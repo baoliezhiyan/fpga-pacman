@@ -1,0 +1,151 @@
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_io.h"
+#include "sleep.h"
+
+// ==========================================
+// 解决 Xilinx 宏定义与 USB 协议栈枚举的命名冲突
+// ==========================================
+#undef FALSE
+#undef TRUE
+
+// USB 驱动协议栈头文件
+#include "lw_usb/GenericMacros.h"
+#include "lw_usb/GenericTypeDefs.h"
+#include "lw_usb/MAX3421E.h"
+#include "lw_usb/USB.h"
+#include "lw_usb/usb_ch9.h"
+#include "lw_usb/transfer.h"
+#include "lw_usb/HID.h"
+
+// ==========================================
+// 你的 AXI 硬件寄存器映射
+// ==========================================
+#define PACMAN_BASEADDR XPAR_PACMAN_AXI4_GRAPHICS_0_S00_AXI_BASEADDR
+#define REG_PACMAN_X 0
+#define REG_PACMAN_Y 4
+
+// ==========================================
+// USB 键盘常量与外部变量
+// ==========================================
+extern HID_DEVICE hid_device;
+const char* const devclasses[] = { " Uninitialized", " HID Keyboard", " HID Mouse", " Mass storage" };
+
+#define KEY_W 0x1A
+#define KEY_S 0x16
+#define KEY_A 0x04
+#define KEY_D 0x07
+
+// Lab 6 提取设备信息的辅助函数 (已清理未使用变量警告)
+BYTE GetDriverandReport(BYTE addr) {
+    BYTE i;
+    BYTE device = 0xFF;
+    DEV_RECORD* tpl_ptr;
+
+    xil_printf("Reached USB_STATE_RUNNING (0x40)\n");
+    for (i = 1; i < USB_NUMDEVICES; i++) {
+        tpl_ptr = GetDevtable(i);
+        if (tpl_ptr->epinfo != NULL) {
+            xil_printf("Device: %d %s \n", i, devclasses[tpl_ptr->devclass]);
+            device = tpl_ptr->devclass;
+        }
+    }
+    return device;
+}
+
+int main() {
+    // 1. 基础平台初始化
+    init_platform();
+
+    xil_printf("Initializing MAX3421E USB Controller...\n");
+    MAX3421E_init();
+    xil_printf("Initializing USB Protocol Stack...\n");
+    USB_init();
+
+    // 2. 吃豆人物理状态初始化
+    int x_pos = 320;
+    int y_pos = 240;
+    int step = 3;             // 每次移动像素数，决定吃豆人速度
+    BYTE current_key = 0;     // 缓存当前按下的方向键
+
+    // USB 状态机变量
+    BYTE rcode;
+    BOOT_KBD_REPORT kbdbuf;
+    BYTE runningdebugflag = 0;
+    BYTE errorflag = 0;
+    BYTE device = 0;
+    BYTE addr = 1;
+
+    xil_printf("Pac-Man Engine Ready. Waiting for USB Keyboard...\n");
+
+    // 3. 游戏与 USB 主循环
+    while (1) {
+        // --- A. 维持 USB 硬件与协议栈运行 ---
+        MAX3421E_Task();
+        USB_Task();
+
+        // --- B. 键盘读取逻辑 ---
+        if (GetUsbTaskState() == USB_STATE_RUNNING) {
+            if (!runningdebugflag) {
+                runningdebugflag = 1;
+                device = GetDriverandReport(addr);
+            } else if (device == 1) { // 确认是键盘接入
+
+                rcode = kbdPoll(&kbdbuf);
+
+                // 如果有新数据包 (rcode == 0)，更新 current_key
+                if (rcode == 0) {
+                    current_key = kbdbuf.keycode[0];
+                }
+                // 如果 rcode == hrNAK，说明按键没变化（一直按着没松开），继续用 current_key
+                // 如果发生了错误，则跳过本帧更新
+                else if (rcode != hrNAK) {
+                    continue;
+                }
+            }
+        }
+        else if (GetUsbTaskState() == USB_STATE_ERROR) {
+            if (!errorflag) {
+                errorflag = 1;
+                xil_printf("USB Error State\n");
+            }
+            current_key = 0; // 拔出或出错时停止移动
+        }
+        else {
+            if (runningdebugflag) {    // 掉线重置
+                runningdebugflag = 0;
+                MAX3421E_init();
+                USB_init();
+            }
+            errorflag = 0;
+            current_key = 0;
+        }
+
+        // --- C. 游戏物理引擎更新 ---
+        switch (current_key) {
+            case KEY_W: y_pos -= step; break;
+            case KEY_S: y_pos += step; break;
+            case KEY_A: x_pos -= step; break;
+            case KEY_D: x_pos += step; break;
+            default: break; // 无效按键或没按键时静止
+        }
+
+        // 边界碰撞检测 (假设屏幕 640x480，吃豆人半径16)
+        if (x_pos < 16) x_pos = 16;
+        if (x_pos > 624) x_pos = 624;
+        if (y_pos < 16) y_pos = 16;
+        if (y_pos > 464) y_pos = 464;
+
+        // --- D. 写入硬件 AXI 总线，驱动 HDMI 显示 ---
+        Xil_Out32(PACMAN_BASEADDR + REG_PACMAN_X, x_pos);
+        Xil_Out32(PACMAN_BASEADDR + REG_PACMAN_Y, y_pos);
+
+        // --- E. 帧率控制 ---
+        // 适当延时，防止 USB 轮询过快导致跑飞，约相当于 ~60FPS
+        usleep(16000);
+    }
+
+    cleanup_platform();
+    return 0;
+}

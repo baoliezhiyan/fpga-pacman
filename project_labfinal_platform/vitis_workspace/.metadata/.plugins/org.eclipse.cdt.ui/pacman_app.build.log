@@ -1,0 +1,21 @@
+10:38:28 **** Incremental Build of configuration Debug for project pacman_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: pacman_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LD:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "pacman_app.elf"  ./src/lw_usb/HID.o ./src/lw_usb/MAX3421E.o ./src/lw_usb/transfer.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: pacman_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size pacman_app.elf  |tee "pacman_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24184	    476	   3660	  28320	   6ea0	pacman_app.elf
+'Finished building: pacman_app.elf.size'
+' '
+
+10:38:29 Build Finished (took 1s.716ms)
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="pacman_app_system-bitFile" value="${project_loc:pacman_app}/_ide/bitstream/mb_pacman_wrapper.bit"/>
+	<item key="pacman_app_system-bmmFile" value="${project_loc:pacman_app}/_ide/bitstream/mb_pacman_wrapper.mmi"/>
+	<item key="pacman_app_system-target" value="Local"/>
+	<item key="pacman_app_system-device" value="Auto Detect"/>
+	<item key="pacman_app_system-partial_bit" value="false"/>
+	<item key="pacman_app_system-skip_rev_check" value="false"/>
+	<item key="programfpga.sdxproject" value="pacman_app_system"/>
+	<item key="pacman_app_system-microblaze_0-initElf" value="bootloop"/>
+	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;RealDigital Boo 887100000000A&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn1-0362f093-0&quot;}}]}"/>
+</section>
