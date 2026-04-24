@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1777042244">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1777051232">
   <File Type="ROUTE-PWR" Name="mb_pacman_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="mb_pacman_wrapper.tcl"/>
   <File Type="BITSTR-MMI" Name="mb_pacman_wrapper.mmi"/>
@@ -154,7 +154,7 @@
   <BlockFileSet Type="BlockSrcs" Name="mb_pacman_rst_clk_wiz_1_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_pacman_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_pacman_hdmi_tx_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mb_pacman_pacman_AXI4_graphics_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_pacman_axi_quad_spi_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_pacman_axi_intc_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mb_pacman_pacman_AXI4_graphics_0_0"/>
 </GenRun>

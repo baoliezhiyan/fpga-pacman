@@ -44,3 +44,9 @@ platform clean
 platform generate
 platform clean
 platform generate
+platform active {pacman_platform}
+platform config -updatehw {D:/Vivado/MyProjects/project_labfinal_platform/mb_pacman_wrapper.xsa}
+platform clean
+platform generate
+platform clean
+platform generate

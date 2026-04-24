@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Fri Apr 24 00:22:00 2026
+-- Date        : Fri Apr 24 12:20:05 2026
 -- Host        : LAPTOP-KGNOGRA4 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/mb_pacman_pacman_AXI4_graphics_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ mb_pacman_pacman_AXI4_graphics_0_0_sim_netlist.vhdl
 -- Design      : mb_pacman_pacman_AXI4_graphics_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,49 +14,53 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity mb_pacman_pacman_AXI4_graphics_0_0_vga_controller is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_vga_controller is
   port (
     VGA_HS : out STD_LOGIC;
     AR : out STD_LOGIC_VECTOR ( 0 to 0 );
     VGA_VS : out STD_LOGIC;
-    s00_axi_aresetn_0 : out STD_LOGIC;
+    Q : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    \hc_reg[9]_0\ : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    \hc_reg[9]_1\ : out STD_LOGIC;
+    \vc_reg[9]_0\ : out STD_LOGIC;
     active_nblank : out STD_LOGIC;
-    A : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    \hc_reg[9]_0\ : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    B : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    \hc_reg[9]_2\ : out STD_LOGIC_VECTOR ( 10 downto 0 );
     vga_clk : in STD_LOGIC;
-    CO : in STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aresetn : in STD_LOGIC;
-    pacman_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    pacman_x : in STD_LOGIC_VECTOR ( 9 downto 0 )
+    VGA_R1 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    VGA_R2 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    CO : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_pacman_pacman_AXI4_graphics_0_0_vga_controller : entity is "vga_controller";
-end mb_pacman_pacman_AXI4_graphics_0_0_vga_controller;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_vga_controller;
 
-architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_vga_controller is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_vga_controller is
   signal \^ar\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal DrawX : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal DrawY : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal \VGA_R2__2_i_10_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_11_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_12_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_13_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_1_n_2\ : STD_LOGIC;
-  signal \VGA_R2__2_i_1_n_3\ : STD_LOGIC;
-  signal \VGA_R2__2_i_2_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_2_n_1\ : STD_LOGIC;
-  signal \VGA_R2__2_i_2_n_2\ : STD_LOGIC;
-  signal \VGA_R2__2_i_2_n_3\ : STD_LOGIC;
-  signal \VGA_R2__2_i_3_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_3_n_1\ : STD_LOGIC;
-  signal \VGA_R2__2_i_3_n_2\ : STD_LOGIC;
-  signal \VGA_R2__2_i_3_n_3\ : STD_LOGIC;
-  signal \VGA_R2__2_i_4_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_5_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_6_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_7_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_8_n_0\ : STD_LOGIC;
-  signal \VGA_R2__2_i_9_n_0\ : STD_LOGIC;
+  signal \^q\ : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal \VGA_B[0]_i_2_n_0\ : STD_LOGIC;
+  signal \VGA_B[0]_i_3_n_0\ : STD_LOGIC;
+  signal \VGA_B[0]_i_4_n_0\ : STD_LOGIC;
+  signal \VGA_B[0]_i_5_n_0\ : STD_LOGIC;
+  signal VGA_R1_i_10_n_0 : STD_LOGIC;
+  signal VGA_R1_i_11_n_0 : STD_LOGIC;
+  signal VGA_R1_i_12_n_0 : STD_LOGIC;
+  signal VGA_R1_i_13_n_0 : STD_LOGIC;
+  signal VGA_R1_i_1_n_2 : STD_LOGIC;
+  signal VGA_R1_i_1_n_3 : STD_LOGIC;
+  signal VGA_R1_i_2_n_0 : STD_LOGIC;
+  signal VGA_R1_i_2_n_1 : STD_LOGIC;
+  signal VGA_R1_i_2_n_2 : STD_LOGIC;
+  signal VGA_R1_i_2_n_3 : STD_LOGIC;
+  signal VGA_R1_i_3_n_0 : STD_LOGIC;
+  signal VGA_R1_i_3_n_1 : STD_LOGIC;
+  signal VGA_R1_i_3_n_2 : STD_LOGIC;
+  signal VGA_R1_i_3_n_3 : STD_LOGIC;
+  signal VGA_R1_i_4_n_0 : STD_LOGIC;
+  signal VGA_R1_i_5_n_0 : STD_LOGIC;
+  signal VGA_R1_i_6_n_0 : STD_LOGIC;
+  signal VGA_R1_i_7_n_0 : STD_LOGIC;
+  signal VGA_R1_i_8_n_0 : STD_LOGIC;
+  signal VGA_R1_i_9_n_0 : STD_LOGIC;
   signal VGA_R2_i_10_n_0 : STD_LOGIC;
   signal VGA_R2_i_11_n_0 : STD_LOGIC;
   signal VGA_R2_i_12_n_0 : STD_LOGIC;
@@ -77,11 +81,42 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_vga_controller is
   signal VGA_R2_i_7_n_0 : STD_LOGIC;
   signal VGA_R2_i_8_n_0 : STD_LOGIC;
   signal VGA_R2_i_9_n_0 : STD_LOGIC;
+  signal \VGA_R[0]_i_13_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_14_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_15_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_16_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_17_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_18_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_19_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_20_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_21_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_22_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_23_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_24_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_25_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_26_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_27_n_0\ : STD_LOGIC;
   signal \VGA_R[0]_i_2_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_33_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_34_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_35_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_36_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_37_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_38_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_39_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_40_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_4_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_5_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_6_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_7_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_8_n_0\ : STD_LOGIC;
   signal active_nblank_INST_0_i_1_n_0 : STD_LOGIC;
   signal hc : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal \hc[9]_i_2_n_0\ : STD_LOGIC;
+  signal \^hc_reg[9]_0\ : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal hs_i_2_n_0 : STD_LOGIC;
+  signal hs_i_3_n_0 : STD_LOGIC;
+  signal hs_i_4_n_0 : STD_LOGIC;
+  signal hs_i_5_n_0 : STD_LOGIC;
   signal p_0_in : STD_LOGIC;
   signal vc : STD_LOGIC;
   signal \vc[0]_i_1_n_0\ : STD_LOGIC;
@@ -89,178 +124,257 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_vga_controller is
   signal \vc[2]_i_1_n_0\ : STD_LOGIC;
   signal \vc[3]_i_1_n_0\ : STD_LOGIC;
   signal \vc[3]_i_2_n_0\ : STD_LOGIC;
+  signal \vc[3]_i_3_n_0\ : STD_LOGIC;
   signal \vc[4]_i_1_n_0\ : STD_LOGIC;
   signal \vc[5]_i_1_n_0\ : STD_LOGIC;
   signal \vc[6]_i_1_n_0\ : STD_LOGIC;
+  signal \vc[6]_i_2_n_0\ : STD_LOGIC;
   signal \vc[7]_i_1_n_0\ : STD_LOGIC;
   signal \vc[8]_i_1_n_0\ : STD_LOGIC;
   signal \vc[8]_i_2_n_0\ : STD_LOGIC;
   signal \vc[9]_i_2_n_0\ : STD_LOGIC;
   signal \vc[9]_i_3_n_0\ : STD_LOGIC;
   signal \vc[9]_i_4_n_0\ : STD_LOGIC;
+  signal \vc[9]_i_5_n_0\ : STD_LOGIC;
   signal vs_i_1_n_0 : STD_LOGIC;
   signal vs_i_2_n_0 : STD_LOGIC;
-  signal \NLW_VGA_R2__2_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  signal \NLW_VGA_R2__2_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal NLW_VGA_R1_i_1_CO_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal NLW_VGA_R1_i_1_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 to 3 );
   signal NLW_VGA_R2_i_1_CO_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal NLW_VGA_R2_i_1_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \VGA_R[0]_i_2\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of active_nblank_INST_0 : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of active_nblank_INST_0_i_1 : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \hc[1]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \hc[2]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \hc[3]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \hc[4]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \hc[6]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \hc[7]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \hc[9]_i_2\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of hs_i_2 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \vc[0]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \vc[1]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \vc[2]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \vc[3]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \vc[4]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \vc[7]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \vc[8]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \vc[8]_i_2\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of vs_i_2 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \VGA_B[0]_i_4\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \VGA_B[0]_i_5\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_14\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_18\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_20\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_22\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_34\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_35\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_36\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_37\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_38\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_40\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \VGA_R[0]_i_8\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of active_nblank_INST_0_i_1 : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \hc[0]_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \hc[1]_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \hc[2]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \hc[3]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \hc[4]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \hc[6]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \hc[7]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of hs_i_2 : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of hs_i_3 : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of hs_i_5 : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \vc[1]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \vc[3]_i_2\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \vc[3]_i_3\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \vc[4]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \vc[7]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \vc[8]_i_2\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \vc[9]_i_3\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \vc[9]_i_4\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \vc[9]_i_5\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of vs_i_1 : label is "soft_lutpair4";
 begin
   AR(0) <= \^ar\(0);
-\VGA_R2__2_i_1\: unisim.vcomponents.CARRY4
+  Q(9 downto 0) <= \^q\(9 downto 0);
+  \hc_reg[9]_0\(9 downto 0) <= \^hc_reg[9]_0\(9 downto 0);
+\VGA_B[0]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00000000FFFFFFB0"
+    )
+        port map (
+      I0 => \VGA_B[0]_i_2_n_0\,
+      I1 => \VGA_B[0]_i_3_n_0\,
+      I2 => \VGA_R[0]_i_5_n_0\,
+      I3 => \VGA_R[0]_i_6_n_0\,
+      I4 => \VGA_R[0]_i_7_n_0\,
+      I5 => \VGA_R[0]_i_2_n_0\,
+      O => \hc_reg[9]_1\
+    );
+\VGA_B[0]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF00440F44"
+    )
+        port map (
+      I0 => \VGA_B[0]_i_4_n_0\,
+      I1 => \VGA_B[0]_i_5_n_0\,
+      I2 => hs_i_3_n_0,
+      I3 => \^hc_reg[9]_0\(9),
+      I4 => \VGA_R[0]_i_14_n_0\,
+      I5 => \VGA_R[0]_i_13_n_0\,
+      O => \VGA_B[0]_i_2_n_0\
+    );
+\VGA_B[0]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFEFEFEFEFE"
+    )
+        port map (
+      I0 => \vc[9]_i_4_n_0\,
+      I1 => \^q\(5),
+      I2 => \^q\(8),
+      I3 => \^q\(3),
+      I4 => \^q\(2),
+      I5 => \^q\(4),
+      O => \VGA_B[0]_i_3_n_0\
+    );
+\VGA_B[0]_i_4\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E0"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(2),
+      I1 => \^hc_reg[9]_0\(3),
+      I2 => \^hc_reg[9]_0\(4),
+      O => \VGA_B[0]_i_4_n_0\
+    );
+\VGA_B[0]_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0001"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(7),
+      I1 => \^hc_reg[9]_0\(8),
+      I2 => \^hc_reg[9]_0\(5),
+      I3 => \^hc_reg[9]_0\(6),
+      O => \VGA_B[0]_i_5_n_0\
+    );
+VGA_R1_i_1: unisim.vcomponents.CARRY4
      port map (
-      CI => \VGA_R2__2_i_2_n_0\,
-      CO(3 downto 2) => \NLW_VGA_R2__2_i_1_CO_UNCONNECTED\(3 downto 2),
-      CO(1) => \VGA_R2__2_i_1_n_2\,
-      CO(0) => \VGA_R2__2_i_1_n_3\,
+      CI => VGA_R1_i_2_n_0,
+      CO(3 downto 2) => NLW_VGA_R1_i_1_CO_UNCONNECTED(3 downto 2),
+      CO(1) => VGA_R1_i_1_n_2,
+      CO(0) => VGA_R1_i_1_n_3,
       CYINIT => '0',
       DI(3 downto 2) => B"00",
-      DI(1 downto 0) => DrawX(9 downto 8),
-      O(3) => \NLW_VGA_R2__2_i_1_O_UNCONNECTED\(3),
-      O(2 downto 0) => \hc_reg[9]_0\(10 downto 8),
+      DI(1 downto 0) => \^q\(9 downto 8),
+      O(3) => NLW_VGA_R1_i_1_O_UNCONNECTED(3),
+      O(2 downto 0) => B(10 downto 8),
       S(3 downto 2) => B"01",
-      S(1) => \VGA_R2__2_i_4_n_0\,
-      S(0) => \VGA_R2__2_i_5_n_0\
+      S(1) => VGA_R1_i_4_n_0,
+      S(0) => VGA_R1_i_5_n_0
     );
-\VGA_R2__2_i_10\: unisim.vcomponents.LUT2
+VGA_R1_i_10: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(3),
-      I1 => pacman_x(3),
-      O => \VGA_R2__2_i_10_n_0\
+      I0 => \^q\(3),
+      I1 => VGA_R1(3),
+      O => VGA_R1_i_10_n_0
     );
-\VGA_R2__2_i_11\: unisim.vcomponents.LUT2
+VGA_R1_i_11: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(2),
-      I1 => pacman_x(2),
-      O => \VGA_R2__2_i_11_n_0\
+      I0 => \^q\(2),
+      I1 => VGA_R1(2),
+      O => VGA_R1_i_11_n_0
     );
-\VGA_R2__2_i_12\: unisim.vcomponents.LUT2
+VGA_R1_i_12: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(1),
-      I1 => pacman_x(1),
-      O => \VGA_R2__2_i_12_n_0\
+      I0 => \^q\(1),
+      I1 => VGA_R1(1),
+      O => VGA_R1_i_12_n_0
     );
-\VGA_R2__2_i_13\: unisim.vcomponents.LUT2
+VGA_R1_i_13: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(0),
-      I1 => pacman_x(0),
-      O => \VGA_R2__2_i_13_n_0\
+      I0 => \^q\(0),
+      I1 => VGA_R1(0),
+      O => VGA_R1_i_13_n_0
     );
-\VGA_R2__2_i_2\: unisim.vcomponents.CARRY4
+VGA_R1_i_2: unisim.vcomponents.CARRY4
      port map (
-      CI => \VGA_R2__2_i_3_n_0\,
-      CO(3) => \VGA_R2__2_i_2_n_0\,
-      CO(2) => \VGA_R2__2_i_2_n_1\,
-      CO(1) => \VGA_R2__2_i_2_n_2\,
-      CO(0) => \VGA_R2__2_i_2_n_3\,
+      CI => VGA_R1_i_3_n_0,
+      CO(3) => VGA_R1_i_2_n_0,
+      CO(2) => VGA_R1_i_2_n_1,
+      CO(1) => VGA_R1_i_2_n_2,
+      CO(0) => VGA_R1_i_2_n_3,
       CYINIT => '0',
-      DI(3 downto 0) => DrawX(7 downto 4),
-      O(3 downto 0) => \hc_reg[9]_0\(7 downto 4),
-      S(3) => \VGA_R2__2_i_6_n_0\,
-      S(2) => \VGA_R2__2_i_7_n_0\,
-      S(1) => \VGA_R2__2_i_8_n_0\,
-      S(0) => \VGA_R2__2_i_9_n_0\
+      DI(3 downto 0) => \^q\(7 downto 4),
+      O(3 downto 0) => B(7 downto 4),
+      S(3) => VGA_R1_i_6_n_0,
+      S(2) => VGA_R1_i_7_n_0,
+      S(1) => VGA_R1_i_8_n_0,
+      S(0) => VGA_R1_i_9_n_0
     );
-\VGA_R2__2_i_3\: unisim.vcomponents.CARRY4
+VGA_R1_i_3: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \VGA_R2__2_i_3_n_0\,
-      CO(2) => \VGA_R2__2_i_3_n_1\,
-      CO(1) => \VGA_R2__2_i_3_n_2\,
-      CO(0) => \VGA_R2__2_i_3_n_3\,
+      CO(3) => VGA_R1_i_3_n_0,
+      CO(2) => VGA_R1_i_3_n_1,
+      CO(1) => VGA_R1_i_3_n_2,
+      CO(0) => VGA_R1_i_3_n_3,
       CYINIT => '1',
-      DI(3 downto 0) => DrawX(3 downto 0),
-      O(3 downto 0) => \hc_reg[9]_0\(3 downto 0),
-      S(3) => \VGA_R2__2_i_10_n_0\,
-      S(2) => \VGA_R2__2_i_11_n_0\,
-      S(1) => \VGA_R2__2_i_12_n_0\,
-      S(0) => \VGA_R2__2_i_13_n_0\
+      DI(3 downto 0) => \^q\(3 downto 0),
+      O(3 downto 0) => B(3 downto 0),
+      S(3) => VGA_R1_i_10_n_0,
+      S(2) => VGA_R1_i_11_n_0,
+      S(1) => VGA_R1_i_12_n_0,
+      S(0) => VGA_R1_i_13_n_0
     );
-\VGA_R2__2_i_4\: unisim.vcomponents.LUT2
+VGA_R1_i_4: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(9),
-      I1 => pacman_x(9),
-      O => \VGA_R2__2_i_4_n_0\
+      I0 => \^q\(9),
+      I1 => VGA_R1(9),
+      O => VGA_R1_i_4_n_0
     );
-\VGA_R2__2_i_5\: unisim.vcomponents.LUT2
+VGA_R1_i_5: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(8),
-      I1 => pacman_x(8),
-      O => \VGA_R2__2_i_5_n_0\
+      I0 => \^q\(8),
+      I1 => VGA_R1(8),
+      O => VGA_R1_i_5_n_0
     );
-\VGA_R2__2_i_6\: unisim.vcomponents.LUT2
+VGA_R1_i_6: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(7),
-      I1 => pacman_x(7),
-      O => \VGA_R2__2_i_6_n_0\
+      I0 => \^q\(7),
+      I1 => VGA_R1(7),
+      O => VGA_R1_i_6_n_0
     );
-\VGA_R2__2_i_7\: unisim.vcomponents.LUT2
+VGA_R1_i_7: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(6),
-      I1 => pacman_x(6),
-      O => \VGA_R2__2_i_7_n_0\
+      I0 => \^q\(6),
+      I1 => VGA_R1(6),
+      O => VGA_R1_i_7_n_0
     );
-\VGA_R2__2_i_8\: unisim.vcomponents.LUT2
+VGA_R1_i_8: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(5),
-      I1 => pacman_x(5),
-      O => \VGA_R2__2_i_8_n_0\
+      I0 => \^q\(5),
+      I1 => VGA_R1(5),
+      O => VGA_R1_i_8_n_0
     );
-\VGA_R2__2_i_9\: unisim.vcomponents.LUT2
+VGA_R1_i_9: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
-      I0 => DrawX(4),
-      I1 => pacman_x(4),
-      O => \VGA_R2__2_i_9_n_0\
+      I0 => \^q\(4),
+      I1 => VGA_R1(4),
+      O => VGA_R1_i_9_n_0
     );
 VGA_R2_i_1: unisim.vcomponents.CARRY4
      port map (
@@ -270,9 +384,9 @@ VGA_R2_i_1: unisim.vcomponents.CARRY4
       CO(0) => VGA_R2_i_1_n_3,
       CYINIT => '0',
       DI(3 downto 2) => B"00",
-      DI(1 downto 0) => DrawY(9 downto 8),
+      DI(1 downto 0) => \^hc_reg[9]_0\(9 downto 8),
       O(3) => NLW_VGA_R2_i_1_O_UNCONNECTED(3),
-      O(2 downto 0) => A(10 downto 8),
+      O(2 downto 0) => \hc_reg[9]_2\(10 downto 8),
       S(3 downto 2) => B"01",
       S(1) => VGA_R2_i_4_n_0,
       S(0) => VGA_R2_i_5_n_0
@@ -282,8 +396,8 @@ VGA_R2_i_10: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(3),
-      I1 => pacman_y(3),
+      I0 => \^hc_reg[9]_0\(3),
+      I1 => VGA_R2(3),
       O => VGA_R2_i_10_n_0
     );
 VGA_R2_i_11: unisim.vcomponents.LUT2
@@ -291,8 +405,8 @@ VGA_R2_i_11: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(2),
-      I1 => pacman_y(2),
+      I0 => \^hc_reg[9]_0\(2),
+      I1 => VGA_R2(2),
       O => VGA_R2_i_11_n_0
     );
 VGA_R2_i_12: unisim.vcomponents.LUT2
@@ -300,8 +414,8 @@ VGA_R2_i_12: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(1),
-      I1 => pacman_y(1),
+      I0 => \^hc_reg[9]_0\(1),
+      I1 => VGA_R2(1),
       O => VGA_R2_i_12_n_0
     );
 VGA_R2_i_13: unisim.vcomponents.LUT2
@@ -309,8 +423,8 @@ VGA_R2_i_13: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(0),
-      I1 => pacman_y(0),
+      I0 => \^hc_reg[9]_0\(0),
+      I1 => VGA_R2(0),
       O => VGA_R2_i_13_n_0
     );
 VGA_R2_i_2: unisim.vcomponents.CARRY4
@@ -321,8 +435,8 @@ VGA_R2_i_2: unisim.vcomponents.CARRY4
       CO(1) => VGA_R2_i_2_n_2,
       CO(0) => VGA_R2_i_2_n_3,
       CYINIT => '0',
-      DI(3 downto 0) => DrawY(7 downto 4),
-      O(3 downto 0) => A(7 downto 4),
+      DI(3 downto 0) => \^hc_reg[9]_0\(7 downto 4),
+      O(3 downto 0) => \hc_reg[9]_2\(7 downto 4),
       S(3) => VGA_R2_i_6_n_0,
       S(2) => VGA_R2_i_7_n_0,
       S(1) => VGA_R2_i_8_n_0,
@@ -336,8 +450,8 @@ VGA_R2_i_3: unisim.vcomponents.CARRY4
       CO(1) => VGA_R2_i_3_n_2,
       CO(0) => VGA_R2_i_3_n_3,
       CYINIT => '1',
-      DI(3 downto 0) => DrawY(3 downto 0),
-      O(3 downto 0) => A(3 downto 0),
+      DI(3 downto 0) => \^hc_reg[9]_0\(3 downto 0),
+      O(3 downto 0) => \hc_reg[9]_2\(3 downto 0),
       S(3) => VGA_R2_i_10_n_0,
       S(2) => VGA_R2_i_11_n_0,
       S(1) => VGA_R2_i_12_n_0,
@@ -348,8 +462,8 @@ VGA_R2_i_4: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(9),
-      I1 => pacman_y(9),
+      I0 => \^hc_reg[9]_0\(9),
+      I1 => VGA_R2(9),
       O => VGA_R2_i_4_n_0
     );
 VGA_R2_i_5: unisim.vcomponents.LUT2
@@ -357,8 +471,8 @@ VGA_R2_i_5: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(8),
-      I1 => pacman_y(8),
+      I0 => \^hc_reg[9]_0\(8),
+      I1 => VGA_R2(8),
       O => VGA_R2_i_5_n_0
     );
 VGA_R2_i_6: unisim.vcomponents.LUT2
@@ -366,8 +480,8 @@ VGA_R2_i_6: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(7),
-      I1 => pacman_y(7),
+      I0 => \^hc_reg[9]_0\(7),
+      I1 => VGA_R2(7),
       O => VGA_R2_i_6_n_0
     );
 VGA_R2_i_7: unisim.vcomponents.LUT2
@@ -375,8 +489,8 @@ VGA_R2_i_7: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(6),
-      I1 => pacman_y(6),
+      I0 => \^hc_reg[9]_0\(6),
+      I1 => VGA_R2(6),
       O => VGA_R2_i_7_n_0
     );
 VGA_R2_i_8: unisim.vcomponents.LUT2
@@ -384,8 +498,8 @@ VGA_R2_i_8: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(5),
-      I1 => pacman_y(5),
+      I0 => \^hc_reg[9]_0\(5),
+      I1 => VGA_R2(5),
       O => VGA_R2_i_8_n_0
     );
 VGA_R2_i_9: unisim.vcomponents.LUT2
@@ -393,53 +507,390 @@ VGA_R2_i_9: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => DrawY(4),
-      I1 => pacman_y(4),
+      I0 => \^hc_reg[9]_0\(4),
+      I1 => VGA_R2(4),
       O => VGA_R2_i_9_n_0
     );
-\VGA_R[0]_i_1\: unisim.vcomponents.LUT5
+\VGA_R[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00800000"
+      INIT => X"0000000000004044"
     )
         port map (
       I0 => \VGA_R[0]_i_2_n_0\,
       I1 => CO(0),
-      I2 => s00_axi_aresetn,
-      I3 => DrawY(9),
-      I4 => active_nblank_INST_0_i_1_n_0,
-      O => s00_axi_aresetn_0
+      I2 => \VGA_R[0]_i_4_n_0\,
+      I3 => \VGA_R[0]_i_5_n_0\,
+      I4 => \VGA_R[0]_i_6_n_0\,
+      I5 => \VGA_R[0]_i_7_n_0\,
+      O => \vc_reg[9]_0\
     );
-\VGA_R[0]_i_2\: unisim.vcomponents.LUT3
+\VGA_R[0]_i_13\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"1F"
+      INIT => X"8080808080808000"
     )
         port map (
-      I0 => DrawX(8),
-      I1 => DrawX(7),
-      I2 => DrawX(9),
+      I0 => \^q\(6),
+      I1 => \^q\(7),
+      I2 => \^q\(8),
+      I3 => \vc[6]_i_2_n_0\,
+      I4 => \^q\(5),
+      I5 => \^q\(4),
+      O => \VGA_R[0]_i_13_n_0\
+    );
+\VGA_R[0]_i_14\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"15"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(4),
+      I1 => \^hc_reg[9]_0\(2),
+      I2 => \^hc_reg[9]_0\(3),
+      O => \VGA_R[0]_i_14_n_0\
+    );
+\VGA_R[0]_i_15\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000000001"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(6),
+      I1 => \^hc_reg[9]_0\(5),
+      I2 => \^hc_reg[9]_0\(8),
+      I3 => \^hc_reg[9]_0\(7),
+      I4 => \VGA_B[0]_i_4_n_0\,
+      I5 => \^hc_reg[9]_0\(9),
+      O => \VGA_R[0]_i_15_n_0\
+    );
+\VGA_R[0]_i_16\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"A8A0000000000000"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(4),
+      I1 => \^hc_reg[9]_0\(2),
+      I2 => \^hc_reg[9]_0\(3),
+      I3 => \^hc_reg[9]_0\(1),
+      I4 => \^hc_reg[9]_0\(6),
+      I5 => \^hc_reg[9]_0\(5),
+      O => \VGA_R[0]_i_16_n_0\
+    );
+\VGA_R[0]_i_17\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AA88A888A888A888"
+    )
+        port map (
+      I0 => active_nblank_INST_0_i_1_n_0,
+      I1 => \^q\(5),
+      I2 => \^q\(3),
+      I3 => \^q\(4),
+      I4 => \^q\(1),
+      I5 => \^q\(2),
+      O => \VGA_R[0]_i_17_n_0\
+    );
+\VGA_R[0]_i_18\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(8),
+      I1 => \^hc_reg[9]_0\(7),
+      O => \VGA_R[0]_i_18_n_0\
+    );
+\VGA_R[0]_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000000313"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(2),
+      I1 => \^hc_reg[9]_0\(4),
+      I2 => \^hc_reg[9]_0\(3),
+      I3 => \^hc_reg[9]_0\(1),
+      I4 => \^hc_reg[9]_0\(6),
+      I5 => \^hc_reg[9]_0\(5),
+      O => \VGA_R[0]_i_19_n_0\
+    );
+\VGA_R[0]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFDDDDDFFFFFFFF"
+    )
+        port map (
+      I0 => \VGA_R[0]_i_8_n_0\,
+      I1 => \^q\(9),
+      I2 => \^hc_reg[9]_0\(8),
+      I3 => \^hc_reg[9]_0\(7),
+      I4 => \^hc_reg[9]_0\(9),
+      I5 => s00_axi_aresetn,
       O => \VGA_R[0]_i_2_n_0\
     );
-active_nblank_INST_0: unisim.vcomponents.LUT5
+\VGA_R[0]_i_20\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"01550000"
+      INIT => X"ABAA"
     )
         port map (
-      I0 => DrawY(9),
-      I1 => DrawX(8),
-      I2 => DrawX(7),
-      I3 => DrawX(9),
-      I4 => active_nblank_INST_0_i_1_n_0,
-      O => active_nblank
+      I0 => \^q\(9),
+      I1 => \^q\(7),
+      I2 => \^q\(8),
+      I3 => \VGA_R[0]_i_33_n_0\,
+      O => \VGA_R[0]_i_20_n_0\
     );
-active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
+\VGA_R[0]_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"02AAAAAAAAAAAAAA"
+    )
+        port map (
+      I0 => \VGA_B[0]_i_5_n_0\,
+      I1 => \^hc_reg[9]_0\(1),
+      I2 => \^hc_reg[9]_0\(0),
+      I3 => \^hc_reg[9]_0\(4),
+      I4 => \^hc_reg[9]_0\(3),
+      I5 => \^hc_reg[9]_0\(2),
+      O => \VGA_R[0]_i_21_n_0\
+    );
+\VGA_R[0]_i_22\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"88888880"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(5),
+      I1 => \^hc_reg[9]_0\(6),
+      I2 => \^hc_reg[9]_0\(3),
+      I3 => \^hc_reg[9]_0\(2),
+      I4 => \^hc_reg[9]_0\(4),
+      O => \VGA_R[0]_i_22_n_0\
+    );
+\VGA_R[0]_i_23\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000B000F000F0000"
+    )
+        port map (
+      I0 => \VGA_R[0]_i_34_n_0\,
+      I1 => \^q\(2),
+      I2 => \VGA_R[0]_i_35_n_0\,
+      I3 => \VGA_R[0]_i_36_n_0\,
+      I4 => \^q\(3),
+      I5 => \^q\(4),
+      O => \VGA_R[0]_i_23_n_0\
+    );
+\VGA_R[0]_i_24\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFF01FFC1"
+    )
+        port map (
+      I0 => \^q\(2),
+      I1 => \^q\(4),
+      I2 => \^q\(3),
+      I3 => \VGA_R[0]_i_36_n_0\,
+      I4 => \VGA_R[0]_i_37_n_0\,
+      I5 => \VGA_R[0]_i_38_n_0\,
+      O => \VGA_R[0]_i_24_n_0\
+    );
+\VGA_R[0]_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000000222"
+    )
+        port map (
+      I0 => \VGA_R[0]_i_39_n_0\,
+      I1 => \VGA_R[0]_i_40_n_0\,
+      I2 => \^hc_reg[9]_0\(5),
+      I3 => \^hc_reg[9]_0\(6),
+      I4 => \^hc_reg[9]_0\(9),
+      I5 => \^q\(9),
+      O => \VGA_R[0]_i_25_n_0\
+    );
+\VGA_R[0]_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF00FF00AE000000"
+    )
+        port map (
+      I0 => \^q\(4),
+      I1 => \vc[6]_i_2_n_0\,
+      I2 => \VGA_R[0]_i_34_n_0\,
+      I3 => \^q\(8),
+      I4 => \^q\(5),
+      I5 => \vc[9]_i_4_n_0\,
+      O => \VGA_R[0]_i_26_n_0\
+    );
+\VGA_R[0]_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFE0000000000000"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(0),
+      I1 => \^hc_reg[9]_0\(1),
+      I2 => \^hc_reg[9]_0\(2),
+      I3 => \^hc_reg[9]_0\(3),
+      I4 => \^hc_reg[9]_0\(4),
+      I5 => \^hc_reg[9]_0\(6),
+      O => \VGA_R[0]_i_27_n_0\
+    );
+\VGA_R[0]_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000000057"
+    )
+        port map (
+      I0 => \^q\(3),
+      I1 => \^q\(1),
+      I2 => \^q\(2),
+      I3 => \^q\(5),
+      I4 => \^q\(4),
+      I5 => \^q\(6),
+      O => \VGA_R[0]_i_33_n_0\
+    );
+\VGA_R[0]_i_34\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      O => \VGA_R[0]_i_34_n_0\
+    );
+\VGA_R[0]_i_35\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"EF"
+    )
+        port map (
+      I0 => \^q\(9),
+      I1 => \^q\(7),
+      I2 => \^q\(8),
+      O => \VGA_R[0]_i_35_n_0\
+    );
+\VGA_R[0]_i_36\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^q\(6),
+      I1 => \^q\(5),
+      O => \VGA_R[0]_i_36_n_0\
+    );
+\VGA_R[0]_i_37\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"01"
+    )
+        port map (
+      I0 => \^q\(0),
+      I1 => \^q\(2),
+      I2 => \^q\(1),
+      O => \VGA_R[0]_i_37_n_0\
+    );
+\VGA_R[0]_i_38\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"FE"
+    )
+        port map (
+      I0 => \^q\(9),
+      I1 => \^q\(7),
+      I2 => \^q\(8),
+      O => \VGA_R[0]_i_38_n_0\
+    );
+\VGA_R[0]_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFE000"
+    )
+        port map (
+      I0 => \^q\(3),
+      I1 => \^q\(2),
+      I2 => \^q\(4),
+      I3 => \^q\(5),
+      I4 => \^q\(8),
+      I5 => \^q\(6),
+      O => \VGA_R[0]_i_39_n_0\
+    );
+\VGA_R[0]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000022222022"
+    )
+        port map (
+      I0 => \VGA_B[0]_i_3_n_0\,
+      I1 => \VGA_R[0]_i_13_n_0\,
+      I2 => \VGA_R[0]_i_14_n_0\,
+      I3 => \^hc_reg[9]_0\(9),
+      I4 => hs_i_3_n_0,
+      I5 => \VGA_R[0]_i_15_n_0\,
+      O => \VGA_R[0]_i_4_n_0\
+    );
+\VGA_R[0]_i_40\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"DDDF"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(8),
+      I1 => \^hc_reg[9]_0\(7),
+      I2 => \^q\(7),
+      I3 => \^q\(8),
+      O => \VGA_R[0]_i_40_n_0\
+    );
+\VGA_R[0]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000010031303"
+    )
+        port map (
+      I0 => \VGA_R[0]_i_16_n_0\,
+      I1 => \VGA_R[0]_i_17_n_0\,
+      I2 => \^hc_reg[9]_0\(9),
+      I3 => \VGA_R[0]_i_18_n_0\,
+      I4 => \VGA_R[0]_i_19_n_0\,
+      I5 => \VGA_R[0]_i_20_n_0\,
+      O => \VGA_R[0]_i_5_n_0\
+    );
+\VGA_R[0]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"DD8D0000DD8DDD8D"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(9),
+      I1 => \VGA_R[0]_i_21_n_0\,
+      I2 => \VGA_R[0]_i_18_n_0\,
+      I3 => \VGA_R[0]_i_22_n_0\,
+      I4 => \VGA_R[0]_i_23_n_0\,
+      I5 => \VGA_R[0]_i_24_n_0\,
+      O => \VGA_R[0]_i_6_n_0\
+    );
+\VGA_R[0]_i_7\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000020222020"
+    )
+        port map (
+      I0 => \VGA_R[0]_i_25_n_0\,
+      I1 => \VGA_R[0]_i_26_n_0\,
+      I2 => \^hc_reg[9]_0\(6),
+      I3 => \VGA_R[0]_i_14_n_0\,
+      I4 => \^hc_reg[9]_0\(5),
+      I5 => \VGA_R[0]_i_27_n_0\,
+      O => \VGA_R[0]_i_7_n_0\
+    );
+\VGA_R[0]_i_8\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"7FFF"
     )
         port map (
-      I0 => DrawY(7),
-      I1 => DrawY(5),
-      I2 => DrawY(6),
-      I3 => DrawY(8),
+      I0 => \^q\(5),
+      I1 => \^q\(6),
+      I2 => \^q\(7),
+      I3 => \^q\(8),
+      O => \VGA_R[0]_i_8_n_0\
+    );
+active_nblank_INST_0: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000707070707"
+    )
+        port map (
+      I0 => \^q\(5),
+      I1 => active_nblank_INST_0_i_1_n_0,
+      I2 => \^q\(9),
+      I3 => \^hc_reg[9]_0\(8),
+      I4 => \^hc_reg[9]_0\(7),
+      I5 => \^hc_reg[9]_0\(9),
+      O => active_nblank
+    );
+active_nblank_INST_0_i_1: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => \^q\(8),
+      I1 => \^q\(7),
+      I2 => \^q\(6),
       O => active_nblank_INST_0_i_1_n_0
     );
 \hc[0]_i_1\: unisim.vcomponents.LUT1
@@ -447,7 +898,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       INIT => X"1"
     )
         port map (
-      I0 => DrawX(0),
+      I0 => \^hc_reg[9]_0\(0),
       O => hc(0)
     );
 \hc[1]_i_1\: unisim.vcomponents.LUT2
@@ -455,8 +906,8 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       INIT => X"6"
     )
         port map (
-      I0 => DrawX(0),
-      I1 => DrawX(1),
+      I0 => \^hc_reg[9]_0\(0),
+      I1 => \^hc_reg[9]_0\(1),
       O => hc(1)
     );
 \hc[2]_i_1\: unisim.vcomponents.LUT3
@@ -464,105 +915,93 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       INIT => X"78"
     )
         port map (
-      I0 => DrawX(1),
-      I1 => DrawX(0),
-      I2 => DrawX(2),
+      I0 => \^hc_reg[9]_0\(0),
+      I1 => \^hc_reg[9]_0\(1),
+      I2 => \^hc_reg[9]_0\(2),
       O => hc(2)
     );
 \hc[3]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"7F80"
+      INIT => X"6AAA"
     )
         port map (
-      I0 => DrawX(2),
-      I1 => DrawX(0),
-      I2 => DrawX(1),
-      I3 => DrawX(3),
+      I0 => \^hc_reg[9]_0\(3),
+      I1 => \^hc_reg[9]_0\(0),
+      I2 => \^hc_reg[9]_0\(1),
+      I3 => \^hc_reg[9]_0\(2),
       O => hc(3)
     );
 \hc[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"7FFF8000"
+      INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => DrawX(3),
-      I1 => DrawX(1),
-      I2 => DrawX(0),
-      I3 => DrawX(2),
-      I4 => DrawX(4),
+      I0 => \^hc_reg[9]_0\(4),
+      I1 => \^hc_reg[9]_0\(0),
+      I2 => \^hc_reg[9]_0\(1),
+      I3 => \^hc_reg[9]_0\(3),
+      I4 => \^hc_reg[9]_0\(2),
       O => hc(4)
     );
 \hc[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"AAAAAAAA55515555"
+      INIT => X"0000FFFFFDFF0000"
     )
         port map (
-      I0 => \hc[9]_i_2_n_0\,
-      I1 => DrawX(8),
-      I2 => DrawX(7),
-      I3 => DrawX(6),
-      I4 => DrawX(9),
-      I5 => DrawX(5),
+      I0 => \^hc_reg[9]_0\(8),
+      I1 => \^hc_reg[9]_0\(7),
+      I2 => \^hc_reg[9]_0\(6),
+      I3 => \^hc_reg[9]_0\(9),
+      I4 => hs_i_2_n_0,
+      I5 => \^hc_reg[9]_0\(5),
       O => hc(5)
     );
 \hc[6]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D2"
+      INIT => X"6A"
     )
         port map (
-      I0 => DrawX(5),
-      I1 => \hc[9]_i_2_n_0\,
-      I2 => DrawX(6),
+      I0 => \^hc_reg[9]_0\(6),
+      I1 => hs_i_2_n_0,
+      I2 => \^hc_reg[9]_0\(5),
       O => hc(6)
     );
 \hc[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"DF20"
+      INIT => X"7F80"
     )
         port map (
-      I0 => DrawX(6),
-      I1 => \hc[9]_i_2_n_0\,
-      I2 => DrawX(5),
-      I3 => DrawX(7),
+      I0 => hs_i_2_n_0,
+      I1 => \^hc_reg[9]_0\(5),
+      I2 => \^hc_reg[9]_0\(6),
+      I3 => \^hc_reg[9]_0\(7),
       O => hc(7)
     );
 \hc[8]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"CCCCCCCC3CCCCCC4"
+      INIT => X"3FFDFFFFC0000000"
     )
         port map (
-      I0 => DrawX(9),
-      I1 => DrawX(8),
-      I2 => DrawX(5),
-      I3 => DrawX(6),
-      I4 => DrawX(7),
-      I5 => \hc[9]_i_2_n_0\,
+      I0 => \^hc_reg[9]_0\(9),
+      I1 => \^hc_reg[9]_0\(7),
+      I2 => \^hc_reg[9]_0\(6),
+      I3 => \^hc_reg[9]_0\(5),
+      I4 => hs_i_2_n_0,
+      I5 => \^hc_reg[9]_0\(8),
       O => hc(8)
     );
 \hc[9]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"C6CCCCCCCCCCCCC4"
+      INIT => X"7F80FD00FF00FF00"
     )
         port map (
-      I0 => DrawX(8),
-      I1 => DrawX(9),
-      I2 => \hc[9]_i_2_n_0\,
-      I3 => DrawX(5),
-      I4 => DrawX(7),
-      I5 => DrawX(6),
+      I0 => \^hc_reg[9]_0\(8),
+      I1 => \^hc_reg[9]_0\(7),
+      I2 => \^hc_reg[9]_0\(6),
+      I3 => \^hc_reg[9]_0\(9),
+      I4 => \^hc_reg[9]_0\(5),
+      I5 => hs_i_2_n_0,
       O => hc(9)
-    );
-\hc[9]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFFFFFF"
-    )
-        port map (
-      I0 => DrawX(3),
-      I1 => DrawX(1),
-      I2 => DrawX(0),
-      I3 => DrawX(2),
-      I4 => DrawX(4),
-      O => \hc[9]_i_2_n_0\
     );
 \hc_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -570,7 +1009,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(0),
-      Q => DrawX(0)
+      Q => \^hc_reg[9]_0\(0)
     );
 \hc_reg[1]\: unisim.vcomponents.FDCE
      port map (
@@ -578,7 +1017,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(1),
-      Q => DrawX(1)
+      Q => \^hc_reg[9]_0\(1)
     );
 \hc_reg[2]\: unisim.vcomponents.FDCE
      port map (
@@ -586,7 +1025,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(2),
-      Q => DrawX(2)
+      Q => \^hc_reg[9]_0\(2)
     );
 \hc_reg[3]\: unisim.vcomponents.FDCE
      port map (
@@ -594,7 +1033,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(3),
-      Q => DrawX(3)
+      Q => \^hc_reg[9]_0\(3)
     );
 \hc_reg[4]\: unisim.vcomponents.FDCE
      port map (
@@ -602,7 +1041,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(4),
-      Q => DrawX(4)
+      Q => \^hc_reg[9]_0\(4)
     );
 \hc_reg[5]\: unisim.vcomponents.FDCE
      port map (
@@ -610,7 +1049,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(5),
-      Q => DrawX(5)
+      Q => \^hc_reg[9]_0\(5)
     );
 \hc_reg[6]\: unisim.vcomponents.FDCE
      port map (
@@ -618,7 +1057,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(6),
-      Q => DrawX(6)
+      Q => \^hc_reg[9]_0\(6)
     );
 \hc_reg[7]\: unisim.vcomponents.FDCE
      port map (
@@ -626,7 +1065,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(7),
-      Q => DrawX(7)
+      Q => \^hc_reg[9]_0\(7)
     );
 \hc_reg[8]\: unisim.vcomponents.FDCE
      port map (
@@ -634,7 +1073,7 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(8),
-      Q => DrawX(8)
+      Q => \^hc_reg[9]_0\(8)
     );
 \hc_reg[9]\: unisim.vcomponents.FDCE
      port map (
@@ -642,32 +1081,65 @@ active_nblank_INST_0_i_1: unisim.vcomponents.LUT4
       CE => '1',
       CLR => \^ar\(0),
       D => hc(9),
-      Q => DrawX(9)
+      Q => \^hc_reg[9]_0\(9)
     );
 hs_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFF81FFFFFFFFFF"
+      INIT => X"FFFFFFFF0800F7FF"
     )
         port map (
-      I0 => DrawX(6),
-      I1 => DrawX(5),
-      I2 => hs_i_2_n_0,
-      I3 => DrawX(7),
-      I4 => DrawX(8),
-      I5 => DrawX(9),
+      I0 => \^hc_reg[9]_0\(8),
+      I1 => hs_i_2_n_0,
+      I2 => hs_i_3_n_0,
+      I3 => \^hc_reg[9]_0\(7),
+      I4 => \^hc_reg[9]_0\(9),
+      I5 => hs_i_4_n_0,
       O => p_0_in
     );
 hs_i_2: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"EAAAAAAA"
+      INIT => X"80000000"
     )
         port map (
-      I0 => DrawX(4),
-      I1 => DrawX(3),
-      I2 => DrawX(1),
-      I3 => DrawX(0),
-      I4 => DrawX(2),
+      I0 => \^hc_reg[9]_0\(0),
+      I1 => \^hc_reg[9]_0\(1),
+      I2 => \^hc_reg[9]_0\(3),
+      I3 => \^hc_reg[9]_0\(2),
+      I4 => \^hc_reg[9]_0\(4),
       O => hs_i_2_n_0
+    );
+hs_i_3: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(6),
+      I1 => \^hc_reg[9]_0\(5),
+      O => hs_i_3_n_0
+    );
+hs_i_4: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFD555557"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(7),
+      I1 => \^hc_reg[9]_0\(4),
+      I2 => hs_i_5_n_0,
+      I3 => \^hc_reg[9]_0\(6),
+      I4 => \^hc_reg[9]_0\(5),
+      I5 => \^hc_reg[9]_0\(8),
+      O => hs_i_4_n_0
+    );
+hs_i_5: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => \^hc_reg[9]_0\(2),
+      I1 => \^hc_reg[9]_0\(3),
+      I2 => \^hc_reg[9]_0\(1),
+      I3 => \^hc_reg[9]_0\(0),
+      O => hs_i_5_n_0
     );
 hs_reg: unisim.vcomponents.FDCE
      port map (
@@ -685,16 +1157,17 @@ hs_reg: unisim.vcomponents.FDCE
       I0 => s00_axi_aresetn,
       O => \^ar\(0)
     );
-\vc[0]_i_1\: unisim.vcomponents.LUT5
+\vc[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00FF00BF"
+      INIT => X"00000000FFFFFEFF"
     )
         port map (
-      I0 => \vc[3]_i_2_n_0\,
-      I1 => DrawY(3),
-      I2 => DrawY(2),
-      I3 => DrawY(0),
-      I4 => DrawY(1),
+      I0 => \^q\(6),
+      I1 => \^q\(7),
+      I2 => \^q\(8),
+      I3 => \^q\(9),
+      I4 => \vc[9]_i_5_n_0\,
+      I5 => \^q\(0),
       O => \vc[0]_i_1_n_0\
     );
 \vc[1]_i_1\: unisim.vcomponents.LUT2
@@ -702,167 +1175,197 @@ hs_reg: unisim.vcomponents.FDCE
       INIT => X"6"
     )
         port map (
-      I0 => DrawY(0),
-      I1 => DrawY(1),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
       O => \vc[1]_i_1_n_0\
     );
-\vc[2]_i_1\: unisim.vcomponents.LUT5
+\vc[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"33CCCCC4"
+      INIT => X"00FFFFFDFF000000"
     )
         port map (
-      I0 => DrawY(3),
-      I1 => DrawY(2),
+      I0 => \^q\(3),
+      I1 => \vc[3]_i_3_n_0\,
       I2 => \vc[3]_i_2_n_0\,
-      I3 => DrawY(1),
-      I4 => DrawY(0),
+      I3 => \^q\(0),
+      I4 => \^q\(1),
+      I5 => \^q\(2),
       O => \vc[2]_i_1_n_0\
     );
-\vc[3]_i_1\: unisim.vcomponents.LUT5
+\vc[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"66CCCCC4"
+      INIT => X"0FFEF000FFFF0000"
     )
         port map (
-      I0 => DrawY(2),
-      I1 => DrawY(3),
-      I2 => \vc[3]_i_2_n_0\,
-      I3 => DrawY(1),
-      I4 => DrawY(0),
+      I0 => \vc[3]_i_2_n_0\,
+      I1 => \vc[3]_i_3_n_0\,
+      I2 => \^q\(0),
+      I3 => \^q\(1),
+      I4 => \^q\(3),
+      I5 => \^q\(2),
       O => \vc[3]_i_1_n_0\
     );
-\vc[3]_i_2\: unisim.vcomponents.LUT6
+\vc[3]_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFFFFFFEFFFFFFFF"
+      INIT => X"FEFF"
     )
         port map (
-      I0 => DrawY(5),
-      I1 => DrawY(6),
-      I2 => DrawY(8),
-      I3 => DrawY(7),
-      I4 => DrawY(4),
-      I5 => DrawY(9),
+      I0 => \^q\(6),
+      I1 => \^q\(7),
+      I2 => \^q\(8),
+      I3 => \^q\(9),
       O => \vc[3]_i_2_n_0\
+    );
+\vc[3]_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"E"
+    )
+        port map (
+      I0 => \^q\(5),
+      I1 => \^q\(4),
+      O => \vc[3]_i_3_n_0\
     );
 \vc[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"7FFF8000"
+      INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => DrawY(2),
-      I1 => DrawY(3),
-      I2 => DrawY(0),
-      I3 => DrawY(1),
-      I4 => DrawY(4),
+      I0 => \^q\(4),
+      I1 => \^q\(3),
+      I2 => \^q\(2),
+      I3 => \^q\(0),
+      I4 => \^q\(1),
       O => \vc[4]_i_1_n_0\
     );
 \vc[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7FFFFFFF80000000"
+      INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => DrawY(4),
-      I1 => DrawY(1),
-      I2 => DrawY(0),
-      I3 => DrawY(3),
-      I4 => DrawY(2),
-      I5 => DrawY(5),
+      I0 => \^q\(5),
+      I1 => \^q\(4),
+      I2 => \^q\(1),
+      I3 => \^q\(0),
+      I4 => \^q\(2),
+      I5 => \^q\(3),
       O => \vc[5]_i_1_n_0\
     );
-\vc[6]_i_1\: unisim.vcomponents.LUT3
+\vc[6]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"D2"
+      INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => DrawY(5),
-      I1 => \vc[8]_i_2_n_0\,
-      I2 => DrawY(6),
+      I0 => \^q\(6),
+      I1 => \vc[6]_i_2_n_0\,
+      I2 => \^q\(0),
+      I3 => \^q\(1),
+      I4 => \^q\(4),
+      I5 => \^q\(5),
       O => \vc[6]_i_1_n_0\
     );
-\vc[7]_i_1\: unisim.vcomponents.LUT4
+\vc[6]_i_2\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"F708"
+      INIT => X"8"
     )
         port map (
-      I0 => DrawY(5),
-      I1 => DrawY(6),
-      I2 => \vc[8]_i_2_n_0\,
-      I3 => DrawY(7),
+      I0 => \^q\(3),
+      I1 => \^q\(2),
+      O => \vc[6]_i_2_n_0\
+    );
+\vc[7]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"6AAAAAAA"
+    )
+        port map (
+      I0 => \^q\(7),
+      I1 => \vc[8]_i_2_n_0\,
+      I2 => \^q\(1),
+      I3 => \^q\(0),
+      I4 => \^q\(2),
       O => \vc[7]_i_1_n_0\
     );
-\vc[8]_i_1\: unisim.vcomponents.LUT5
+\vc[8]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF7F0080"
+      INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => DrawY(6),
-      I1 => DrawY(5),
-      I2 => DrawY(7),
-      I3 => \vc[8]_i_2_n_0\,
-      I4 => DrawY(8),
+      I0 => \^q\(8),
+      I1 => \^q\(7),
+      I2 => \^q\(2),
+      I3 => \^q\(0),
+      I4 => \^q\(1),
+      I5 => \vc[8]_i_2_n_0\,
       O => \vc[8]_i_1_n_0\
     );
-\vc[8]_i_2\: unisim.vcomponents.LUT5
+\vc[8]_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"7FFFFFFF"
+      INIT => X"8000"
     )
         port map (
-      I0 => DrawY(2),
-      I1 => DrawY(3),
-      I2 => DrawY(0),
-      I3 => DrawY(1),
-      I4 => DrawY(4),
+      I0 => \^q\(5),
+      I1 => \^q\(6),
+      I2 => \^q\(3),
+      I3 => \^q\(4),
       O => \vc[8]_i_2_n_0\
     );
 \vc[9]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000000040000"
+      INIT => X"0000002000000000"
     )
         port map (
-      I0 => DrawX(5),
-      I1 => DrawX(9),
-      I2 => DrawX(6),
-      I3 => DrawX(7),
-      I4 => DrawX(8),
-      I5 => \hc[9]_i_2_n_0\,
+      I0 => hs_i_2_n_0,
+      I1 => \^hc_reg[9]_0\(5),
+      I2 => \^hc_reg[9]_0\(9),
+      I3 => \^hc_reg[9]_0\(6),
+      I4 => \^hc_reg[9]_0\(7),
+      I5 => \^hc_reg[9]_0\(8),
       O => vc
     );
 \vc[9]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"BFAAFFAAFFAABFAA"
+      INIT => X"D2D2D2D2D2D2D282"
     )
         port map (
-      I0 => \vc[9]_i_3_n_0\,
-      I1 => DrawY(3),
-      I2 => DrawY(2),
-      I3 => DrawY(9),
-      I4 => DrawY(0),
-      I5 => DrawY(1),
+      I0 => \^q\(8),
+      I1 => \vc[9]_i_3_n_0\,
+      I2 => \^q\(9),
+      I3 => \vc[9]_i_4_n_0\,
+      I4 => \^q\(0),
+      I5 => \vc[9]_i_5_n_0\,
       O => \vc[9]_i_2_n_0\
     );
-\vc[9]_i_3\: unisim.vcomponents.LUT6
+\vc[9]_i_3\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F0FF0505CCCC0505"
+      INIT => X"7FFFFFFF"
     )
         port map (
       I0 => \vc[8]_i_2_n_0\,
-      I1 => \vc[9]_i_4_n_0\,
-      I2 => active_nblank_INST_0_i_1_n_0,
-      I3 => DrawY(4),
-      I4 => DrawY(9),
-      I5 => DrawY(1),
+      I1 => \^q\(1),
+      I2 => \^q\(0),
+      I3 => \^q\(2),
+      I4 => \^q\(7),
       O => \vc[9]_i_3_n_0\
     );
-\vc[9]_i_4\: unisim.vcomponents.LUT5
+\vc[9]_i_4\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FFFFFFFE"
+      INIT => X"E"
     )
         port map (
-      I0 => DrawY(4),
-      I1 => DrawY(7),
-      I2 => DrawY(8),
-      I3 => DrawY(6),
-      I4 => DrawY(5),
+      I0 => \^q\(6),
+      I1 => \^q\(7),
       O => \vc[9]_i_4_n_0\
+    );
+\vc[9]_i_5\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFFFFDFF"
+    )
+        port map (
+      I0 => \^q\(3),
+      I1 => \^q\(5),
+      I2 => \^q\(4),
+      I3 => \^q\(2),
+      I4 => \^q\(1),
+      O => \vc[9]_i_5_n_0\
     );
 \vc_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -870,7 +1373,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[0]_i_1_n_0\,
-      Q => DrawY(0)
+      Q => \^q\(0)
     );
 \vc_reg[1]\: unisim.vcomponents.FDCE
      port map (
@@ -878,7 +1381,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[1]_i_1_n_0\,
-      Q => DrawY(1)
+      Q => \^q\(1)
     );
 \vc_reg[2]\: unisim.vcomponents.FDCE
      port map (
@@ -886,7 +1389,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[2]_i_1_n_0\,
-      Q => DrawY(2)
+      Q => \^q\(2)
     );
 \vc_reg[3]\: unisim.vcomponents.FDCE
      port map (
@@ -894,7 +1397,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[3]_i_1_n_0\,
-      Q => DrawY(3)
+      Q => \^q\(3)
     );
 \vc_reg[4]\: unisim.vcomponents.FDCE
      port map (
@@ -902,7 +1405,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[4]_i_1_n_0\,
-      Q => DrawY(4)
+      Q => \^q\(4)
     );
 \vc_reg[5]\: unisim.vcomponents.FDCE
      port map (
@@ -910,7 +1413,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[5]_i_1_n_0\,
-      Q => DrawY(5)
+      Q => \^q\(5)
     );
 \vc_reg[6]\: unisim.vcomponents.FDCE
      port map (
@@ -918,7 +1421,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[6]_i_1_n_0\,
-      Q => DrawY(6)
+      Q => \^q\(6)
     );
 \vc_reg[7]\: unisim.vcomponents.FDCE
      port map (
@@ -926,7 +1429,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[7]_i_1_n_0\,
-      Q => DrawY(7)
+      Q => \^q\(7)
     );
 \vc_reg[8]\: unisim.vcomponents.FDCE
      port map (
@@ -934,7 +1437,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[8]_i_1_n_0\,
-      Q => DrawY(8)
+      Q => \^q\(8)
     );
 \vc_reg[9]\: unisim.vcomponents.FDCE
      port map (
@@ -942,31 +1445,31 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => \^ar\(0),
       D => \vc[9]_i_2_n_0\,
-      Q => DrawY(9)
+      Q => \^q\(9)
     );
-vs_i_1: unisim.vcomponents.LUT6
+vs_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFFFFEFFFEFFFF"
+      INIT => X"FFFF7FFF"
     )
         port map (
-      I0 => DrawY(2),
-      I1 => vs_i_2_n_0,
-      I2 => DrawY(9),
-      I3 => DrawY(4),
-      I4 => DrawY(1),
-      I5 => DrawY(0),
+      I0 => \^q\(8),
+      I1 => \^q\(7),
+      I2 => \^q\(6),
+      I3 => \^q\(5),
+      I4 => vs_i_2_n_0,
       O => vs_i_1_n_0
     );
-vs_i_2: unisim.vcomponents.LUT5
+vs_i_2: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7FFFFFFF"
+      INIT => X"FFFFFFEFFFEFFFFF"
     )
         port map (
-      I0 => DrawY(8),
-      I1 => DrawY(6),
-      I2 => DrawY(5),
-      I3 => DrawY(7),
-      I4 => DrawY(3),
+      I0 => \^q\(2),
+      I1 => \^q\(9),
+      I2 => \^q\(3),
+      I3 => \^q\(4),
+      I4 => \^q\(0),
+      I5 => \^q\(1),
       O => vs_i_2_n_0
     );
 vs_reg: unisim.vcomponents.FDCE
@@ -982,426 +1485,49 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_graphics_engine is
   port (
-    VGA_HS : out STD_LOGIC;
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
+    VGA_HS : out STD_LOGIC;
     VGA_VS : out STD_LOGIC;
-    VGA_R : out STD_LOGIC_VECTOR ( 0 to 0 );
     active_nblank : out STD_LOGIC;
-    O : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1_1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1_2\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_2\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_3\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    vga_clk : in STD_LOGIC;
+    VGA_R : out STD_LOGIC_VECTOR ( 0 to 0 );
+    VGA_B : out STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aresetn : in STD_LOGIC;
-    S : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_12_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_10_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_7_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    pacman_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    pacman_x : in STD_LOGIC_VECTOR ( 9 downto 0 )
+    Q : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    VGA_R2_0 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    vga_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine : entity is "graphics_engine";
-end mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_graphics_engine;
 
-architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine is
-  signal DistX : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal DistY : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal VGA_R1 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \VGA_R2__0_n_100\ : STD_LOGIC;
-  signal \VGA_R2__0_n_101\ : STD_LOGIC;
-  signal \VGA_R2__0_n_102\ : STD_LOGIC;
-  signal \VGA_R2__0_n_103\ : STD_LOGIC;
-  signal \VGA_R2__0_n_104\ : STD_LOGIC;
-  signal \VGA_R2__0_n_105\ : STD_LOGIC;
-  signal \VGA_R2__0_n_106\ : STD_LOGIC;
-  signal \VGA_R2__0_n_107\ : STD_LOGIC;
-  signal \VGA_R2__0_n_108\ : STD_LOGIC;
-  signal \VGA_R2__0_n_109\ : STD_LOGIC;
-  signal \VGA_R2__0_n_110\ : STD_LOGIC;
-  signal \VGA_R2__0_n_111\ : STD_LOGIC;
-  signal \VGA_R2__0_n_112\ : STD_LOGIC;
-  signal \VGA_R2__0_n_113\ : STD_LOGIC;
-  signal \VGA_R2__0_n_114\ : STD_LOGIC;
-  signal \VGA_R2__0_n_115\ : STD_LOGIC;
-  signal \VGA_R2__0_n_116\ : STD_LOGIC;
-  signal \VGA_R2__0_n_117\ : STD_LOGIC;
-  signal \VGA_R2__0_n_118\ : STD_LOGIC;
-  signal \VGA_R2__0_n_119\ : STD_LOGIC;
-  signal \VGA_R2__0_n_120\ : STD_LOGIC;
-  signal \VGA_R2__0_n_121\ : STD_LOGIC;
-  signal \VGA_R2__0_n_122\ : STD_LOGIC;
-  signal \VGA_R2__0_n_123\ : STD_LOGIC;
-  signal \VGA_R2__0_n_124\ : STD_LOGIC;
-  signal \VGA_R2__0_n_125\ : STD_LOGIC;
-  signal \VGA_R2__0_n_126\ : STD_LOGIC;
-  signal \VGA_R2__0_n_127\ : STD_LOGIC;
-  signal \VGA_R2__0_n_128\ : STD_LOGIC;
-  signal \VGA_R2__0_n_129\ : STD_LOGIC;
-  signal \VGA_R2__0_n_130\ : STD_LOGIC;
-  signal \VGA_R2__0_n_131\ : STD_LOGIC;
-  signal \VGA_R2__0_n_132\ : STD_LOGIC;
-  signal \VGA_R2__0_n_133\ : STD_LOGIC;
-  signal \VGA_R2__0_n_134\ : STD_LOGIC;
-  signal \VGA_R2__0_n_135\ : STD_LOGIC;
-  signal \VGA_R2__0_n_136\ : STD_LOGIC;
-  signal \VGA_R2__0_n_137\ : STD_LOGIC;
-  signal \VGA_R2__0_n_138\ : STD_LOGIC;
-  signal \VGA_R2__0_n_139\ : STD_LOGIC;
-  signal \VGA_R2__0_n_140\ : STD_LOGIC;
-  signal \VGA_R2__0_n_141\ : STD_LOGIC;
-  signal \VGA_R2__0_n_142\ : STD_LOGIC;
-  signal \VGA_R2__0_n_143\ : STD_LOGIC;
-  signal \VGA_R2__0_n_144\ : STD_LOGIC;
-  signal \VGA_R2__0_n_145\ : STD_LOGIC;
-  signal \VGA_R2__0_n_146\ : STD_LOGIC;
-  signal \VGA_R2__0_n_147\ : STD_LOGIC;
-  signal \VGA_R2__0_n_148\ : STD_LOGIC;
-  signal \VGA_R2__0_n_149\ : STD_LOGIC;
-  signal \VGA_R2__0_n_150\ : STD_LOGIC;
-  signal \VGA_R2__0_n_151\ : STD_LOGIC;
-  signal \VGA_R2__0_n_152\ : STD_LOGIC;
-  signal \VGA_R2__0_n_153\ : STD_LOGIC;
-  signal \VGA_R2__0_n_58\ : STD_LOGIC;
-  signal \VGA_R2__0_n_59\ : STD_LOGIC;
-  signal \VGA_R2__0_n_60\ : STD_LOGIC;
-  signal \VGA_R2__0_n_61\ : STD_LOGIC;
-  signal \VGA_R2__0_n_62\ : STD_LOGIC;
-  signal \VGA_R2__0_n_63\ : STD_LOGIC;
-  signal \VGA_R2__0_n_64\ : STD_LOGIC;
-  signal \VGA_R2__0_n_65\ : STD_LOGIC;
-  signal \VGA_R2__0_n_66\ : STD_LOGIC;
-  signal \VGA_R2__0_n_67\ : STD_LOGIC;
-  signal \VGA_R2__0_n_68\ : STD_LOGIC;
-  signal \VGA_R2__0_n_69\ : STD_LOGIC;
-  signal \VGA_R2__0_n_70\ : STD_LOGIC;
-  signal \VGA_R2__0_n_71\ : STD_LOGIC;
-  signal \VGA_R2__0_n_72\ : STD_LOGIC;
-  signal \VGA_R2__0_n_73\ : STD_LOGIC;
-  signal \VGA_R2__0_n_74\ : STD_LOGIC;
-  signal \VGA_R2__0_n_75\ : STD_LOGIC;
-  signal \VGA_R2__0_n_76\ : STD_LOGIC;
-  signal \VGA_R2__0_n_77\ : STD_LOGIC;
-  signal \VGA_R2__0_n_78\ : STD_LOGIC;
-  signal \VGA_R2__0_n_79\ : STD_LOGIC;
-  signal \VGA_R2__0_n_80\ : STD_LOGIC;
-  signal \VGA_R2__0_n_81\ : STD_LOGIC;
-  signal \VGA_R2__0_n_82\ : STD_LOGIC;
-  signal \VGA_R2__0_n_83\ : STD_LOGIC;
-  signal \VGA_R2__0_n_84\ : STD_LOGIC;
-  signal \VGA_R2__0_n_85\ : STD_LOGIC;
-  signal \VGA_R2__0_n_86\ : STD_LOGIC;
-  signal \VGA_R2__0_n_87\ : STD_LOGIC;
-  signal \VGA_R2__0_n_88\ : STD_LOGIC;
-  signal \VGA_R2__0_n_89\ : STD_LOGIC;
-  signal \VGA_R2__0_n_90\ : STD_LOGIC;
-  signal \VGA_R2__0_n_91\ : STD_LOGIC;
-  signal \VGA_R2__0_n_92\ : STD_LOGIC;
-  signal \VGA_R2__0_n_93\ : STD_LOGIC;
-  signal \VGA_R2__0_n_94\ : STD_LOGIC;
-  signal \VGA_R2__0_n_95\ : STD_LOGIC;
-  signal \VGA_R2__0_n_96\ : STD_LOGIC;
-  signal \VGA_R2__0_n_97\ : STD_LOGIC;
-  signal \VGA_R2__0_n_98\ : STD_LOGIC;
-  signal \VGA_R2__0_n_99\ : STD_LOGIC;
-  signal \VGA_R2__1_n_100\ : STD_LOGIC;
-  signal \VGA_R2__1_n_101\ : STD_LOGIC;
-  signal \VGA_R2__1_n_102\ : STD_LOGIC;
-  signal \VGA_R2__1_n_103\ : STD_LOGIC;
-  signal \VGA_R2__1_n_104\ : STD_LOGIC;
-  signal \VGA_R2__1_n_105\ : STD_LOGIC;
-  signal \VGA_R2__1_n_58\ : STD_LOGIC;
-  signal \VGA_R2__1_n_59\ : STD_LOGIC;
-  signal \VGA_R2__1_n_60\ : STD_LOGIC;
-  signal \VGA_R2__1_n_61\ : STD_LOGIC;
-  signal \VGA_R2__1_n_62\ : STD_LOGIC;
-  signal \VGA_R2__1_n_63\ : STD_LOGIC;
-  signal \VGA_R2__1_n_64\ : STD_LOGIC;
-  signal \VGA_R2__1_n_65\ : STD_LOGIC;
-  signal \VGA_R2__1_n_66\ : STD_LOGIC;
-  signal \VGA_R2__1_n_67\ : STD_LOGIC;
-  signal \VGA_R2__1_n_68\ : STD_LOGIC;
-  signal \VGA_R2__1_n_69\ : STD_LOGIC;
-  signal \VGA_R2__1_n_70\ : STD_LOGIC;
-  signal \VGA_R2__1_n_71\ : STD_LOGIC;
-  signal \VGA_R2__1_n_72\ : STD_LOGIC;
-  signal \VGA_R2__1_n_73\ : STD_LOGIC;
-  signal \VGA_R2__1_n_74\ : STD_LOGIC;
-  signal \VGA_R2__1_n_75\ : STD_LOGIC;
-  signal \VGA_R2__1_n_76\ : STD_LOGIC;
-  signal \VGA_R2__1_n_77\ : STD_LOGIC;
-  signal \VGA_R2__1_n_78\ : STD_LOGIC;
-  signal \VGA_R2__1_n_79\ : STD_LOGIC;
-  signal \VGA_R2__1_n_80\ : STD_LOGIC;
-  signal \VGA_R2__1_n_81\ : STD_LOGIC;
-  signal \VGA_R2__1_n_82\ : STD_LOGIC;
-  signal \VGA_R2__1_n_83\ : STD_LOGIC;
-  signal \VGA_R2__1_n_84\ : STD_LOGIC;
-  signal \VGA_R2__1_n_85\ : STD_LOGIC;
-  signal \VGA_R2__1_n_86\ : STD_LOGIC;
-  signal \VGA_R2__1_n_87\ : STD_LOGIC;
-  signal \VGA_R2__1_n_88\ : STD_LOGIC;
-  signal \VGA_R2__1_n_89\ : STD_LOGIC;
-  signal \VGA_R2__1_n_90\ : STD_LOGIC;
-  signal \VGA_R2__1_n_91\ : STD_LOGIC;
-  signal \VGA_R2__1_n_92\ : STD_LOGIC;
-  signal \VGA_R2__1_n_93\ : STD_LOGIC;
-  signal \VGA_R2__1_n_94\ : STD_LOGIC;
-  signal \VGA_R2__1_n_95\ : STD_LOGIC;
-  signal \VGA_R2__1_n_96\ : STD_LOGIC;
-  signal \VGA_R2__1_n_97\ : STD_LOGIC;
-  signal \VGA_R2__1_n_98\ : STD_LOGIC;
-  signal \VGA_R2__1_n_99\ : STD_LOGIC;
-  signal \VGA_R2__2_n_100\ : STD_LOGIC;
-  signal \VGA_R2__2_n_101\ : STD_LOGIC;
-  signal \VGA_R2__2_n_102\ : STD_LOGIC;
-  signal \VGA_R2__2_n_103\ : STD_LOGIC;
-  signal \VGA_R2__2_n_104\ : STD_LOGIC;
-  signal \VGA_R2__2_n_105\ : STD_LOGIC;
-  signal \VGA_R2__2_n_106\ : STD_LOGIC;
-  signal \VGA_R2__2_n_107\ : STD_LOGIC;
-  signal \VGA_R2__2_n_108\ : STD_LOGIC;
-  signal \VGA_R2__2_n_109\ : STD_LOGIC;
-  signal \VGA_R2__2_n_110\ : STD_LOGIC;
-  signal \VGA_R2__2_n_111\ : STD_LOGIC;
-  signal \VGA_R2__2_n_112\ : STD_LOGIC;
-  signal \VGA_R2__2_n_113\ : STD_LOGIC;
-  signal \VGA_R2__2_n_114\ : STD_LOGIC;
-  signal \VGA_R2__2_n_115\ : STD_LOGIC;
-  signal \VGA_R2__2_n_116\ : STD_LOGIC;
-  signal \VGA_R2__2_n_117\ : STD_LOGIC;
-  signal \VGA_R2__2_n_118\ : STD_LOGIC;
-  signal \VGA_R2__2_n_119\ : STD_LOGIC;
-  signal \VGA_R2__2_n_120\ : STD_LOGIC;
-  signal \VGA_R2__2_n_121\ : STD_LOGIC;
-  signal \VGA_R2__2_n_122\ : STD_LOGIC;
-  signal \VGA_R2__2_n_123\ : STD_LOGIC;
-  signal \VGA_R2__2_n_124\ : STD_LOGIC;
-  signal \VGA_R2__2_n_125\ : STD_LOGIC;
-  signal \VGA_R2__2_n_126\ : STD_LOGIC;
-  signal \VGA_R2__2_n_127\ : STD_LOGIC;
-  signal \VGA_R2__2_n_128\ : STD_LOGIC;
-  signal \VGA_R2__2_n_129\ : STD_LOGIC;
-  signal \VGA_R2__2_n_130\ : STD_LOGIC;
-  signal \VGA_R2__2_n_131\ : STD_LOGIC;
-  signal \VGA_R2__2_n_132\ : STD_LOGIC;
-  signal \VGA_R2__2_n_133\ : STD_LOGIC;
-  signal \VGA_R2__2_n_134\ : STD_LOGIC;
-  signal \VGA_R2__2_n_135\ : STD_LOGIC;
-  signal \VGA_R2__2_n_136\ : STD_LOGIC;
-  signal \VGA_R2__2_n_137\ : STD_LOGIC;
-  signal \VGA_R2__2_n_138\ : STD_LOGIC;
-  signal \VGA_R2__2_n_139\ : STD_LOGIC;
-  signal \VGA_R2__2_n_140\ : STD_LOGIC;
-  signal \VGA_R2__2_n_141\ : STD_LOGIC;
-  signal \VGA_R2__2_n_142\ : STD_LOGIC;
-  signal \VGA_R2__2_n_143\ : STD_LOGIC;
-  signal \VGA_R2__2_n_144\ : STD_LOGIC;
-  signal \VGA_R2__2_n_145\ : STD_LOGIC;
-  signal \VGA_R2__2_n_146\ : STD_LOGIC;
-  signal \VGA_R2__2_n_147\ : STD_LOGIC;
-  signal \VGA_R2__2_n_148\ : STD_LOGIC;
-  signal \VGA_R2__2_n_149\ : STD_LOGIC;
-  signal \VGA_R2__2_n_150\ : STD_LOGIC;
-  signal \VGA_R2__2_n_151\ : STD_LOGIC;
-  signal \VGA_R2__2_n_152\ : STD_LOGIC;
-  signal \VGA_R2__2_n_153\ : STD_LOGIC;
-  signal \VGA_R2__2_n_58\ : STD_LOGIC;
-  signal \VGA_R2__2_n_59\ : STD_LOGIC;
-  signal \VGA_R2__2_n_60\ : STD_LOGIC;
-  signal \VGA_R2__2_n_61\ : STD_LOGIC;
-  signal \VGA_R2__2_n_62\ : STD_LOGIC;
-  signal \VGA_R2__2_n_63\ : STD_LOGIC;
-  signal \VGA_R2__2_n_64\ : STD_LOGIC;
-  signal \VGA_R2__2_n_65\ : STD_LOGIC;
-  signal \VGA_R2__2_n_66\ : STD_LOGIC;
-  signal \VGA_R2__2_n_67\ : STD_LOGIC;
-  signal \VGA_R2__2_n_68\ : STD_LOGIC;
-  signal \VGA_R2__2_n_69\ : STD_LOGIC;
-  signal \VGA_R2__2_n_70\ : STD_LOGIC;
-  signal \VGA_R2__2_n_71\ : STD_LOGIC;
-  signal \VGA_R2__2_n_72\ : STD_LOGIC;
-  signal \VGA_R2__2_n_73\ : STD_LOGIC;
-  signal \VGA_R2__2_n_74\ : STD_LOGIC;
-  signal \VGA_R2__2_n_75\ : STD_LOGIC;
-  signal \VGA_R2__2_n_76\ : STD_LOGIC;
-  signal \VGA_R2__2_n_77\ : STD_LOGIC;
-  signal \VGA_R2__2_n_78\ : STD_LOGIC;
-  signal \VGA_R2__2_n_79\ : STD_LOGIC;
-  signal \VGA_R2__2_n_80\ : STD_LOGIC;
-  signal \VGA_R2__2_n_81\ : STD_LOGIC;
-  signal \VGA_R2__2_n_82\ : STD_LOGIC;
-  signal \VGA_R2__2_n_83\ : STD_LOGIC;
-  signal \VGA_R2__2_n_84\ : STD_LOGIC;
-  signal \VGA_R2__2_n_85\ : STD_LOGIC;
-  signal \VGA_R2__2_n_86\ : STD_LOGIC;
-  signal \VGA_R2__2_n_87\ : STD_LOGIC;
-  signal \VGA_R2__2_n_88\ : STD_LOGIC;
-  signal \VGA_R2__2_n_89\ : STD_LOGIC;
-  signal \VGA_R2__2_n_90\ : STD_LOGIC;
-  signal \VGA_R2__2_n_91\ : STD_LOGIC;
-  signal \VGA_R2__2_n_92\ : STD_LOGIC;
-  signal \VGA_R2__2_n_93\ : STD_LOGIC;
-  signal \VGA_R2__2_n_94\ : STD_LOGIC;
-  signal \VGA_R2__2_n_95\ : STD_LOGIC;
-  signal \VGA_R2__2_n_96\ : STD_LOGIC;
-  signal \VGA_R2__2_n_97\ : STD_LOGIC;
-  signal \VGA_R2__2_n_98\ : STD_LOGIC;
-  signal \VGA_R2__2_n_99\ : STD_LOGIC;
-  signal \VGA_R2__3_n_100\ : STD_LOGIC;
-  signal \VGA_R2__3_n_101\ : STD_LOGIC;
-  signal \VGA_R2__3_n_102\ : STD_LOGIC;
-  signal \VGA_R2__3_n_103\ : STD_LOGIC;
-  signal \VGA_R2__3_n_104\ : STD_LOGIC;
-  signal \VGA_R2__3_n_105\ : STD_LOGIC;
-  signal \VGA_R2__3_n_106\ : STD_LOGIC;
-  signal \VGA_R2__3_n_107\ : STD_LOGIC;
-  signal \VGA_R2__3_n_108\ : STD_LOGIC;
-  signal \VGA_R2__3_n_109\ : STD_LOGIC;
-  signal \VGA_R2__3_n_110\ : STD_LOGIC;
-  signal \VGA_R2__3_n_111\ : STD_LOGIC;
-  signal \VGA_R2__3_n_112\ : STD_LOGIC;
-  signal \VGA_R2__3_n_113\ : STD_LOGIC;
-  signal \VGA_R2__3_n_114\ : STD_LOGIC;
-  signal \VGA_R2__3_n_115\ : STD_LOGIC;
-  signal \VGA_R2__3_n_116\ : STD_LOGIC;
-  signal \VGA_R2__3_n_117\ : STD_LOGIC;
-  signal \VGA_R2__3_n_118\ : STD_LOGIC;
-  signal \VGA_R2__3_n_119\ : STD_LOGIC;
-  signal \VGA_R2__3_n_120\ : STD_LOGIC;
-  signal \VGA_R2__3_n_121\ : STD_LOGIC;
-  signal \VGA_R2__3_n_122\ : STD_LOGIC;
-  signal \VGA_R2__3_n_123\ : STD_LOGIC;
-  signal \VGA_R2__3_n_124\ : STD_LOGIC;
-  signal \VGA_R2__3_n_125\ : STD_LOGIC;
-  signal \VGA_R2__3_n_126\ : STD_LOGIC;
-  signal \VGA_R2__3_n_127\ : STD_LOGIC;
-  signal \VGA_R2__3_n_128\ : STD_LOGIC;
-  signal \VGA_R2__3_n_129\ : STD_LOGIC;
-  signal \VGA_R2__3_n_130\ : STD_LOGIC;
-  signal \VGA_R2__3_n_131\ : STD_LOGIC;
-  signal \VGA_R2__3_n_132\ : STD_LOGIC;
-  signal \VGA_R2__3_n_133\ : STD_LOGIC;
-  signal \VGA_R2__3_n_134\ : STD_LOGIC;
-  signal \VGA_R2__3_n_135\ : STD_LOGIC;
-  signal \VGA_R2__3_n_136\ : STD_LOGIC;
-  signal \VGA_R2__3_n_137\ : STD_LOGIC;
-  signal \VGA_R2__3_n_138\ : STD_LOGIC;
-  signal \VGA_R2__3_n_139\ : STD_LOGIC;
-  signal \VGA_R2__3_n_140\ : STD_LOGIC;
-  signal \VGA_R2__3_n_141\ : STD_LOGIC;
-  signal \VGA_R2__3_n_142\ : STD_LOGIC;
-  signal \VGA_R2__3_n_143\ : STD_LOGIC;
-  signal \VGA_R2__3_n_144\ : STD_LOGIC;
-  signal \VGA_R2__3_n_145\ : STD_LOGIC;
-  signal \VGA_R2__3_n_146\ : STD_LOGIC;
-  signal \VGA_R2__3_n_147\ : STD_LOGIC;
-  signal \VGA_R2__3_n_148\ : STD_LOGIC;
-  signal \VGA_R2__3_n_149\ : STD_LOGIC;
-  signal \VGA_R2__3_n_150\ : STD_LOGIC;
-  signal \VGA_R2__3_n_151\ : STD_LOGIC;
-  signal \VGA_R2__3_n_152\ : STD_LOGIC;
-  signal \VGA_R2__3_n_153\ : STD_LOGIC;
-  signal \VGA_R2__3_n_58\ : STD_LOGIC;
-  signal \VGA_R2__3_n_59\ : STD_LOGIC;
-  signal \VGA_R2__3_n_60\ : STD_LOGIC;
-  signal \VGA_R2__3_n_61\ : STD_LOGIC;
-  signal \VGA_R2__3_n_62\ : STD_LOGIC;
-  signal \VGA_R2__3_n_63\ : STD_LOGIC;
-  signal \VGA_R2__3_n_64\ : STD_LOGIC;
-  signal \VGA_R2__3_n_65\ : STD_LOGIC;
-  signal \VGA_R2__3_n_66\ : STD_LOGIC;
-  signal \VGA_R2__3_n_67\ : STD_LOGIC;
-  signal \VGA_R2__3_n_68\ : STD_LOGIC;
-  signal \VGA_R2__3_n_69\ : STD_LOGIC;
-  signal \VGA_R2__3_n_70\ : STD_LOGIC;
-  signal \VGA_R2__3_n_71\ : STD_LOGIC;
-  signal \VGA_R2__3_n_72\ : STD_LOGIC;
-  signal \VGA_R2__3_n_73\ : STD_LOGIC;
-  signal \VGA_R2__3_n_74\ : STD_LOGIC;
-  signal \VGA_R2__3_n_75\ : STD_LOGIC;
-  signal \VGA_R2__3_n_76\ : STD_LOGIC;
-  signal \VGA_R2__3_n_77\ : STD_LOGIC;
-  signal \VGA_R2__3_n_78\ : STD_LOGIC;
-  signal \VGA_R2__3_n_79\ : STD_LOGIC;
-  signal \VGA_R2__3_n_80\ : STD_LOGIC;
-  signal \VGA_R2__3_n_81\ : STD_LOGIC;
-  signal \VGA_R2__3_n_82\ : STD_LOGIC;
-  signal \VGA_R2__3_n_83\ : STD_LOGIC;
-  signal \VGA_R2__3_n_84\ : STD_LOGIC;
-  signal \VGA_R2__3_n_85\ : STD_LOGIC;
-  signal \VGA_R2__3_n_86\ : STD_LOGIC;
-  signal \VGA_R2__3_n_87\ : STD_LOGIC;
-  signal \VGA_R2__3_n_88\ : STD_LOGIC;
-  signal \VGA_R2__3_n_89\ : STD_LOGIC;
-  signal \VGA_R2__3_n_90\ : STD_LOGIC;
-  signal \VGA_R2__3_n_91\ : STD_LOGIC;
-  signal \VGA_R2__3_n_92\ : STD_LOGIC;
-  signal \VGA_R2__3_n_93\ : STD_LOGIC;
-  signal \VGA_R2__3_n_94\ : STD_LOGIC;
-  signal \VGA_R2__3_n_95\ : STD_LOGIC;
-  signal \VGA_R2__3_n_96\ : STD_LOGIC;
-  signal \VGA_R2__3_n_97\ : STD_LOGIC;
-  signal \VGA_R2__3_n_98\ : STD_LOGIC;
-  signal \VGA_R2__3_n_99\ : STD_LOGIC;
-  signal \^vga_r2__4_0\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^vga_r2__4_1\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^vga_r2__4_2\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^vga_r2__4_3\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \VGA_R2__4_n_100\ : STD_LOGIC;
-  signal \VGA_R2__4_n_101\ : STD_LOGIC;
-  signal \VGA_R2__4_n_102\ : STD_LOGIC;
-  signal \VGA_R2__4_n_103\ : STD_LOGIC;
-  signal \VGA_R2__4_n_104\ : STD_LOGIC;
-  signal \VGA_R2__4_n_105\ : STD_LOGIC;
-  signal \VGA_R2__4_n_58\ : STD_LOGIC;
-  signal \VGA_R2__4_n_59\ : STD_LOGIC;
-  signal \VGA_R2__4_n_60\ : STD_LOGIC;
-  signal \VGA_R2__4_n_61\ : STD_LOGIC;
-  signal \VGA_R2__4_n_62\ : STD_LOGIC;
-  signal \VGA_R2__4_n_63\ : STD_LOGIC;
-  signal \VGA_R2__4_n_64\ : STD_LOGIC;
-  signal \VGA_R2__4_n_65\ : STD_LOGIC;
-  signal \VGA_R2__4_n_66\ : STD_LOGIC;
-  signal \VGA_R2__4_n_67\ : STD_LOGIC;
-  signal \VGA_R2__4_n_68\ : STD_LOGIC;
-  signal \VGA_R2__4_n_69\ : STD_LOGIC;
-  signal \VGA_R2__4_n_70\ : STD_LOGIC;
-  signal \VGA_R2__4_n_71\ : STD_LOGIC;
-  signal \VGA_R2__4_n_72\ : STD_LOGIC;
-  signal \VGA_R2__4_n_73\ : STD_LOGIC;
-  signal \VGA_R2__4_n_74\ : STD_LOGIC;
-  signal \VGA_R2__4_n_75\ : STD_LOGIC;
-  signal \VGA_R2__4_n_76\ : STD_LOGIC;
-  signal \VGA_R2__4_n_77\ : STD_LOGIC;
-  signal \VGA_R2__4_n_78\ : STD_LOGIC;
-  signal \VGA_R2__4_n_79\ : STD_LOGIC;
-  signal \VGA_R2__4_n_80\ : STD_LOGIC;
-  signal \VGA_R2__4_n_81\ : STD_LOGIC;
-  signal \VGA_R2__4_n_82\ : STD_LOGIC;
-  signal \VGA_R2__4_n_83\ : STD_LOGIC;
-  signal \VGA_R2__4_n_84\ : STD_LOGIC;
-  signal \VGA_R2__4_n_85\ : STD_LOGIC;
-  signal \VGA_R2__4_n_86\ : STD_LOGIC;
-  signal \VGA_R2__4_n_87\ : STD_LOGIC;
-  signal \VGA_R2__4_n_88\ : STD_LOGIC;
-  signal \VGA_R2__4_n_89\ : STD_LOGIC;
-  signal \VGA_R2__4_n_90\ : STD_LOGIC;
-  signal \VGA_R2__4_n_91\ : STD_LOGIC;
-  signal \VGA_R2__4_n_92\ : STD_LOGIC;
-  signal \VGA_R2__4_n_93\ : STD_LOGIC;
-  signal \VGA_R2__4_n_94\ : STD_LOGIC;
-  signal \VGA_R2__4_n_95\ : STD_LOGIC;
-  signal \VGA_R2__4_n_96\ : STD_LOGIC;
-  signal \VGA_R2__4_n_97\ : STD_LOGIC;
-  signal \VGA_R2__4_n_98\ : STD_LOGIC;
-  signal \VGA_R2__4_n_99\ : STD_LOGIC;
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_graphics_engine is
+  signal B : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal DrawX : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal DrawY : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal VGA_R1_n_100 : STD_LOGIC;
+  signal VGA_R1_n_101 : STD_LOGIC;
+  signal VGA_R1_n_102 : STD_LOGIC;
+  signal VGA_R1_n_103 : STD_LOGIC;
+  signal VGA_R1_n_104 : STD_LOGIC;
+  signal VGA_R1_n_105 : STD_LOGIC;
+  signal VGA_R1_n_82 : STD_LOGIC;
+  signal VGA_R1_n_83 : STD_LOGIC;
+  signal VGA_R1_n_84 : STD_LOGIC;
+  signal VGA_R1_n_85 : STD_LOGIC;
+  signal VGA_R1_n_86 : STD_LOGIC;
+  signal VGA_R1_n_87 : STD_LOGIC;
+  signal VGA_R1_n_88 : STD_LOGIC;
+  signal VGA_R1_n_89 : STD_LOGIC;
+  signal VGA_R1_n_90 : STD_LOGIC;
+  signal VGA_R1_n_91 : STD_LOGIC;
+  signal VGA_R1_n_92 : STD_LOGIC;
+  signal VGA_R1_n_93 : STD_LOGIC;
+  signal VGA_R1_n_94 : STD_LOGIC;
+  signal VGA_R1_n_95 : STD_LOGIC;
+  signal VGA_R1_n_96 : STD_LOGIC;
+  signal VGA_R1_n_97 : STD_LOGIC;
+  signal VGA_R1_n_98 : STD_LOGIC;
+  signal VGA_R1_n_99 : STD_LOGIC;
   signal VGA_R2_n_100 : STD_LOGIC;
   signal VGA_R2_n_101 : STD_LOGIC;
   signal VGA_R2_n_102 : STD_LOGIC;
@@ -1456,30 +1582,6 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine is
   signal VGA_R2_n_151 : STD_LOGIC;
   signal VGA_R2_n_152 : STD_LOGIC;
   signal VGA_R2_n_153 : STD_LOGIC;
-  signal VGA_R2_n_58 : STD_LOGIC;
-  signal VGA_R2_n_59 : STD_LOGIC;
-  signal VGA_R2_n_60 : STD_LOGIC;
-  signal VGA_R2_n_61 : STD_LOGIC;
-  signal VGA_R2_n_62 : STD_LOGIC;
-  signal VGA_R2_n_63 : STD_LOGIC;
-  signal VGA_R2_n_64 : STD_LOGIC;
-  signal VGA_R2_n_65 : STD_LOGIC;
-  signal VGA_R2_n_66 : STD_LOGIC;
-  signal VGA_R2_n_67 : STD_LOGIC;
-  signal VGA_R2_n_68 : STD_LOGIC;
-  signal VGA_R2_n_69 : STD_LOGIC;
-  signal VGA_R2_n_70 : STD_LOGIC;
-  signal VGA_R2_n_71 : STD_LOGIC;
-  signal VGA_R2_n_72 : STD_LOGIC;
-  signal VGA_R2_n_73 : STD_LOGIC;
-  signal VGA_R2_n_74 : STD_LOGIC;
-  signal VGA_R2_n_75 : STD_LOGIC;
-  signal VGA_R2_n_76 : STD_LOGIC;
-  signal VGA_R2_n_77 : STD_LOGIC;
-  signal VGA_R2_n_78 : STD_LOGIC;
-  signal VGA_R2_n_79 : STD_LOGIC;
-  signal VGA_R2_n_80 : STD_LOGIC;
-  signal VGA_R2_n_81 : STD_LOGIC;
   signal VGA_R2_n_82 : STD_LOGIC;
   signal VGA_R2_n_83 : STD_LOGIC;
   signal VGA_R2_n_84 : STD_LOGIC;
@@ -1498,146 +1600,54 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine is
   signal VGA_R2_n_97 : STD_LOGIC;
   signal VGA_R2_n_98 : STD_LOGIC;
   signal VGA_R2_n_99 : STD_LOGIC;
-  signal \VGA_R[0]_i_100_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_101_n_0\ : STD_LOGIC;
   signal \VGA_R[0]_i_10_n_0\ : STD_LOGIC;
   signal \VGA_R[0]_i_11_n_0\ : STD_LOGIC;
   signal \VGA_R[0]_i_12_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_13_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_21_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_22_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_23_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_24_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_29_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_30_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_31_n_0\ : STD_LOGIC;
   signal \VGA_R[0]_i_32_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_33_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_34_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_35_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_37_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_38_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_39_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_40_n_0\ : STD_LOGIC;
   signal \VGA_R[0]_i_41_n_0\ : STD_LOGIC;
   signal \VGA_R[0]_i_42_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_55_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_56_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_57_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_58_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_60_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_61_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_62_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_63_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_66_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_67_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_68_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_69_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_6_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_70_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_71_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_72_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_73_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_74_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_75_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_76_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_77_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_79_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_7_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_80_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_81_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_83_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_84_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_85_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_86_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_87_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_88_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_89_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_8_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_90_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_91_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_92_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_93_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_94_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_95_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_96_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_97_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_98_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_99_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_14_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_14_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_14_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_14_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_15_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_15_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_15_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_20_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_20_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_20_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_20_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_25_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_25_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_25_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_25_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_26_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_26_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_26_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_26_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_27_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_27_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_27_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_27_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_36_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_36_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_36_n_3\ : STD_LOGIC;
+  signal \VGA_R[0]_i_43_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_44_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_45_n_0\ : STD_LOGIC;
+  signal \VGA_R[0]_i_46_n_0\ : STD_LOGIC;
+  signal \VGA_R_reg[0]_i_28_n_0\ : STD_LOGIC;
+  signal \VGA_R_reg[0]_i_28_n_1\ : STD_LOGIC;
+  signal \VGA_R_reg[0]_i_28_n_2\ : STD_LOGIC;
+  signal \VGA_R_reg[0]_i_28_n_3\ : STD_LOGIC;
   signal \VGA_R_reg[0]_i_3_n_2\ : STD_LOGIC;
   signal \VGA_R_reg[0]_i_3_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_43_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_43_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_43_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_43_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_44_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_44_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_44_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_44_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_45_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_45_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_45_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_45_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_4_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_4_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_4_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_4_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_50_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_50_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_50_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_50_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_59_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_59_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_59_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_59_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_5_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_5_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_5_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_64_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_64_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_64_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_64_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_65_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_65_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_65_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_65_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_78_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_78_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_78_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_78_n_3\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_82_n_0\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_82_n_1\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_82_n_2\ : STD_LOGIC;
-  signal \VGA_R_reg[0]_i_82_n_3\ : STD_LOGIC;
   signal \VGA_R_reg[0]_i_9_n_0\ : STD_LOGIC;
   signal \VGA_R_reg[0]_i_9_n_1\ : STD_LOGIC;
   signal \VGA_R_reg[0]_i_9_n_2\ : STD_LOGIC;
   signal \VGA_R_reg[0]_i_9_n_3\ : STD_LOGIC;
   signal is_pacman : STD_LOGIC;
-  signal vga_inst_n_3 : STD_LOGIC;
+  signal vga_inst_n_23 : STD_LOGIC;
+  signal vga_inst_n_24 : STD_LOGIC;
+  signal vga_inst_n_37 : STD_LOGIC;
+  signal vga_inst_n_38 : STD_LOGIC;
+  signal vga_inst_n_39 : STD_LOGIC;
+  signal vga_inst_n_40 : STD_LOGIC;
+  signal vga_inst_n_41 : STD_LOGIC;
+  signal vga_inst_n_42 : STD_LOGIC;
+  signal vga_inst_n_43 : STD_LOGIC;
+  signal vga_inst_n_44 : STD_LOGIC;
+  signal vga_inst_n_45 : STD_LOGIC;
+  signal vga_inst_n_46 : STD_LOGIC;
+  signal vga_inst_n_47 : STD_LOGIC;
+  signal NLW_VGA_R1_CARRYCASCOUT_UNCONNECTED : STD_LOGIC;
+  signal NLW_VGA_R1_MULTSIGNOUT_UNCONNECTED : STD_LOGIC;
+  signal NLW_VGA_R1_OVERFLOW_UNCONNECTED : STD_LOGIC;
+  signal NLW_VGA_R1_PATTERNBDETECT_UNCONNECTED : STD_LOGIC;
+  signal NLW_VGA_R1_PATTERNDETECT_UNCONNECTED : STD_LOGIC;
+  signal NLW_VGA_R1_UNDERFLOW_UNCONNECTED : STD_LOGIC;
+  signal NLW_VGA_R1_ACOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 29 downto 0 );
+  signal NLW_VGA_R1_BCOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 17 downto 0 );
+  signal NLW_VGA_R1_CARRYOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_VGA_R1_P_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 24 );
+  signal NLW_VGA_R1_PCOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 0 );
   signal NLW_VGA_R2_CARRYCASCOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_VGA_R2_MULTSIGNOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_VGA_R2_OVERFLOW_UNCONNECTED : STD_LOGIC;
@@ -1647,99 +1657,31 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine is
   signal NLW_VGA_R2_ACOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 29 downto 0 );
   signal NLW_VGA_R2_BCOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal NLW_VGA_R2_CARRYOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R2__0_CARRYCASCOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__0_MULTSIGNOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__0_OVERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__0_PATTERNBDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__0_PATTERNDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__0_UNDERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__0_ACOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 29 downto 0 );
-  signal \NLW_VGA_R2__0_BCOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 17 downto 0 );
-  signal \NLW_VGA_R2__0_CARRYOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R2__1_CARRYCASCOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__1_MULTSIGNOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__1_OVERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__1_PATTERNBDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__1_PATTERNDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__1_UNDERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__1_ACOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 29 downto 0 );
-  signal \NLW_VGA_R2__1_BCOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 17 downto 0 );
-  signal \NLW_VGA_R2__1_CARRYOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R2__1_PCOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 47 downto 0 );
-  signal \NLW_VGA_R2__2_CARRYCASCOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__2_MULTSIGNOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__2_OVERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__2_PATTERNBDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__2_PATTERNDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__2_UNDERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__2_ACOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 29 downto 0 );
-  signal \NLW_VGA_R2__2_BCOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 17 downto 0 );
-  signal \NLW_VGA_R2__2_CARRYOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R2__3_CARRYCASCOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__3_MULTSIGNOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__3_OVERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__3_PATTERNBDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__3_PATTERNDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__3_UNDERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__3_ACOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 29 downto 0 );
-  signal \NLW_VGA_R2__3_BCOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 17 downto 0 );
-  signal \NLW_VGA_R2__3_CARRYOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R2__4_CARRYCASCOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__4_MULTSIGNOUT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__4_OVERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__4_PATTERNBDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__4_PATTERNDETECT_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__4_UNDERFLOW_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_VGA_R2__4_ACOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 29 downto 0 );
-  signal \NLW_VGA_R2__4_BCOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 17 downto 0 );
-  signal \NLW_VGA_R2__4_CARRYOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R2__4_PCOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 47 downto 0 );
-  signal \NLW_VGA_R_reg[0]_i_15_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal \NLW_VGA_R_reg[0]_i_20_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_VGA_R2_P_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 24 );
+  signal \NLW_VGA_R_reg[0]_i_28_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_VGA_R_reg[0]_i_3_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_VGA_R_reg[0]_i_3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R_reg[0]_i_36_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal \NLW_VGA_R_reg[0]_i_4_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_VGA_R_reg[0]_i_5_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_VGA_R_reg[0]_i_9_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute METHODOLOGY_DRC_VIOS : string;
-  attribute METHODOLOGY_DRC_VIOS of VGA_R2 : label is "{SYNTH-10 {cell *THIS*} {string 15x18 4}}";
-  attribute METHODOLOGY_DRC_VIOS of \VGA_R2__0\ : label is "{SYNTH-10 {cell *THIS*} {string 18x18 4}}";
-  attribute METHODOLOGY_DRC_VIOS of \VGA_R2__1\ : label is "{SYNTH-10 {cell *THIS*} {string 18x15 4}}";
-  attribute METHODOLOGY_DRC_VIOS of \VGA_R2__2\ : label is "{SYNTH-10 {cell *THIS*} {string 15x18 4}}";
-  attribute METHODOLOGY_DRC_VIOS of \VGA_R2__3\ : label is "{SYNTH-10 {cell *THIS*} {string 18x18 4}}";
-  attribute METHODOLOGY_DRC_VIOS of \VGA_R2__4\ : label is "{SYNTH-10 {cell *THIS*} {string 18x15 4}}";
-  attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_14\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_15\ : label is 35;
+  attribute METHODOLOGY_DRC_VIOS of VGA_R1 : label is "{SYNTH-13 {cell *THIS*}}";
+  attribute METHODOLOGY_DRC_VIOS of VGA_R2 : label is "{SYNTH-13 {cell *THIS*}}";
   attribute COMPARATOR_THRESHOLD : integer;
-  attribute COMPARATOR_THRESHOLD of \VGA_R_reg[0]_i_20\ : label is 11;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_25\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_26\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_27\ : label is 35;
+  attribute COMPARATOR_THRESHOLD of \VGA_R_reg[0]_i_28\ : label is 11;
   attribute COMPARATOR_THRESHOLD of \VGA_R_reg[0]_i_3\ : label is 11;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_36\ : label is 35;
-  attribute COMPARATOR_THRESHOLD of \VGA_R_reg[0]_i_4\ : label is 11;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_43\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_44\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_45\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_5\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_50\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_59\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_64\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_65\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_78\ : label is 35;
-  attribute ADDER_THRESHOLD of \VGA_R_reg[0]_i_82\ : label is 35;
   attribute COMPARATOR_THRESHOLD of \VGA_R_reg[0]_i_9\ : label is 11;
 begin
-  \VGA_R2__4_0\(3 downto 0) <= \^vga_r2__4_0\(3 downto 0);
-  \VGA_R2__4_1\(3 downto 0) <= \^vga_r2__4_1\(3 downto 0);
-  \VGA_R2__4_2\(3 downto 0) <= \^vga_r2__4_2\(3 downto 0);
-  \VGA_R2__4_3\(3 downto 0) <= \^vga_r2__4_3\(3 downto 0);
-VGA_R2: unisim.vcomponents.DSP48E1
+\VGA_B_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => vga_clk,
+      CE => '1',
+      D => vga_inst_n_23,
+      Q => VGA_B(0),
+      R => '0'
+    );
+VGA_R1: unisim.vcomponents.DSP48E1
     generic map(
       ACASCREG => 0,
-      ADREG => 1,
+      ADREG => 0,
       ALUMODEREG => 0,
       AREG => 0,
       AUTORESET_PATDET => "NO_RESET",
@@ -1750,7 +1692,7 @@ VGA_R2: unisim.vcomponents.DSP48E1
       CARRYINREG => 0,
       CARRYINSELREG => 0,
       CREG => 1,
-      DREG => 1,
+      DREG => 0,
       INMODEREG => 0,
       MASK => X"3FFFFFFFFFFF",
       MREG => 0,
@@ -1759,42 +1701,195 @@ VGA_R2: unisim.vcomponents.DSP48E1
       PREG => 0,
       SEL_MASK => "MASK",
       SEL_PATTERN => "PATTERN",
-      USE_DPORT => false,
+      USE_DPORT => true,
       USE_MULT => "MULTIPLY",
       USE_PATTERN_DETECT => "NO_PATDET",
       USE_SIMD => "ONE48"
     )
         port map (
-      A(29 downto 17) => B"0000000000000",
-      A(16) => DistY(31),
-      A(15) => DistY(31),
-      A(14) => DistY(31),
-      A(13) => DistY(31),
-      A(12) => DistY(31),
-      A(11) => DistY(31),
-      A(10) => DistY(31),
-      A(9 downto 0) => DistY(9 downto 0),
+      A(29 downto 10) => B"00000000000000000000",
+      A(9 downto 0) => Q(9 downto 0),
+      ACIN(29 downto 0) => B"000000000000000000000000000000",
+      ACOUT(29 downto 0) => NLW_VGA_R1_ACOUT_UNCONNECTED(29 downto 0),
+      ALUMODE(3 downto 0) => B"0000",
+      B(17) => B(11),
+      B(16) => B(11),
+      B(15) => B(11),
+      B(14) => B(11),
+      B(13) => B(11),
+      B(12) => B(11),
+      B(11) => B(11),
+      B(10) => B(11),
+      B(9 downto 0) => B(9 downto 0),
+      BCIN(17 downto 0) => B"000000000000000000",
+      BCOUT(17 downto 0) => NLW_VGA_R1_BCOUT_UNCONNECTED(17 downto 0),
+      C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
+      CARRYCASCIN => '0',
+      CARRYCASCOUT => NLW_VGA_R1_CARRYCASCOUT_UNCONNECTED,
+      CARRYIN => '0',
+      CARRYINSEL(2 downto 0) => B"000",
+      CARRYOUT(3 downto 0) => NLW_VGA_R1_CARRYOUT_UNCONNECTED(3 downto 0),
+      CEA1 => '0',
+      CEA2 => '0',
+      CEAD => '0',
+      CEALUMODE => '0',
+      CEB1 => '0',
+      CEB2 => '0',
+      CEC => '0',
+      CECARRYIN => '0',
+      CECTRL => '0',
+      CED => '0',
+      CEINMODE => '0',
+      CEM => '0',
+      CEP => '0',
+      CLK => '0',
+      D(24 downto 10) => B"000000000000000",
+      D(9 downto 0) => DrawY(9 downto 0),
+      INMODE(4 downto 0) => B"01100",
+      MULTSIGNIN => '0',
+      MULTSIGNOUT => NLW_VGA_R1_MULTSIGNOUT_UNCONNECTED,
+      OPMODE(6 downto 0) => B"0010101",
+      OVERFLOW => NLW_VGA_R1_OVERFLOW_UNCONNECTED,
+      P(47 downto 24) => NLW_VGA_R1_P_UNCONNECTED(47 downto 24),
+      P(23) => VGA_R1_n_82,
+      P(22) => VGA_R1_n_83,
+      P(21) => VGA_R1_n_84,
+      P(20) => VGA_R1_n_85,
+      P(19) => VGA_R1_n_86,
+      P(18) => VGA_R1_n_87,
+      P(17) => VGA_R1_n_88,
+      P(16) => VGA_R1_n_89,
+      P(15) => VGA_R1_n_90,
+      P(14) => VGA_R1_n_91,
+      P(13) => VGA_R1_n_92,
+      P(12) => VGA_R1_n_93,
+      P(11) => VGA_R1_n_94,
+      P(10) => VGA_R1_n_95,
+      P(9) => VGA_R1_n_96,
+      P(8) => VGA_R1_n_97,
+      P(7) => VGA_R1_n_98,
+      P(6) => VGA_R1_n_99,
+      P(5) => VGA_R1_n_100,
+      P(4) => VGA_R1_n_101,
+      P(3) => VGA_R1_n_102,
+      P(2) => VGA_R1_n_103,
+      P(1) => VGA_R1_n_104,
+      P(0) => VGA_R1_n_105,
+      PATTERNBDETECT => NLW_VGA_R1_PATTERNBDETECT_UNCONNECTED,
+      PATTERNDETECT => NLW_VGA_R1_PATTERNDETECT_UNCONNECTED,
+      PCIN(47) => VGA_R2_n_106,
+      PCIN(46) => VGA_R2_n_107,
+      PCIN(45) => VGA_R2_n_108,
+      PCIN(44) => VGA_R2_n_109,
+      PCIN(43) => VGA_R2_n_110,
+      PCIN(42) => VGA_R2_n_111,
+      PCIN(41) => VGA_R2_n_112,
+      PCIN(40) => VGA_R2_n_113,
+      PCIN(39) => VGA_R2_n_114,
+      PCIN(38) => VGA_R2_n_115,
+      PCIN(37) => VGA_R2_n_116,
+      PCIN(36) => VGA_R2_n_117,
+      PCIN(35) => VGA_R2_n_118,
+      PCIN(34) => VGA_R2_n_119,
+      PCIN(33) => VGA_R2_n_120,
+      PCIN(32) => VGA_R2_n_121,
+      PCIN(31) => VGA_R2_n_122,
+      PCIN(30) => VGA_R2_n_123,
+      PCIN(29) => VGA_R2_n_124,
+      PCIN(28) => VGA_R2_n_125,
+      PCIN(27) => VGA_R2_n_126,
+      PCIN(26) => VGA_R2_n_127,
+      PCIN(25) => VGA_R2_n_128,
+      PCIN(24) => VGA_R2_n_129,
+      PCIN(23) => VGA_R2_n_130,
+      PCIN(22) => VGA_R2_n_131,
+      PCIN(21) => VGA_R2_n_132,
+      PCIN(20) => VGA_R2_n_133,
+      PCIN(19) => VGA_R2_n_134,
+      PCIN(18) => VGA_R2_n_135,
+      PCIN(17) => VGA_R2_n_136,
+      PCIN(16) => VGA_R2_n_137,
+      PCIN(15) => VGA_R2_n_138,
+      PCIN(14) => VGA_R2_n_139,
+      PCIN(13) => VGA_R2_n_140,
+      PCIN(12) => VGA_R2_n_141,
+      PCIN(11) => VGA_R2_n_142,
+      PCIN(10) => VGA_R2_n_143,
+      PCIN(9) => VGA_R2_n_144,
+      PCIN(8) => VGA_R2_n_145,
+      PCIN(7) => VGA_R2_n_146,
+      PCIN(6) => VGA_R2_n_147,
+      PCIN(5) => VGA_R2_n_148,
+      PCIN(4) => VGA_R2_n_149,
+      PCIN(3) => VGA_R2_n_150,
+      PCIN(2) => VGA_R2_n_151,
+      PCIN(1) => VGA_R2_n_152,
+      PCIN(0) => VGA_R2_n_153,
+      PCOUT(47 downto 0) => NLW_VGA_R1_PCOUT_UNCONNECTED(47 downto 0),
+      RSTA => '0',
+      RSTALLCARRYIN => '0',
+      RSTALUMODE => '0',
+      RSTB => '0',
+      RSTC => '0',
+      RSTCTRL => '0',
+      RSTD => '0',
+      RSTINMODE => '0',
+      RSTM => '0',
+      RSTP => '0',
+      UNDERFLOW => NLW_VGA_R1_UNDERFLOW_UNCONNECTED
+    );
+VGA_R2: unisim.vcomponents.DSP48E1
+    generic map(
+      ACASCREG => 0,
+      ADREG => 0,
+      ALUMODEREG => 0,
+      AREG => 0,
+      AUTORESET_PATDET => "NO_RESET",
+      A_INPUT => "DIRECT",
+      BCASCREG => 0,
+      BREG => 0,
+      B_INPUT => "DIRECT",
+      CARRYINREG => 0,
+      CARRYINSELREG => 0,
+      CREG => 1,
+      DREG => 0,
+      INMODEREG => 0,
+      MASK => X"3FFFFFFFFFFF",
+      MREG => 0,
+      OPMODEREG => 0,
+      PATTERN => X"000000000000",
+      PREG => 0,
+      SEL_MASK => "MASK",
+      SEL_PATTERN => "PATTERN",
+      USE_DPORT => true,
+      USE_MULT => "MULTIPLY",
+      USE_PATTERN_DETECT => "NO_PATDET",
+      USE_SIMD => "ONE48"
+    )
+        port map (
+      A(29 downto 10) => B"00000000000000000000",
+      A(9 downto 0) => VGA_R2_0(9 downto 0),
       ACIN(29 downto 0) => B"000000000000000000000000000000",
       ACOUT(29 downto 0) => NLW_VGA_R2_ACOUT_UNCONNECTED(29 downto 0),
       ALUMODE(3 downto 0) => B"0000",
-      B(17) => DistY(31),
-      B(16) => DistY(31),
-      B(15) => DistY(31),
-      B(14) => DistY(31),
-      B(13) => DistY(31),
-      B(12) => DistY(31),
-      B(11) => DistY(31),
-      B(10) => DistY(31),
-      B(9) => DistY(31),
-      B(8) => DistY(31),
-      B(7) => DistY(31),
-      B(6) => DistY(31),
-      B(5) => DistY(31),
-      B(4) => DistY(31),
-      B(3) => DistY(31),
-      B(2) => DistY(31),
-      B(1) => DistY(31),
-      B(0) => DistY(31),
+      B(17) => vga_inst_n_37,
+      B(16) => vga_inst_n_37,
+      B(15) => vga_inst_n_37,
+      B(14) => vga_inst_n_37,
+      B(13) => vga_inst_n_37,
+      B(12) => vga_inst_n_37,
+      B(11) => vga_inst_n_37,
+      B(10) => vga_inst_n_37,
+      B(9) => vga_inst_n_38,
+      B(8) => vga_inst_n_39,
+      B(7) => vga_inst_n_40,
+      B(6) => vga_inst_n_41,
+      B(5) => vga_inst_n_42,
+      B(4) => vga_inst_n_43,
+      B(3) => vga_inst_n_44,
+      B(2) => vga_inst_n_45,
+      B(1) => vga_inst_n_46,
+      B(0) => vga_inst_n_47,
       BCIN(17 downto 0) => B"000000000000000000",
       BCOUT(17 downto 0) => NLW_VGA_R2_BCOUT_UNCONNECTED(17 downto 0),
       C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
@@ -1817,36 +1912,14 @@ VGA_R2: unisim.vcomponents.DSP48E1
       CEM => '0',
       CEP => '0',
       CLK => '0',
-      D(24 downto 0) => B"0000000000000000000000000",
-      INMODE(4 downto 0) => B"00000",
+      D(24 downto 10) => B"000000000000000",
+      D(9 downto 0) => DrawX(9 downto 0),
+      INMODE(4 downto 0) => B"01100",
       MULTSIGNIN => '0',
       MULTSIGNOUT => NLW_VGA_R2_MULTSIGNOUT_UNCONNECTED,
       OPMODE(6 downto 0) => B"0000101",
       OVERFLOW => NLW_VGA_R2_OVERFLOW_UNCONNECTED,
-      P(47) => VGA_R2_n_58,
-      P(46) => VGA_R2_n_59,
-      P(45) => VGA_R2_n_60,
-      P(44) => VGA_R2_n_61,
-      P(43) => VGA_R2_n_62,
-      P(42) => VGA_R2_n_63,
-      P(41) => VGA_R2_n_64,
-      P(40) => VGA_R2_n_65,
-      P(39) => VGA_R2_n_66,
-      P(38) => VGA_R2_n_67,
-      P(37) => VGA_R2_n_68,
-      P(36) => VGA_R2_n_69,
-      P(35) => VGA_R2_n_70,
-      P(34) => VGA_R2_n_71,
-      P(33) => VGA_R2_n_72,
-      P(32) => VGA_R2_n_73,
-      P(31) => VGA_R2_n_74,
-      P(30) => VGA_R2_n_75,
-      P(29) => VGA_R2_n_76,
-      P(28) => VGA_R2_n_77,
-      P(27) => VGA_R2_n_78,
-      P(26) => VGA_R2_n_79,
-      P(25) => VGA_R2_n_80,
-      P(24) => VGA_R2_n_81,
+      P(47 downto 24) => NLW_VGA_R2_P_UNCONNECTED(47 downto 24),
       P(23) => VGA_R2_n_82,
       P(22) => VGA_R2_n_83,
       P(21) => VGA_R2_n_84,
@@ -1934,1012 +2007,22 @@ VGA_R2: unisim.vcomponents.DSP48E1
       RSTP => '0',
       UNDERFLOW => NLW_VGA_R2_UNDERFLOW_UNCONNECTED
     );
-\VGA_R2__0\: unisim.vcomponents.DSP48E1
-    generic map(
-      ACASCREG => 0,
-      ADREG => 1,
-      ALUMODEREG => 0,
-      AREG => 0,
-      AUTORESET_PATDET => "NO_RESET",
-      A_INPUT => "DIRECT",
-      BCASCREG => 0,
-      BREG => 0,
-      B_INPUT => "DIRECT",
-      CARRYINREG => 0,
-      CARRYINSELREG => 0,
-      CREG => 1,
-      DREG => 1,
-      INMODEREG => 0,
-      MASK => X"3FFFFFFFFFFF",
-      MREG => 0,
-      OPMODEREG => 0,
-      PATTERN => X"000000000000",
-      PREG => 0,
-      SEL_MASK => "MASK",
-      SEL_PATTERN => "PATTERN",
-      USE_DPORT => false,
-      USE_MULT => "MULTIPLY",
-      USE_PATTERN_DETECT => "NO_PATDET",
-      USE_SIMD => "ONE48"
-    )
-        port map (
-      A(29 downto 17) => B"0000000000000",
-      A(16) => DistY(31),
-      A(15) => DistY(31),
-      A(14) => DistY(31),
-      A(13) => DistY(31),
-      A(12) => DistY(31),
-      A(11) => DistY(31),
-      A(10) => DistY(31),
-      A(9 downto 0) => DistY(9 downto 0),
-      ACIN(29 downto 0) => B"000000000000000000000000000000",
-      ACOUT(29 downto 0) => \NLW_VGA_R2__0_ACOUT_UNCONNECTED\(29 downto 0),
-      ALUMODE(3 downto 0) => B"0000",
-      B(17) => '0',
-      B(16) => DistY(31),
-      B(15) => DistY(31),
-      B(14) => DistY(31),
-      B(13) => DistY(31),
-      B(12) => DistY(31),
-      B(11) => DistY(31),
-      B(10) => DistY(31),
-      B(9 downto 0) => DistY(9 downto 0),
-      BCIN(17 downto 0) => B"000000000000000000",
-      BCOUT(17 downto 0) => \NLW_VGA_R2__0_BCOUT_UNCONNECTED\(17 downto 0),
-      C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
-      CARRYCASCIN => '0',
-      CARRYCASCOUT => \NLW_VGA_R2__0_CARRYCASCOUT_UNCONNECTED\,
-      CARRYIN => '0',
-      CARRYINSEL(2 downto 0) => B"000",
-      CARRYOUT(3 downto 0) => \NLW_VGA_R2__0_CARRYOUT_UNCONNECTED\(3 downto 0),
-      CEA1 => '0',
-      CEA2 => '0',
-      CEAD => '0',
-      CEALUMODE => '0',
-      CEB1 => '0',
-      CEB2 => '0',
-      CEC => '0',
-      CECARRYIN => '0',
-      CECTRL => '0',
-      CED => '0',
-      CEINMODE => '0',
-      CEM => '0',
-      CEP => '0',
-      CLK => '0',
-      D(24 downto 0) => B"0000000000000000000000000",
-      INMODE(4 downto 0) => B"00000",
-      MULTSIGNIN => '0',
-      MULTSIGNOUT => \NLW_VGA_R2__0_MULTSIGNOUT_UNCONNECTED\,
-      OPMODE(6 downto 0) => B"0000101",
-      OVERFLOW => \NLW_VGA_R2__0_OVERFLOW_UNCONNECTED\,
-      P(47) => \VGA_R2__0_n_58\,
-      P(46) => \VGA_R2__0_n_59\,
-      P(45) => \VGA_R2__0_n_60\,
-      P(44) => \VGA_R2__0_n_61\,
-      P(43) => \VGA_R2__0_n_62\,
-      P(42) => \VGA_R2__0_n_63\,
-      P(41) => \VGA_R2__0_n_64\,
-      P(40) => \VGA_R2__0_n_65\,
-      P(39) => \VGA_R2__0_n_66\,
-      P(38) => \VGA_R2__0_n_67\,
-      P(37) => \VGA_R2__0_n_68\,
-      P(36) => \VGA_R2__0_n_69\,
-      P(35) => \VGA_R2__0_n_70\,
-      P(34) => \VGA_R2__0_n_71\,
-      P(33) => \VGA_R2__0_n_72\,
-      P(32) => \VGA_R2__0_n_73\,
-      P(31) => \VGA_R2__0_n_74\,
-      P(30) => \VGA_R2__0_n_75\,
-      P(29) => \VGA_R2__0_n_76\,
-      P(28) => \VGA_R2__0_n_77\,
-      P(27) => \VGA_R2__0_n_78\,
-      P(26) => \VGA_R2__0_n_79\,
-      P(25) => \VGA_R2__0_n_80\,
-      P(24) => \VGA_R2__0_n_81\,
-      P(23) => \VGA_R2__0_n_82\,
-      P(22) => \VGA_R2__0_n_83\,
-      P(21) => \VGA_R2__0_n_84\,
-      P(20) => \VGA_R2__0_n_85\,
-      P(19) => \VGA_R2__0_n_86\,
-      P(18) => \VGA_R2__0_n_87\,
-      P(17) => \VGA_R2__0_n_88\,
-      P(16) => \VGA_R2__0_n_89\,
-      P(15) => \VGA_R2__0_n_90\,
-      P(14) => \VGA_R2__0_n_91\,
-      P(13) => \VGA_R2__0_n_92\,
-      P(12) => \VGA_R2__0_n_93\,
-      P(11) => \VGA_R2__0_n_94\,
-      P(10) => \VGA_R2__0_n_95\,
-      P(9) => \VGA_R2__0_n_96\,
-      P(8) => \VGA_R2__0_n_97\,
-      P(7) => \VGA_R2__0_n_98\,
-      P(6) => \VGA_R2__0_n_99\,
-      P(5) => \VGA_R2__0_n_100\,
-      P(4) => \VGA_R2__0_n_101\,
-      P(3) => \VGA_R2__0_n_102\,
-      P(2) => \VGA_R2__0_n_103\,
-      P(1) => \VGA_R2__0_n_104\,
-      P(0) => \VGA_R2__0_n_105\,
-      PATTERNBDETECT => \NLW_VGA_R2__0_PATTERNBDETECT_UNCONNECTED\,
-      PATTERNDETECT => \NLW_VGA_R2__0_PATTERNDETECT_UNCONNECTED\,
-      PCIN(47 downto 0) => B"000000000000000000000000000000000000000000000000",
-      PCOUT(47) => \VGA_R2__0_n_106\,
-      PCOUT(46) => \VGA_R2__0_n_107\,
-      PCOUT(45) => \VGA_R2__0_n_108\,
-      PCOUT(44) => \VGA_R2__0_n_109\,
-      PCOUT(43) => \VGA_R2__0_n_110\,
-      PCOUT(42) => \VGA_R2__0_n_111\,
-      PCOUT(41) => \VGA_R2__0_n_112\,
-      PCOUT(40) => \VGA_R2__0_n_113\,
-      PCOUT(39) => \VGA_R2__0_n_114\,
-      PCOUT(38) => \VGA_R2__0_n_115\,
-      PCOUT(37) => \VGA_R2__0_n_116\,
-      PCOUT(36) => \VGA_R2__0_n_117\,
-      PCOUT(35) => \VGA_R2__0_n_118\,
-      PCOUT(34) => \VGA_R2__0_n_119\,
-      PCOUT(33) => \VGA_R2__0_n_120\,
-      PCOUT(32) => \VGA_R2__0_n_121\,
-      PCOUT(31) => \VGA_R2__0_n_122\,
-      PCOUT(30) => \VGA_R2__0_n_123\,
-      PCOUT(29) => \VGA_R2__0_n_124\,
-      PCOUT(28) => \VGA_R2__0_n_125\,
-      PCOUT(27) => \VGA_R2__0_n_126\,
-      PCOUT(26) => \VGA_R2__0_n_127\,
-      PCOUT(25) => \VGA_R2__0_n_128\,
-      PCOUT(24) => \VGA_R2__0_n_129\,
-      PCOUT(23) => \VGA_R2__0_n_130\,
-      PCOUT(22) => \VGA_R2__0_n_131\,
-      PCOUT(21) => \VGA_R2__0_n_132\,
-      PCOUT(20) => \VGA_R2__0_n_133\,
-      PCOUT(19) => \VGA_R2__0_n_134\,
-      PCOUT(18) => \VGA_R2__0_n_135\,
-      PCOUT(17) => \VGA_R2__0_n_136\,
-      PCOUT(16) => \VGA_R2__0_n_137\,
-      PCOUT(15) => \VGA_R2__0_n_138\,
-      PCOUT(14) => \VGA_R2__0_n_139\,
-      PCOUT(13) => \VGA_R2__0_n_140\,
-      PCOUT(12) => \VGA_R2__0_n_141\,
-      PCOUT(11) => \VGA_R2__0_n_142\,
-      PCOUT(10) => \VGA_R2__0_n_143\,
-      PCOUT(9) => \VGA_R2__0_n_144\,
-      PCOUT(8) => \VGA_R2__0_n_145\,
-      PCOUT(7) => \VGA_R2__0_n_146\,
-      PCOUT(6) => \VGA_R2__0_n_147\,
-      PCOUT(5) => \VGA_R2__0_n_148\,
-      PCOUT(4) => \VGA_R2__0_n_149\,
-      PCOUT(3) => \VGA_R2__0_n_150\,
-      PCOUT(2) => \VGA_R2__0_n_151\,
-      PCOUT(1) => \VGA_R2__0_n_152\,
-      PCOUT(0) => \VGA_R2__0_n_153\,
-      RSTA => '0',
-      RSTALLCARRYIN => '0',
-      RSTALUMODE => '0',
-      RSTB => '0',
-      RSTC => '0',
-      RSTCTRL => '0',
-      RSTD => '0',
-      RSTINMODE => '0',
-      RSTM => '0',
-      RSTP => '0',
-      UNDERFLOW => \NLW_VGA_R2__0_UNDERFLOW_UNCONNECTED\
-    );
-\VGA_R2__1\: unisim.vcomponents.DSP48E1
-    generic map(
-      ACASCREG => 0,
-      ADREG => 1,
-      ALUMODEREG => 0,
-      AREG => 0,
-      AUTORESET_PATDET => "NO_RESET",
-      A_INPUT => "DIRECT",
-      BCASCREG => 0,
-      BREG => 0,
-      B_INPUT => "DIRECT",
-      CARRYINREG => 0,
-      CARRYINSELREG => 0,
-      CREG => 1,
-      DREG => 1,
-      INMODEREG => 0,
-      MASK => X"3FFFFFFFFFFF",
-      MREG => 0,
-      OPMODEREG => 0,
-      PATTERN => X"000000000000",
-      PREG => 0,
-      SEL_MASK => "MASK",
-      SEL_PATTERN => "PATTERN",
-      USE_DPORT => false,
-      USE_MULT => "MULTIPLY",
-      USE_PATTERN_DETECT => "NO_PATDET",
-      USE_SIMD => "ONE48"
-    )
-        port map (
-      A(29 downto 17) => B"0000000000000",
-      A(16) => DistY(31),
-      A(15) => DistY(31),
-      A(14) => DistY(31),
-      A(13) => DistY(31),
-      A(12) => DistY(31),
-      A(11) => DistY(31),
-      A(10) => DistY(31),
-      A(9 downto 0) => DistY(9 downto 0),
-      ACIN(29 downto 0) => B"000000000000000000000000000000",
-      ACOUT(29 downto 0) => \NLW_VGA_R2__1_ACOUT_UNCONNECTED\(29 downto 0),
-      ALUMODE(3 downto 0) => B"0000",
-      B(17) => DistY(31),
-      B(16) => DistY(31),
-      B(15) => DistY(31),
-      B(14) => DistY(31),
-      B(13) => DistY(31),
-      B(12) => DistY(31),
-      B(11) => DistY(31),
-      B(10) => DistY(31),
-      B(9) => DistY(31),
-      B(8) => DistY(31),
-      B(7) => DistY(31),
-      B(6) => DistY(31),
-      B(5) => DistY(31),
-      B(4) => DistY(31),
-      B(3) => DistY(31),
-      B(2) => DistY(31),
-      B(1) => DistY(31),
-      B(0) => DistY(31),
-      BCIN(17 downto 0) => B"000000000000000000",
-      BCOUT(17 downto 0) => \NLW_VGA_R2__1_BCOUT_UNCONNECTED\(17 downto 0),
-      C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
-      CARRYCASCIN => '0',
-      CARRYCASCOUT => \NLW_VGA_R2__1_CARRYCASCOUT_UNCONNECTED\,
-      CARRYIN => '0',
-      CARRYINSEL(2 downto 0) => B"000",
-      CARRYOUT(3 downto 0) => \NLW_VGA_R2__1_CARRYOUT_UNCONNECTED\(3 downto 0),
-      CEA1 => '0',
-      CEA2 => '0',
-      CEAD => '0',
-      CEALUMODE => '0',
-      CEB1 => '0',
-      CEB2 => '0',
-      CEC => '0',
-      CECARRYIN => '0',
-      CECTRL => '0',
-      CED => '0',
-      CEINMODE => '0',
-      CEM => '0',
-      CEP => '0',
-      CLK => '0',
-      D(24 downto 0) => B"0000000000000000000000000",
-      INMODE(4 downto 0) => B"00000",
-      MULTSIGNIN => '0',
-      MULTSIGNOUT => \NLW_VGA_R2__1_MULTSIGNOUT_UNCONNECTED\,
-      OPMODE(6 downto 0) => B"1010101",
-      OVERFLOW => \NLW_VGA_R2__1_OVERFLOW_UNCONNECTED\,
-      P(47) => \VGA_R2__1_n_58\,
-      P(46) => \VGA_R2__1_n_59\,
-      P(45) => \VGA_R2__1_n_60\,
-      P(44) => \VGA_R2__1_n_61\,
-      P(43) => \VGA_R2__1_n_62\,
-      P(42) => \VGA_R2__1_n_63\,
-      P(41) => \VGA_R2__1_n_64\,
-      P(40) => \VGA_R2__1_n_65\,
-      P(39) => \VGA_R2__1_n_66\,
-      P(38) => \VGA_R2__1_n_67\,
-      P(37) => \VGA_R2__1_n_68\,
-      P(36) => \VGA_R2__1_n_69\,
-      P(35) => \VGA_R2__1_n_70\,
-      P(34) => \VGA_R2__1_n_71\,
-      P(33) => \VGA_R2__1_n_72\,
-      P(32) => \VGA_R2__1_n_73\,
-      P(31) => \VGA_R2__1_n_74\,
-      P(30) => \VGA_R2__1_n_75\,
-      P(29) => \VGA_R2__1_n_76\,
-      P(28) => \VGA_R2__1_n_77\,
-      P(27) => \VGA_R2__1_n_78\,
-      P(26) => \VGA_R2__1_n_79\,
-      P(25) => \VGA_R2__1_n_80\,
-      P(24) => \VGA_R2__1_n_81\,
-      P(23) => \VGA_R2__1_n_82\,
-      P(22) => \VGA_R2__1_n_83\,
-      P(21) => \VGA_R2__1_n_84\,
-      P(20) => \VGA_R2__1_n_85\,
-      P(19) => \VGA_R2__1_n_86\,
-      P(18) => \VGA_R2__1_n_87\,
-      P(17) => \VGA_R2__1_n_88\,
-      P(16) => \VGA_R2__1_n_89\,
-      P(15) => \VGA_R2__1_n_90\,
-      P(14) => \VGA_R2__1_n_91\,
-      P(13) => \VGA_R2__1_n_92\,
-      P(12) => \VGA_R2__1_n_93\,
-      P(11) => \VGA_R2__1_n_94\,
-      P(10) => \VGA_R2__1_n_95\,
-      P(9) => \VGA_R2__1_n_96\,
-      P(8) => \VGA_R2__1_n_97\,
-      P(7) => \VGA_R2__1_n_98\,
-      P(6) => \VGA_R2__1_n_99\,
-      P(5) => \VGA_R2__1_n_100\,
-      P(4) => \VGA_R2__1_n_101\,
-      P(3) => \VGA_R2__1_n_102\,
-      P(2) => \VGA_R2__1_n_103\,
-      P(1) => \VGA_R2__1_n_104\,
-      P(0) => \VGA_R2__1_n_105\,
-      PATTERNBDETECT => \NLW_VGA_R2__1_PATTERNBDETECT_UNCONNECTED\,
-      PATTERNDETECT => \NLW_VGA_R2__1_PATTERNDETECT_UNCONNECTED\,
-      PCIN(47) => \VGA_R2__0_n_106\,
-      PCIN(46) => \VGA_R2__0_n_107\,
-      PCIN(45) => \VGA_R2__0_n_108\,
-      PCIN(44) => \VGA_R2__0_n_109\,
-      PCIN(43) => \VGA_R2__0_n_110\,
-      PCIN(42) => \VGA_R2__0_n_111\,
-      PCIN(41) => \VGA_R2__0_n_112\,
-      PCIN(40) => \VGA_R2__0_n_113\,
-      PCIN(39) => \VGA_R2__0_n_114\,
-      PCIN(38) => \VGA_R2__0_n_115\,
-      PCIN(37) => \VGA_R2__0_n_116\,
-      PCIN(36) => \VGA_R2__0_n_117\,
-      PCIN(35) => \VGA_R2__0_n_118\,
-      PCIN(34) => \VGA_R2__0_n_119\,
-      PCIN(33) => \VGA_R2__0_n_120\,
-      PCIN(32) => \VGA_R2__0_n_121\,
-      PCIN(31) => \VGA_R2__0_n_122\,
-      PCIN(30) => \VGA_R2__0_n_123\,
-      PCIN(29) => \VGA_R2__0_n_124\,
-      PCIN(28) => \VGA_R2__0_n_125\,
-      PCIN(27) => \VGA_R2__0_n_126\,
-      PCIN(26) => \VGA_R2__0_n_127\,
-      PCIN(25) => \VGA_R2__0_n_128\,
-      PCIN(24) => \VGA_R2__0_n_129\,
-      PCIN(23) => \VGA_R2__0_n_130\,
-      PCIN(22) => \VGA_R2__0_n_131\,
-      PCIN(21) => \VGA_R2__0_n_132\,
-      PCIN(20) => \VGA_R2__0_n_133\,
-      PCIN(19) => \VGA_R2__0_n_134\,
-      PCIN(18) => \VGA_R2__0_n_135\,
-      PCIN(17) => \VGA_R2__0_n_136\,
-      PCIN(16) => \VGA_R2__0_n_137\,
-      PCIN(15) => \VGA_R2__0_n_138\,
-      PCIN(14) => \VGA_R2__0_n_139\,
-      PCIN(13) => \VGA_R2__0_n_140\,
-      PCIN(12) => \VGA_R2__0_n_141\,
-      PCIN(11) => \VGA_R2__0_n_142\,
-      PCIN(10) => \VGA_R2__0_n_143\,
-      PCIN(9) => \VGA_R2__0_n_144\,
-      PCIN(8) => \VGA_R2__0_n_145\,
-      PCIN(7) => \VGA_R2__0_n_146\,
-      PCIN(6) => \VGA_R2__0_n_147\,
-      PCIN(5) => \VGA_R2__0_n_148\,
-      PCIN(4) => \VGA_R2__0_n_149\,
-      PCIN(3) => \VGA_R2__0_n_150\,
-      PCIN(2) => \VGA_R2__0_n_151\,
-      PCIN(1) => \VGA_R2__0_n_152\,
-      PCIN(0) => \VGA_R2__0_n_153\,
-      PCOUT(47 downto 0) => \NLW_VGA_R2__1_PCOUT_UNCONNECTED\(47 downto 0),
-      RSTA => '0',
-      RSTALLCARRYIN => '0',
-      RSTALUMODE => '0',
-      RSTB => '0',
-      RSTC => '0',
-      RSTCTRL => '0',
-      RSTD => '0',
-      RSTINMODE => '0',
-      RSTM => '0',
-      RSTP => '0',
-      UNDERFLOW => \NLW_VGA_R2__1_UNDERFLOW_UNCONNECTED\
-    );
-\VGA_R2__2\: unisim.vcomponents.DSP48E1
-    generic map(
-      ACASCREG => 0,
-      ADREG => 1,
-      ALUMODEREG => 0,
-      AREG => 0,
-      AUTORESET_PATDET => "NO_RESET",
-      A_INPUT => "DIRECT",
-      BCASCREG => 0,
-      BREG => 0,
-      B_INPUT => "DIRECT",
-      CARRYINREG => 0,
-      CARRYINSELREG => 0,
-      CREG => 1,
-      DREG => 1,
-      INMODEREG => 0,
-      MASK => X"3FFFFFFFFFFF",
-      MREG => 0,
-      OPMODEREG => 0,
-      PATTERN => X"000000000000",
-      PREG => 0,
-      SEL_MASK => "MASK",
-      SEL_PATTERN => "PATTERN",
-      USE_DPORT => false,
-      USE_MULT => "MULTIPLY",
-      USE_PATTERN_DETECT => "NO_PATDET",
-      USE_SIMD => "ONE48"
-    )
-        port map (
-      A(29 downto 17) => B"0000000000000",
-      A(16) => DistX(31),
-      A(15) => DistX(31),
-      A(14) => DistX(31),
-      A(13) => DistX(31),
-      A(12) => DistX(31),
-      A(11) => DistX(31),
-      A(10) => DistX(31),
-      A(9 downto 0) => DistX(9 downto 0),
-      ACIN(29 downto 0) => B"000000000000000000000000000000",
-      ACOUT(29 downto 0) => \NLW_VGA_R2__2_ACOUT_UNCONNECTED\(29 downto 0),
-      ALUMODE(3 downto 0) => B"0000",
-      B(17) => DistX(31),
-      B(16) => DistX(31),
-      B(15) => DistX(31),
-      B(14) => DistX(31),
-      B(13) => DistX(31),
-      B(12) => DistX(31),
-      B(11) => DistX(31),
-      B(10) => DistX(31),
-      B(9) => DistX(31),
-      B(8) => DistX(31),
-      B(7) => DistX(31),
-      B(6) => DistX(31),
-      B(5) => DistX(31),
-      B(4) => DistX(31),
-      B(3) => DistX(31),
-      B(2) => DistX(31),
-      B(1) => DistX(31),
-      B(0) => DistX(31),
-      BCIN(17 downto 0) => B"000000000000000000",
-      BCOUT(17 downto 0) => \NLW_VGA_R2__2_BCOUT_UNCONNECTED\(17 downto 0),
-      C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
-      CARRYCASCIN => '0',
-      CARRYCASCOUT => \NLW_VGA_R2__2_CARRYCASCOUT_UNCONNECTED\,
-      CARRYIN => '0',
-      CARRYINSEL(2 downto 0) => B"000",
-      CARRYOUT(3 downto 0) => \NLW_VGA_R2__2_CARRYOUT_UNCONNECTED\(3 downto 0),
-      CEA1 => '0',
-      CEA2 => '0',
-      CEAD => '0',
-      CEALUMODE => '0',
-      CEB1 => '0',
-      CEB2 => '0',
-      CEC => '0',
-      CECARRYIN => '0',
-      CECTRL => '0',
-      CED => '0',
-      CEINMODE => '0',
-      CEM => '0',
-      CEP => '0',
-      CLK => '0',
-      D(24 downto 0) => B"0000000000000000000000000",
-      INMODE(4 downto 0) => B"00000",
-      MULTSIGNIN => '0',
-      MULTSIGNOUT => \NLW_VGA_R2__2_MULTSIGNOUT_UNCONNECTED\,
-      OPMODE(6 downto 0) => B"0000101",
-      OVERFLOW => \NLW_VGA_R2__2_OVERFLOW_UNCONNECTED\,
-      P(47) => \VGA_R2__2_n_58\,
-      P(46) => \VGA_R2__2_n_59\,
-      P(45) => \VGA_R2__2_n_60\,
-      P(44) => \VGA_R2__2_n_61\,
-      P(43) => \VGA_R2__2_n_62\,
-      P(42) => \VGA_R2__2_n_63\,
-      P(41) => \VGA_R2__2_n_64\,
-      P(40) => \VGA_R2__2_n_65\,
-      P(39) => \VGA_R2__2_n_66\,
-      P(38) => \VGA_R2__2_n_67\,
-      P(37) => \VGA_R2__2_n_68\,
-      P(36) => \VGA_R2__2_n_69\,
-      P(35) => \VGA_R2__2_n_70\,
-      P(34) => \VGA_R2__2_n_71\,
-      P(33) => \VGA_R2__2_n_72\,
-      P(32) => \VGA_R2__2_n_73\,
-      P(31) => \VGA_R2__2_n_74\,
-      P(30) => \VGA_R2__2_n_75\,
-      P(29) => \VGA_R2__2_n_76\,
-      P(28) => \VGA_R2__2_n_77\,
-      P(27) => \VGA_R2__2_n_78\,
-      P(26) => \VGA_R2__2_n_79\,
-      P(25) => \VGA_R2__2_n_80\,
-      P(24) => \VGA_R2__2_n_81\,
-      P(23) => \VGA_R2__2_n_82\,
-      P(22) => \VGA_R2__2_n_83\,
-      P(21) => \VGA_R2__2_n_84\,
-      P(20) => \VGA_R2__2_n_85\,
-      P(19) => \VGA_R2__2_n_86\,
-      P(18) => \VGA_R2__2_n_87\,
-      P(17) => \VGA_R2__2_n_88\,
-      P(16) => \VGA_R2__2_n_89\,
-      P(15) => \VGA_R2__2_n_90\,
-      P(14) => \VGA_R2__2_n_91\,
-      P(13) => \VGA_R2__2_n_92\,
-      P(12) => \VGA_R2__2_n_93\,
-      P(11) => \VGA_R2__2_n_94\,
-      P(10) => \VGA_R2__2_n_95\,
-      P(9) => \VGA_R2__2_n_96\,
-      P(8) => \VGA_R2__2_n_97\,
-      P(7) => \VGA_R2__2_n_98\,
-      P(6) => \VGA_R2__2_n_99\,
-      P(5) => \VGA_R2__2_n_100\,
-      P(4) => \VGA_R2__2_n_101\,
-      P(3) => \VGA_R2__2_n_102\,
-      P(2) => \VGA_R2__2_n_103\,
-      P(1) => \VGA_R2__2_n_104\,
-      P(0) => \VGA_R2__2_n_105\,
-      PATTERNBDETECT => \NLW_VGA_R2__2_PATTERNBDETECT_UNCONNECTED\,
-      PATTERNDETECT => \NLW_VGA_R2__2_PATTERNDETECT_UNCONNECTED\,
-      PCIN(47 downto 0) => B"000000000000000000000000000000000000000000000000",
-      PCOUT(47) => \VGA_R2__2_n_106\,
-      PCOUT(46) => \VGA_R2__2_n_107\,
-      PCOUT(45) => \VGA_R2__2_n_108\,
-      PCOUT(44) => \VGA_R2__2_n_109\,
-      PCOUT(43) => \VGA_R2__2_n_110\,
-      PCOUT(42) => \VGA_R2__2_n_111\,
-      PCOUT(41) => \VGA_R2__2_n_112\,
-      PCOUT(40) => \VGA_R2__2_n_113\,
-      PCOUT(39) => \VGA_R2__2_n_114\,
-      PCOUT(38) => \VGA_R2__2_n_115\,
-      PCOUT(37) => \VGA_R2__2_n_116\,
-      PCOUT(36) => \VGA_R2__2_n_117\,
-      PCOUT(35) => \VGA_R2__2_n_118\,
-      PCOUT(34) => \VGA_R2__2_n_119\,
-      PCOUT(33) => \VGA_R2__2_n_120\,
-      PCOUT(32) => \VGA_R2__2_n_121\,
-      PCOUT(31) => \VGA_R2__2_n_122\,
-      PCOUT(30) => \VGA_R2__2_n_123\,
-      PCOUT(29) => \VGA_R2__2_n_124\,
-      PCOUT(28) => \VGA_R2__2_n_125\,
-      PCOUT(27) => \VGA_R2__2_n_126\,
-      PCOUT(26) => \VGA_R2__2_n_127\,
-      PCOUT(25) => \VGA_R2__2_n_128\,
-      PCOUT(24) => \VGA_R2__2_n_129\,
-      PCOUT(23) => \VGA_R2__2_n_130\,
-      PCOUT(22) => \VGA_R2__2_n_131\,
-      PCOUT(21) => \VGA_R2__2_n_132\,
-      PCOUT(20) => \VGA_R2__2_n_133\,
-      PCOUT(19) => \VGA_R2__2_n_134\,
-      PCOUT(18) => \VGA_R2__2_n_135\,
-      PCOUT(17) => \VGA_R2__2_n_136\,
-      PCOUT(16) => \VGA_R2__2_n_137\,
-      PCOUT(15) => \VGA_R2__2_n_138\,
-      PCOUT(14) => \VGA_R2__2_n_139\,
-      PCOUT(13) => \VGA_R2__2_n_140\,
-      PCOUT(12) => \VGA_R2__2_n_141\,
-      PCOUT(11) => \VGA_R2__2_n_142\,
-      PCOUT(10) => \VGA_R2__2_n_143\,
-      PCOUT(9) => \VGA_R2__2_n_144\,
-      PCOUT(8) => \VGA_R2__2_n_145\,
-      PCOUT(7) => \VGA_R2__2_n_146\,
-      PCOUT(6) => \VGA_R2__2_n_147\,
-      PCOUT(5) => \VGA_R2__2_n_148\,
-      PCOUT(4) => \VGA_R2__2_n_149\,
-      PCOUT(3) => \VGA_R2__2_n_150\,
-      PCOUT(2) => \VGA_R2__2_n_151\,
-      PCOUT(1) => \VGA_R2__2_n_152\,
-      PCOUT(0) => \VGA_R2__2_n_153\,
-      RSTA => '0',
-      RSTALLCARRYIN => '0',
-      RSTALUMODE => '0',
-      RSTB => '0',
-      RSTC => '0',
-      RSTCTRL => '0',
-      RSTD => '0',
-      RSTINMODE => '0',
-      RSTM => '0',
-      RSTP => '0',
-      UNDERFLOW => \NLW_VGA_R2__2_UNDERFLOW_UNCONNECTED\
-    );
-\VGA_R2__3\: unisim.vcomponents.DSP48E1
-    generic map(
-      ACASCREG => 0,
-      ADREG => 1,
-      ALUMODEREG => 0,
-      AREG => 0,
-      AUTORESET_PATDET => "NO_RESET",
-      A_INPUT => "DIRECT",
-      BCASCREG => 0,
-      BREG => 0,
-      B_INPUT => "DIRECT",
-      CARRYINREG => 0,
-      CARRYINSELREG => 0,
-      CREG => 1,
-      DREG => 1,
-      INMODEREG => 0,
-      MASK => X"3FFFFFFFFFFF",
-      MREG => 0,
-      OPMODEREG => 0,
-      PATTERN => X"000000000000",
-      PREG => 0,
-      SEL_MASK => "MASK",
-      SEL_PATTERN => "PATTERN",
-      USE_DPORT => false,
-      USE_MULT => "MULTIPLY",
-      USE_PATTERN_DETECT => "NO_PATDET",
-      USE_SIMD => "ONE48"
-    )
-        port map (
-      A(29 downto 17) => B"0000000000000",
-      A(16) => DistX(31),
-      A(15) => DistX(31),
-      A(14) => DistX(31),
-      A(13) => DistX(31),
-      A(12) => DistX(31),
-      A(11) => DistX(31),
-      A(10) => DistX(31),
-      A(9 downto 0) => DistX(9 downto 0),
-      ACIN(29 downto 0) => B"000000000000000000000000000000",
-      ACOUT(29 downto 0) => \NLW_VGA_R2__3_ACOUT_UNCONNECTED\(29 downto 0),
-      ALUMODE(3 downto 0) => B"0000",
-      B(17) => '0',
-      B(16) => DistX(31),
-      B(15) => DistX(31),
-      B(14) => DistX(31),
-      B(13) => DistX(31),
-      B(12) => DistX(31),
-      B(11) => DistX(31),
-      B(10) => DistX(31),
-      B(9 downto 0) => DistX(9 downto 0),
-      BCIN(17 downto 0) => B"000000000000000000",
-      BCOUT(17 downto 0) => \NLW_VGA_R2__3_BCOUT_UNCONNECTED\(17 downto 0),
-      C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
-      CARRYCASCIN => '0',
-      CARRYCASCOUT => \NLW_VGA_R2__3_CARRYCASCOUT_UNCONNECTED\,
-      CARRYIN => '0',
-      CARRYINSEL(2 downto 0) => B"000",
-      CARRYOUT(3 downto 0) => \NLW_VGA_R2__3_CARRYOUT_UNCONNECTED\(3 downto 0),
-      CEA1 => '0',
-      CEA2 => '0',
-      CEAD => '0',
-      CEALUMODE => '0',
-      CEB1 => '0',
-      CEB2 => '0',
-      CEC => '0',
-      CECARRYIN => '0',
-      CECTRL => '0',
-      CED => '0',
-      CEINMODE => '0',
-      CEM => '0',
-      CEP => '0',
-      CLK => '0',
-      D(24 downto 0) => B"0000000000000000000000000",
-      INMODE(4 downto 0) => B"00000",
-      MULTSIGNIN => '0',
-      MULTSIGNOUT => \NLW_VGA_R2__3_MULTSIGNOUT_UNCONNECTED\,
-      OPMODE(6 downto 0) => B"0000101",
-      OVERFLOW => \NLW_VGA_R2__3_OVERFLOW_UNCONNECTED\,
-      P(47) => \VGA_R2__3_n_58\,
-      P(46) => \VGA_R2__3_n_59\,
-      P(45) => \VGA_R2__3_n_60\,
-      P(44) => \VGA_R2__3_n_61\,
-      P(43) => \VGA_R2__3_n_62\,
-      P(42) => \VGA_R2__3_n_63\,
-      P(41) => \VGA_R2__3_n_64\,
-      P(40) => \VGA_R2__3_n_65\,
-      P(39) => \VGA_R2__3_n_66\,
-      P(38) => \VGA_R2__3_n_67\,
-      P(37) => \VGA_R2__3_n_68\,
-      P(36) => \VGA_R2__3_n_69\,
-      P(35) => \VGA_R2__3_n_70\,
-      P(34) => \VGA_R2__3_n_71\,
-      P(33) => \VGA_R2__3_n_72\,
-      P(32) => \VGA_R2__3_n_73\,
-      P(31) => \VGA_R2__3_n_74\,
-      P(30) => \VGA_R2__3_n_75\,
-      P(29) => \VGA_R2__3_n_76\,
-      P(28) => \VGA_R2__3_n_77\,
-      P(27) => \VGA_R2__3_n_78\,
-      P(26) => \VGA_R2__3_n_79\,
-      P(25) => \VGA_R2__3_n_80\,
-      P(24) => \VGA_R2__3_n_81\,
-      P(23) => \VGA_R2__3_n_82\,
-      P(22) => \VGA_R2__3_n_83\,
-      P(21) => \VGA_R2__3_n_84\,
-      P(20) => \VGA_R2__3_n_85\,
-      P(19) => \VGA_R2__3_n_86\,
-      P(18) => \VGA_R2__3_n_87\,
-      P(17) => \VGA_R2__3_n_88\,
-      P(16) => \VGA_R2__3_n_89\,
-      P(15) => \VGA_R2__3_n_90\,
-      P(14) => \VGA_R2__3_n_91\,
-      P(13) => \VGA_R2__3_n_92\,
-      P(12) => \VGA_R2__3_n_93\,
-      P(11) => \VGA_R2__3_n_94\,
-      P(10) => \VGA_R2__3_n_95\,
-      P(9) => \VGA_R2__3_n_96\,
-      P(8) => \VGA_R2__3_n_97\,
-      P(7) => \VGA_R2__3_n_98\,
-      P(6) => \VGA_R2__3_n_99\,
-      P(5) => \VGA_R2__3_n_100\,
-      P(4) => \VGA_R2__3_n_101\,
-      P(3) => \VGA_R2__3_n_102\,
-      P(2) => \VGA_R2__3_n_103\,
-      P(1) => \VGA_R2__3_n_104\,
-      P(0) => \VGA_R2__3_n_105\,
-      PATTERNBDETECT => \NLW_VGA_R2__3_PATTERNBDETECT_UNCONNECTED\,
-      PATTERNDETECT => \NLW_VGA_R2__3_PATTERNDETECT_UNCONNECTED\,
-      PCIN(47 downto 0) => B"000000000000000000000000000000000000000000000000",
-      PCOUT(47) => \VGA_R2__3_n_106\,
-      PCOUT(46) => \VGA_R2__3_n_107\,
-      PCOUT(45) => \VGA_R2__3_n_108\,
-      PCOUT(44) => \VGA_R2__3_n_109\,
-      PCOUT(43) => \VGA_R2__3_n_110\,
-      PCOUT(42) => \VGA_R2__3_n_111\,
-      PCOUT(41) => \VGA_R2__3_n_112\,
-      PCOUT(40) => \VGA_R2__3_n_113\,
-      PCOUT(39) => \VGA_R2__3_n_114\,
-      PCOUT(38) => \VGA_R2__3_n_115\,
-      PCOUT(37) => \VGA_R2__3_n_116\,
-      PCOUT(36) => \VGA_R2__3_n_117\,
-      PCOUT(35) => \VGA_R2__3_n_118\,
-      PCOUT(34) => \VGA_R2__3_n_119\,
-      PCOUT(33) => \VGA_R2__3_n_120\,
-      PCOUT(32) => \VGA_R2__3_n_121\,
-      PCOUT(31) => \VGA_R2__3_n_122\,
-      PCOUT(30) => \VGA_R2__3_n_123\,
-      PCOUT(29) => \VGA_R2__3_n_124\,
-      PCOUT(28) => \VGA_R2__3_n_125\,
-      PCOUT(27) => \VGA_R2__3_n_126\,
-      PCOUT(26) => \VGA_R2__3_n_127\,
-      PCOUT(25) => \VGA_R2__3_n_128\,
-      PCOUT(24) => \VGA_R2__3_n_129\,
-      PCOUT(23) => \VGA_R2__3_n_130\,
-      PCOUT(22) => \VGA_R2__3_n_131\,
-      PCOUT(21) => \VGA_R2__3_n_132\,
-      PCOUT(20) => \VGA_R2__3_n_133\,
-      PCOUT(19) => \VGA_R2__3_n_134\,
-      PCOUT(18) => \VGA_R2__3_n_135\,
-      PCOUT(17) => \VGA_R2__3_n_136\,
-      PCOUT(16) => \VGA_R2__3_n_137\,
-      PCOUT(15) => \VGA_R2__3_n_138\,
-      PCOUT(14) => \VGA_R2__3_n_139\,
-      PCOUT(13) => \VGA_R2__3_n_140\,
-      PCOUT(12) => \VGA_R2__3_n_141\,
-      PCOUT(11) => \VGA_R2__3_n_142\,
-      PCOUT(10) => \VGA_R2__3_n_143\,
-      PCOUT(9) => \VGA_R2__3_n_144\,
-      PCOUT(8) => \VGA_R2__3_n_145\,
-      PCOUT(7) => \VGA_R2__3_n_146\,
-      PCOUT(6) => \VGA_R2__3_n_147\,
-      PCOUT(5) => \VGA_R2__3_n_148\,
-      PCOUT(4) => \VGA_R2__3_n_149\,
-      PCOUT(3) => \VGA_R2__3_n_150\,
-      PCOUT(2) => \VGA_R2__3_n_151\,
-      PCOUT(1) => \VGA_R2__3_n_152\,
-      PCOUT(0) => \VGA_R2__3_n_153\,
-      RSTA => '0',
-      RSTALLCARRYIN => '0',
-      RSTALUMODE => '0',
-      RSTB => '0',
-      RSTC => '0',
-      RSTCTRL => '0',
-      RSTD => '0',
-      RSTINMODE => '0',
-      RSTM => '0',
-      RSTP => '0',
-      UNDERFLOW => \NLW_VGA_R2__3_UNDERFLOW_UNCONNECTED\
-    );
-\VGA_R2__4\: unisim.vcomponents.DSP48E1
-    generic map(
-      ACASCREG => 0,
-      ADREG => 1,
-      ALUMODEREG => 0,
-      AREG => 0,
-      AUTORESET_PATDET => "NO_RESET",
-      A_INPUT => "DIRECT",
-      BCASCREG => 0,
-      BREG => 0,
-      B_INPUT => "DIRECT",
-      CARRYINREG => 0,
-      CARRYINSELREG => 0,
-      CREG => 1,
-      DREG => 1,
-      INMODEREG => 0,
-      MASK => X"3FFFFFFFFFFF",
-      MREG => 0,
-      OPMODEREG => 0,
-      PATTERN => X"000000000000",
-      PREG => 0,
-      SEL_MASK => "MASK",
-      SEL_PATTERN => "PATTERN",
-      USE_DPORT => false,
-      USE_MULT => "MULTIPLY",
-      USE_PATTERN_DETECT => "NO_PATDET",
-      USE_SIMD => "ONE48"
-    )
-        port map (
-      A(29 downto 17) => B"0000000000000",
-      A(16) => DistX(31),
-      A(15) => DistX(31),
-      A(14) => DistX(31),
-      A(13) => DistX(31),
-      A(12) => DistX(31),
-      A(11) => DistX(31),
-      A(10) => DistX(31),
-      A(9 downto 0) => DistX(9 downto 0),
-      ACIN(29 downto 0) => B"000000000000000000000000000000",
-      ACOUT(29 downto 0) => \NLW_VGA_R2__4_ACOUT_UNCONNECTED\(29 downto 0),
-      ALUMODE(3 downto 0) => B"0000",
-      B(17) => DistX(31),
-      B(16) => DistX(31),
-      B(15) => DistX(31),
-      B(14) => DistX(31),
-      B(13) => DistX(31),
-      B(12) => DistX(31),
-      B(11) => DistX(31),
-      B(10) => DistX(31),
-      B(9) => DistX(31),
-      B(8) => DistX(31),
-      B(7) => DistX(31),
-      B(6) => DistX(31),
-      B(5) => DistX(31),
-      B(4) => DistX(31),
-      B(3) => DistX(31),
-      B(2) => DistX(31),
-      B(1) => DistX(31),
-      B(0) => DistX(31),
-      BCIN(17 downto 0) => B"000000000000000000",
-      BCOUT(17 downto 0) => \NLW_VGA_R2__4_BCOUT_UNCONNECTED\(17 downto 0),
-      C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
-      CARRYCASCIN => '0',
-      CARRYCASCOUT => \NLW_VGA_R2__4_CARRYCASCOUT_UNCONNECTED\,
-      CARRYIN => '0',
-      CARRYINSEL(2 downto 0) => B"000",
-      CARRYOUT(3 downto 0) => \NLW_VGA_R2__4_CARRYOUT_UNCONNECTED\(3 downto 0),
-      CEA1 => '0',
-      CEA2 => '0',
-      CEAD => '0',
-      CEALUMODE => '0',
-      CEB1 => '0',
-      CEB2 => '0',
-      CEC => '0',
-      CECARRYIN => '0',
-      CECTRL => '0',
-      CED => '0',
-      CEINMODE => '0',
-      CEM => '0',
-      CEP => '0',
-      CLK => '0',
-      D(24 downto 0) => B"0000000000000000000000000",
-      INMODE(4 downto 0) => B"00000",
-      MULTSIGNIN => '0',
-      MULTSIGNOUT => \NLW_VGA_R2__4_MULTSIGNOUT_UNCONNECTED\,
-      OPMODE(6 downto 0) => B"1010101",
-      OVERFLOW => \NLW_VGA_R2__4_OVERFLOW_UNCONNECTED\,
-      P(47) => \VGA_R2__4_n_58\,
-      P(46) => \VGA_R2__4_n_59\,
-      P(45) => \VGA_R2__4_n_60\,
-      P(44) => \VGA_R2__4_n_61\,
-      P(43) => \VGA_R2__4_n_62\,
-      P(42) => \VGA_R2__4_n_63\,
-      P(41) => \VGA_R2__4_n_64\,
-      P(40) => \VGA_R2__4_n_65\,
-      P(39) => \VGA_R2__4_n_66\,
-      P(38) => \VGA_R2__4_n_67\,
-      P(37) => \VGA_R2__4_n_68\,
-      P(36) => \VGA_R2__4_n_69\,
-      P(35) => \VGA_R2__4_n_70\,
-      P(34) => \VGA_R2__4_n_71\,
-      P(33) => \VGA_R2__4_n_72\,
-      P(32) => \VGA_R2__4_n_73\,
-      P(31) => \VGA_R2__4_n_74\,
-      P(30) => \VGA_R2__4_n_75\,
-      P(29) => \VGA_R2__4_n_76\,
-      P(28) => \VGA_R2__4_n_77\,
-      P(27) => \VGA_R2__4_n_78\,
-      P(26) => \VGA_R2__4_n_79\,
-      P(25) => \VGA_R2__4_n_80\,
-      P(24) => \VGA_R2__4_n_81\,
-      P(23) => \VGA_R2__4_n_82\,
-      P(22) => \VGA_R2__4_n_83\,
-      P(21) => \VGA_R2__4_n_84\,
-      P(20) => \VGA_R2__4_n_85\,
-      P(19) => \VGA_R2__4_n_86\,
-      P(18) => \VGA_R2__4_n_87\,
-      P(17) => \VGA_R2__4_n_88\,
-      P(16) => \VGA_R2__4_n_89\,
-      P(15) => \VGA_R2__4_n_90\,
-      P(14) => \VGA_R2__4_n_91\,
-      P(13) => \VGA_R2__4_n_92\,
-      P(12) => \VGA_R2__4_n_93\,
-      P(11) => \VGA_R2__4_n_94\,
-      P(10) => \VGA_R2__4_n_95\,
-      P(9) => \VGA_R2__4_n_96\,
-      P(8) => \VGA_R2__4_n_97\,
-      P(7) => \VGA_R2__4_n_98\,
-      P(6) => \VGA_R2__4_n_99\,
-      P(5) => \VGA_R2__4_n_100\,
-      P(4) => \VGA_R2__4_n_101\,
-      P(3) => \VGA_R2__4_n_102\,
-      P(2) => \VGA_R2__4_n_103\,
-      P(1) => \VGA_R2__4_n_104\,
-      P(0) => \VGA_R2__4_n_105\,
-      PATTERNBDETECT => \NLW_VGA_R2__4_PATTERNBDETECT_UNCONNECTED\,
-      PATTERNDETECT => \NLW_VGA_R2__4_PATTERNDETECT_UNCONNECTED\,
-      PCIN(47) => \VGA_R2__3_n_106\,
-      PCIN(46) => \VGA_R2__3_n_107\,
-      PCIN(45) => \VGA_R2__3_n_108\,
-      PCIN(44) => \VGA_R2__3_n_109\,
-      PCIN(43) => \VGA_R2__3_n_110\,
-      PCIN(42) => \VGA_R2__3_n_111\,
-      PCIN(41) => \VGA_R2__3_n_112\,
-      PCIN(40) => \VGA_R2__3_n_113\,
-      PCIN(39) => \VGA_R2__3_n_114\,
-      PCIN(38) => \VGA_R2__3_n_115\,
-      PCIN(37) => \VGA_R2__3_n_116\,
-      PCIN(36) => \VGA_R2__3_n_117\,
-      PCIN(35) => \VGA_R2__3_n_118\,
-      PCIN(34) => \VGA_R2__3_n_119\,
-      PCIN(33) => \VGA_R2__3_n_120\,
-      PCIN(32) => \VGA_R2__3_n_121\,
-      PCIN(31) => \VGA_R2__3_n_122\,
-      PCIN(30) => \VGA_R2__3_n_123\,
-      PCIN(29) => \VGA_R2__3_n_124\,
-      PCIN(28) => \VGA_R2__3_n_125\,
-      PCIN(27) => \VGA_R2__3_n_126\,
-      PCIN(26) => \VGA_R2__3_n_127\,
-      PCIN(25) => \VGA_R2__3_n_128\,
-      PCIN(24) => \VGA_R2__3_n_129\,
-      PCIN(23) => \VGA_R2__3_n_130\,
-      PCIN(22) => \VGA_R2__3_n_131\,
-      PCIN(21) => \VGA_R2__3_n_132\,
-      PCIN(20) => \VGA_R2__3_n_133\,
-      PCIN(19) => \VGA_R2__3_n_134\,
-      PCIN(18) => \VGA_R2__3_n_135\,
-      PCIN(17) => \VGA_R2__3_n_136\,
-      PCIN(16) => \VGA_R2__3_n_137\,
-      PCIN(15) => \VGA_R2__3_n_138\,
-      PCIN(14) => \VGA_R2__3_n_139\,
-      PCIN(13) => \VGA_R2__3_n_140\,
-      PCIN(12) => \VGA_R2__3_n_141\,
-      PCIN(11) => \VGA_R2__3_n_142\,
-      PCIN(10) => \VGA_R2__3_n_143\,
-      PCIN(9) => \VGA_R2__3_n_144\,
-      PCIN(8) => \VGA_R2__3_n_145\,
-      PCIN(7) => \VGA_R2__3_n_146\,
-      PCIN(6) => \VGA_R2__3_n_147\,
-      PCIN(5) => \VGA_R2__3_n_148\,
-      PCIN(4) => \VGA_R2__3_n_149\,
-      PCIN(3) => \VGA_R2__3_n_150\,
-      PCIN(2) => \VGA_R2__3_n_151\,
-      PCIN(1) => \VGA_R2__3_n_152\,
-      PCIN(0) => \VGA_R2__3_n_153\,
-      PCOUT(47 downto 0) => \NLW_VGA_R2__4_PCOUT_UNCONNECTED\(47 downto 0),
-      RSTA => '0',
-      RSTALLCARRYIN => '0',
-      RSTALUMODE => '0',
-      RSTB => '0',
-      RSTC => '0',
-      RSTCTRL => '0',
-      RSTD => '0',
-      RSTINMODE => '0',
-      RSTM => '0',
-      RSTP => '0',
-      UNDERFLOW => \NLW_VGA_R2__4_UNDERFLOW_UNCONNECTED\
-    );
 \VGA_R[0]_i_10\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(24),
-      I1 => VGA_R1(25),
+      I0 => VGA_R1_n_82,
+      I1 => VGA_R1_n_83,
       O => \VGA_R[0]_i_10_n_0\
-    );
-\VGA_R[0]_i_100\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_104\,
-      I1 => VGA_R2_n_104,
-      O => \VGA_R[0]_i_100_n_0\
-    );
-\VGA_R[0]_i_101\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_105\,
-      I1 => VGA_R2_n_105,
-      O => \VGA_R[0]_i_101_n_0\
     );
 \VGA_R[0]_i_11\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(22),
-      I1 => VGA_R1(23),
+      I0 => VGA_R1_n_84,
+      I1 => VGA_R1_n_85,
       O => \VGA_R[0]_i_11_n_0\
     );
 \VGA_R[0]_i_12\: unisim.vcomponents.LUT2
@@ -2947,134 +2030,53 @@ VGA_R2: unisim.vcomponents.DSP48E1
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(20),
-      I1 => VGA_R1(21),
+      I0 => VGA_R1_n_86,
+      I1 => VGA_R1_n_87,
       O => \VGA_R[0]_i_12_n_0\
     );
-\VGA_R[0]_i_13\: unisim.vcomponents.LUT2
+\VGA_R[0]_i_29\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(18),
-      I1 => VGA_R1(19),
-      O => \VGA_R[0]_i_13_n_0\
+      I0 => VGA_R1_n_88,
+      I1 => VGA_R1_n_89,
+      O => \VGA_R[0]_i_29_n_0\
     );
-\VGA_R[0]_i_21\: unisim.vcomponents.LUT2
+\VGA_R[0]_i_30\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(16),
-      I1 => VGA_R1(17),
-      O => \VGA_R[0]_i_21_n_0\
+      I0 => VGA_R1_n_90,
+      I1 => VGA_R1_n_91,
+      O => \VGA_R[0]_i_30_n_0\
     );
-\VGA_R[0]_i_22\: unisim.vcomponents.LUT2
+\VGA_R[0]_i_31\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(14),
-      I1 => VGA_R1(15),
-      O => \VGA_R[0]_i_22_n_0\
-    );
-\VGA_R[0]_i_23\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => VGA_R1(12),
-      I1 => VGA_R1(13),
-      O => \VGA_R[0]_i_23_n_0\
-    );
-\VGA_R[0]_i_24\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => VGA_R1(10),
-      I1 => VGA_R1(11),
-      O => \VGA_R[0]_i_24_n_0\
+      I0 => VGA_R1_n_92,
+      I1 => VGA_R1_n_93,
+      O => \VGA_R[0]_i_31_n_0\
     );
 \VGA_R[0]_i_32\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"6"
+      INIT => X"1"
     )
         port map (
-      I0 => \VGA_R2__4_n_91\,
-      I1 => \VGA_R2__2_n_91\,
+      I0 => VGA_R1_n_94,
+      I1 => VGA_R1_n_95,
       O => \VGA_R[0]_i_32_n_0\
-    );
-\VGA_R[0]_i_33\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_92\,
-      I1 => \VGA_R2__2_n_92\,
-      O => \VGA_R[0]_i_33_n_0\
-    );
-\VGA_R[0]_i_34\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_93\,
-      I1 => \VGA_R2__2_n_93\,
-      O => \VGA_R[0]_i_34_n_0\
-    );
-\VGA_R[0]_i_35\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_94\,
-      I1 => \VGA_R2__2_n_94\,
-      O => \VGA_R[0]_i_35_n_0\
-    );
-\VGA_R[0]_i_37\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => VGA_R1(0),
-      I1 => VGA_R1(1),
-      O => \VGA_R[0]_i_37_n_0\
-    );
-\VGA_R[0]_i_38\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => VGA_R1(8),
-      I1 => VGA_R1(9),
-      O => \VGA_R[0]_i_38_n_0\
-    );
-\VGA_R[0]_i_39\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => VGA_R1(8),
-      I1 => VGA_R1(9),
-      O => \VGA_R[0]_i_39_n_0\
-    );
-\VGA_R[0]_i_40\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => VGA_R1(6),
-      I1 => VGA_R1(7),
-      O => \VGA_R[0]_i_40_n_0\
     );
 \VGA_R[0]_i_41\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(4),
-      I1 => VGA_R1(5),
+      I0 => VGA_R1_n_105,
+      I1 => VGA_R1_n_104,
       O => \VGA_R[0]_i_41_n_0\
     );
 \VGA_R[0]_i_42\: unisim.vcomponents.LUT2
@@ -3082,721 +2084,90 @@ VGA_R2: unisim.vcomponents.DSP48E1
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(2),
-      I1 => VGA_R1(3),
+      I0 => VGA_R1_n_97,
+      I1 => VGA_R1_n_96,
       O => \VGA_R[0]_i_42_n_0\
     );
-\VGA_R[0]_i_55\: unisim.vcomponents.LUT2
+\VGA_R[0]_i_43\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"6"
+      INIT => X"2"
     )
         port map (
-      I0 => \VGA_R2__4_n_95\,
-      I1 => \VGA_R2__2_n_95\,
-      O => \VGA_R[0]_i_55_n_0\
+      I0 => VGA_R1_n_97,
+      I1 => VGA_R1_n_96,
+      O => \VGA_R[0]_i_43_n_0\
     );
-\VGA_R[0]_i_56\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_96\,
-      I1 => \VGA_R2__2_n_96\,
-      O => \VGA_R[0]_i_56_n_0\
-    );
-\VGA_R[0]_i_57\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_97\,
-      I1 => \VGA_R2__2_n_97\,
-      O => \VGA_R[0]_i_57_n_0\
-    );
-\VGA_R[0]_i_58\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_98\,
-      I1 => \VGA_R2__2_n_98\,
-      O => \VGA_R[0]_i_58_n_0\
-    );
-\VGA_R[0]_i_6\: unisim.vcomponents.LUT2
+\VGA_R[0]_i_44\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(30),
-      I1 => VGA_R1(31),
-      O => \VGA_R[0]_i_6_n_0\
+      I0 => VGA_R1_n_98,
+      I1 => VGA_R1_n_99,
+      O => \VGA_R[0]_i_44_n_0\
     );
-\VGA_R[0]_i_60\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_91\,
-      I1 => VGA_R2_n_91,
-      O => \VGA_R[0]_i_60_n_0\
-    );
-\VGA_R[0]_i_61\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_92\,
-      I1 => VGA_R2_n_92,
-      O => \VGA_R[0]_i_61_n_0\
-    );
-\VGA_R[0]_i_62\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_93\,
-      I1 => VGA_R2_n_93,
-      O => \VGA_R[0]_i_62_n_0\
-    );
-\VGA_R[0]_i_63\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_94\,
-      I1 => VGA_R2_n_94,
-      O => \VGA_R[0]_i_63_n_0\
-    );
-\VGA_R[0]_i_66\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_90\,
-      I1 => \VGA_R2__0_n_90\,
-      O => \VGA_R[0]_i_66_n_0\
-    );
-\VGA_R[0]_i_67\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_91\,
-      I1 => \VGA_R2__0_n_91\,
-      O => \VGA_R[0]_i_67_n_0\
-    );
-\VGA_R[0]_i_68\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_92\,
-      I1 => \VGA_R2__0_n_92\,
-      O => \VGA_R[0]_i_68_n_0\
-    );
-\VGA_R[0]_i_69\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_93\,
-      I1 => \VGA_R2__0_n_93\,
-      O => \VGA_R[0]_i_69_n_0\
-    );
-\VGA_R[0]_i_7\: unisim.vcomponents.LUT2
+\VGA_R[0]_i_45\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(28),
-      I1 => VGA_R1(29),
-      O => \VGA_R[0]_i_7_n_0\
+      I0 => VGA_R1_n_100,
+      I1 => VGA_R1_n_101,
+      O => \VGA_R[0]_i_45_n_0\
     );
-\VGA_R[0]_i_70\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_94\,
-      I1 => \VGA_R2__0_n_94\,
-      O => \VGA_R[0]_i_70_n_0\
-    );
-\VGA_R[0]_i_71\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_95\,
-      I1 => \VGA_R2__0_n_95\,
-      O => \VGA_R[0]_i_71_n_0\
-    );
-\VGA_R[0]_i_72\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_96\,
-      I1 => \VGA_R2__0_n_96\,
-      O => \VGA_R[0]_i_72_n_0\
-    );
-\VGA_R[0]_i_73\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_97\,
-      I1 => \VGA_R2__0_n_97\,
-      O => \VGA_R[0]_i_73_n_0\
-    );
-\VGA_R[0]_i_74\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_99\,
-      I1 => \VGA_R2__2_n_99\,
-      O => \VGA_R[0]_i_74_n_0\
-    );
-\VGA_R[0]_i_75\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_100\,
-      I1 => \VGA_R2__2_n_100\,
-      O => \VGA_R[0]_i_75_n_0\
-    );
-\VGA_R[0]_i_76\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_101\,
-      I1 => \VGA_R2__2_n_101\,
-      O => \VGA_R[0]_i_76_n_0\
-    );
-\VGA_R[0]_i_77\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_102\,
-      I1 => \VGA_R2__2_n_102\,
-      O => \VGA_R[0]_i_77_n_0\
-    );
-\VGA_R[0]_i_79\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_103\,
-      I1 => \VGA_R2__2_n_103\,
-      O => \VGA_R[0]_i_79_n_0\
-    );
-\VGA_R[0]_i_8\: unisim.vcomponents.LUT2
+\VGA_R[0]_i_46\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => VGA_R1(26),
-      I1 => VGA_R1(27),
-      O => \VGA_R[0]_i_8_n_0\
-    );
-\VGA_R[0]_i_80\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_104\,
-      I1 => \VGA_R2__2_n_104\,
-      O => \VGA_R[0]_i_80_n_0\
-    );
-\VGA_R[0]_i_81\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__4_n_105\,
-      I1 => \VGA_R2__2_n_105\,
-      O => \VGA_R[0]_i_81_n_0\
-    );
-\VGA_R[0]_i_83\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_95\,
-      I1 => VGA_R2_n_95,
-      O => \VGA_R[0]_i_83_n_0\
-    );
-\VGA_R[0]_i_84\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_96\,
-      I1 => VGA_R2_n_96,
-      O => \VGA_R[0]_i_84_n_0\
-    );
-\VGA_R[0]_i_85\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_97\,
-      I1 => VGA_R2_n_97,
-      O => \VGA_R[0]_i_85_n_0\
-    );
-\VGA_R[0]_i_86\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_98\,
-      I1 => VGA_R2_n_98,
-      O => \VGA_R[0]_i_86_n_0\
-    );
-\VGA_R[0]_i_87\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_102\,
-      I1 => \VGA_R2__0_n_102\,
-      O => \VGA_R[0]_i_87_n_0\
-    );
-\VGA_R[0]_i_88\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_103\,
-      I1 => \VGA_R2__0_n_103\,
-      O => \VGA_R[0]_i_88_n_0\
-    );
-\VGA_R[0]_i_89\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_104\,
-      I1 => \VGA_R2__0_n_104\,
-      O => \VGA_R[0]_i_89_n_0\
-    );
-\VGA_R[0]_i_90\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_105\,
-      I1 => \VGA_R2__0_n_105\,
-      O => \VGA_R[0]_i_90_n_0\
-    );
-\VGA_R[0]_i_91\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_98\,
-      I1 => \VGA_R2__0_n_98\,
-      O => \VGA_R[0]_i_91_n_0\
-    );
-\VGA_R[0]_i_92\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_99\,
-      I1 => \VGA_R2__0_n_99\,
-      O => \VGA_R[0]_i_92_n_0\
-    );
-\VGA_R[0]_i_93\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_100\,
-      I1 => \VGA_R2__0_n_100\,
-      O => \VGA_R[0]_i_93_n_0\
-    );
-\VGA_R[0]_i_94\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__3_n_101\,
-      I1 => \VGA_R2__0_n_101\,
-      O => \VGA_R[0]_i_94_n_0\
-    );
-\VGA_R[0]_i_95\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_99\,
-      I1 => VGA_R2_n_99,
-      O => \VGA_R[0]_i_95_n_0\
-    );
-\VGA_R[0]_i_96\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_100\,
-      I1 => VGA_R2_n_100,
-      O => \VGA_R[0]_i_96_n_0\
-    );
-\VGA_R[0]_i_97\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_101\,
-      I1 => VGA_R2_n_101,
-      O => \VGA_R[0]_i_97_n_0\
-    );
-\VGA_R[0]_i_98\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_102\,
-      I1 => VGA_R2_n_102,
-      O => \VGA_R[0]_i_98_n_0\
-    );
-\VGA_R[0]_i_99\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \VGA_R2__1_n_103\,
-      I1 => VGA_R2_n_103,
-      O => \VGA_R[0]_i_99_n_0\
+      I0 => VGA_R1_n_102,
+      I1 => VGA_R1_n_103,
+      O => \VGA_R[0]_i_46_n_0\
     );
 \VGA_R_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => vga_clk,
       CE => '1',
-      D => vga_inst_n_3,
+      D => vga_inst_n_24,
       Q => VGA_R(0),
       R => '0'
     );
-\VGA_R_reg[0]_i_14\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_25_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_14_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_14_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_14_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_14_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => \^vga_r2__4_2\(3 downto 0),
-      O(3 downto 0) => VGA_R1(27 downto 24),
-      S(3 downto 0) => \VGA_R[0]_i_10_0\(3 downto 0)
-    );
-\VGA_R_reg[0]_i_15\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_27_n_0\,
-      CO(3) => \NLW_VGA_R_reg[0]_i_15_CO_UNCONNECTED\(3),
-      CO(2) => \VGA_R_reg[0]_i_15_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_15_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_15_n_3\,
-      CYINIT => '0',
-      DI(3) => '0',
-      DI(2) => \VGA_R2__4_n_92\,
-      DI(1) => \VGA_R2__4_n_93\,
-      DI(0) => \VGA_R2__4_n_94\,
-      O(3 downto 0) => \^vga_r2__4_3\(3 downto 0),
-      S(3) => \VGA_R[0]_i_32_n_0\,
-      S(2) => \VGA_R[0]_i_33_n_0\,
-      S(1) => \VGA_R[0]_i_34_n_0\,
-      S(0) => \VGA_R[0]_i_35_n_0\
-    );
-\VGA_R_reg[0]_i_20\: unisim.vcomponents.CARRY4
+\VGA_R_reg[0]_i_28\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \VGA_R_reg[0]_i_20_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_20_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_20_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_20_n_3\,
-      CYINIT => \VGA_R[0]_i_37_n_0\,
-      DI(3) => \VGA_R[0]_i_38_n_0\,
+      CO(3) => \VGA_R_reg[0]_i_28_n_0\,
+      CO(2) => \VGA_R_reg[0]_i_28_n_1\,
+      CO(1) => \VGA_R_reg[0]_i_28_n_2\,
+      CO(0) => \VGA_R_reg[0]_i_28_n_3\,
+      CYINIT => \VGA_R[0]_i_41_n_0\,
+      DI(3) => \VGA_R[0]_i_42_n_0\,
       DI(2 downto 0) => B"000",
-      O(3 downto 0) => \NLW_VGA_R_reg[0]_i_20_O_UNCONNECTED\(3 downto 0),
-      S(3) => \VGA_R[0]_i_39_n_0\,
-      S(2) => \VGA_R[0]_i_40_n_0\,
-      S(1) => \VGA_R[0]_i_41_n_0\,
-      S(0) => \VGA_R[0]_i_42_n_0\
-    );
-\VGA_R_reg[0]_i_25\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_26_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_25_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_25_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_25_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_25_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => \^vga_r2__4_1\(3 downto 0),
-      O(3 downto 0) => VGA_R1(23 downto 20),
-      S(3 downto 0) => \VGA_R[0]_i_12_0\(3 downto 0)
-    );
-\VGA_R_reg[0]_i_26\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_43_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_26_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_26_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_26_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_26_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => \^vga_r2__4_0\(3 downto 0),
-      O(3 downto 0) => VGA_R1(19 downto 16),
-      S(3 downto 0) => S(3 downto 0)
-    );
-\VGA_R_reg[0]_i_27\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_45_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_27_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_27_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_27_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_27_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__4_n_95\,
-      DI(2) => \VGA_R2__4_n_96\,
-      DI(1) => \VGA_R2__4_n_97\,
-      DI(0) => \VGA_R2__4_n_98\,
-      O(3 downto 0) => \^vga_r2__4_2\(3 downto 0),
-      S(3) => \VGA_R[0]_i_55_n_0\,
-      S(2) => \VGA_R[0]_i_56_n_0\,
-      S(1) => \VGA_R[0]_i_57_n_0\,
-      S(0) => \VGA_R[0]_i_58_n_0\
+      O(3 downto 0) => \NLW_VGA_R_reg[0]_i_28_O_UNCONNECTED\(3 downto 0),
+      S(3) => \VGA_R[0]_i_43_n_0\,
+      S(2) => \VGA_R[0]_i_44_n_0\,
+      S(1) => \VGA_R[0]_i_45_n_0\,
+      S(0) => \VGA_R[0]_i_46_n_0\
     );
 \VGA_R_reg[0]_i_3\: unisim.vcomponents.CARRY4
      port map (
-      CI => \VGA_R_reg[0]_i_4_n_0\,
+      CI => \VGA_R_reg[0]_i_9_n_0\,
       CO(3) => \NLW_VGA_R_reg[0]_i_3_CO_UNCONNECTED\(3),
       CO(2) => is_pacman,
       CO(1) => \VGA_R_reg[0]_i_3_n_2\,
       CO(0) => \VGA_R_reg[0]_i_3_n_3\,
       CYINIT => '0',
       DI(3) => '0',
-      DI(2) => VGA_R1(31),
+      DI(2) => VGA_R1_n_82,
       DI(1 downto 0) => B"00",
       O(3 downto 0) => \NLW_VGA_R_reg[0]_i_3_O_UNCONNECTED\(3 downto 0),
       S(3) => '0',
-      S(2) => \VGA_R[0]_i_6_n_0\,
-      S(1) => \VGA_R[0]_i_7_n_0\,
-      S(0) => \VGA_R[0]_i_8_n_0\
-    );
-\VGA_R_reg[0]_i_36\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_59_n_0\,
-      CO(3) => \NLW_VGA_R_reg[0]_i_36_CO_UNCONNECTED\(3),
-      CO(2) => \VGA_R_reg[0]_i_36_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_36_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_36_n_3\,
-      CYINIT => '0',
-      DI(3) => '0',
-      DI(2) => \VGA_R2__1_n_92\,
-      DI(1) => \VGA_R2__1_n_93\,
-      DI(0) => \VGA_R2__1_n_94\,
-      O(3 downto 0) => \VGA_R2__1_2\(3 downto 0),
-      S(3) => \VGA_R[0]_i_60_n_0\,
-      S(2) => \VGA_R[0]_i_61_n_0\,
-      S(1) => \VGA_R[0]_i_62_n_0\,
-      S(0) => \VGA_R[0]_i_63_n_0\
-    );
-\VGA_R_reg[0]_i_4\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_9_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_4_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_4_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_4_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_4_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => \NLW_VGA_R_reg[0]_i_4_O_UNCONNECTED\(3 downto 0),
-      S(3) => \VGA_R[0]_i_10_n_0\,
-      S(2) => \VGA_R[0]_i_11_n_0\,
-      S(1) => \VGA_R[0]_i_12_n_0\,
-      S(0) => \VGA_R[0]_i_13_n_0\
-    );
-\VGA_R_reg[0]_i_43\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_44_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_43_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_43_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_43_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_43_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__3_n_90\,
-      DI(2) => \VGA_R2__3_n_91\,
-      DI(1) => \VGA_R2__3_n_92\,
-      DI(0) => \VGA_R2__3_n_93\,
-      O(3 downto 0) => VGA_R1(15 downto 12),
-      S(3) => \VGA_R[0]_i_66_n_0\,
-      S(2) => \VGA_R[0]_i_67_n_0\,
-      S(1) => \VGA_R[0]_i_68_n_0\,
-      S(0) => \VGA_R[0]_i_69_n_0\
-    );
-\VGA_R_reg[0]_i_44\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_65_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_44_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_44_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_44_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_44_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__3_n_94\,
-      DI(2) => \VGA_R2__3_n_95\,
-      DI(1) => \VGA_R2__3_n_96\,
-      DI(0) => \VGA_R2__3_n_97\,
-      O(3 downto 0) => VGA_R1(11 downto 8),
-      S(3) => \VGA_R[0]_i_70_n_0\,
-      S(2) => \VGA_R[0]_i_71_n_0\,
-      S(1) => \VGA_R[0]_i_72_n_0\,
-      S(0) => \VGA_R[0]_i_73_n_0\
-    );
-\VGA_R_reg[0]_i_45\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_50_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_45_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_45_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_45_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_45_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__4_n_99\,
-      DI(2) => \VGA_R2__4_n_100\,
-      DI(1) => \VGA_R2__4_n_101\,
-      DI(0) => \VGA_R2__4_n_102\,
-      O(3 downto 0) => \^vga_r2__4_1\(3 downto 0),
-      S(3) => \VGA_R[0]_i_74_n_0\,
-      S(2) => \VGA_R[0]_i_75_n_0\,
-      S(1) => \VGA_R[0]_i_76_n_0\,
-      S(0) => \VGA_R[0]_i_77_n_0\
-    );
-\VGA_R_reg[0]_i_5\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_14_n_0\,
-      CO(3) => \NLW_VGA_R_reg[0]_i_5_CO_UNCONNECTED\(3),
-      CO(2) => \VGA_R_reg[0]_i_5_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_5_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_5_n_3\,
-      CYINIT => '0',
-      DI(3) => '0',
-      DI(2 downto 0) => \^vga_r2__4_3\(2 downto 0),
-      O(3 downto 0) => VGA_R1(31 downto 28),
-      S(3 downto 0) => \VGA_R[0]_i_7_0\(3 downto 0)
-    );
-\VGA_R_reg[0]_i_50\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \VGA_R_reg[0]_i_50_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_50_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_50_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_50_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__4_n_103\,
-      DI(2) => \VGA_R2__4_n_104\,
-      DI(1) => \VGA_R2__4_n_105\,
-      DI(0) => '0',
-      O(3 downto 0) => \^vga_r2__4_0\(3 downto 0),
-      S(3) => \VGA_R[0]_i_79_n_0\,
-      S(2) => \VGA_R[0]_i_80_n_0\,
-      S(1) => \VGA_R[0]_i_81_n_0\,
-      S(0) => \VGA_R2__3_n_89\
-    );
-\VGA_R_reg[0]_i_59\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_78_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_59_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_59_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_59_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_59_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__1_n_95\,
-      DI(2) => \VGA_R2__1_n_96\,
-      DI(1) => \VGA_R2__1_n_97\,
-      DI(0) => \VGA_R2__1_n_98\,
-      O(3 downto 0) => \VGA_R2__1_1\(3 downto 0),
-      S(3) => \VGA_R[0]_i_83_n_0\,
-      S(2) => \VGA_R[0]_i_84_n_0\,
-      S(1) => \VGA_R[0]_i_85_n_0\,
-      S(0) => \VGA_R[0]_i_86_n_0\
-    );
-\VGA_R_reg[0]_i_64\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \VGA_R_reg[0]_i_64_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_64_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_64_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_64_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__3_n_102\,
-      DI(2) => \VGA_R2__3_n_103\,
-      DI(1) => \VGA_R2__3_n_104\,
-      DI(0) => \VGA_R2__3_n_105\,
-      O(3 downto 0) => VGA_R1(3 downto 0),
-      S(3) => \VGA_R[0]_i_87_n_0\,
-      S(2) => \VGA_R[0]_i_88_n_0\,
-      S(1) => \VGA_R[0]_i_89_n_0\,
-      S(0) => \VGA_R[0]_i_90_n_0\
-    );
-\VGA_R_reg[0]_i_65\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_64_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_65_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_65_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_65_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_65_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__3_n_98\,
-      DI(2) => \VGA_R2__3_n_99\,
-      DI(1) => \VGA_R2__3_n_100\,
-      DI(0) => \VGA_R2__3_n_101\,
-      O(3 downto 0) => VGA_R1(7 downto 4),
-      S(3) => \VGA_R[0]_i_91_n_0\,
-      S(2) => \VGA_R[0]_i_92_n_0\,
-      S(1) => \VGA_R[0]_i_93_n_0\,
-      S(0) => \VGA_R[0]_i_94_n_0\
-    );
-\VGA_R_reg[0]_i_78\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \VGA_R_reg[0]_i_82_n_0\,
-      CO(3) => \VGA_R_reg[0]_i_78_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_78_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_78_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_78_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__1_n_99\,
-      DI(2) => \VGA_R2__1_n_100\,
-      DI(1) => \VGA_R2__1_n_101\,
-      DI(0) => \VGA_R2__1_n_102\,
-      O(3 downto 0) => \VGA_R2__1_0\(3 downto 0),
-      S(3) => \VGA_R[0]_i_95_n_0\,
-      S(2) => \VGA_R[0]_i_96_n_0\,
-      S(1) => \VGA_R[0]_i_97_n_0\,
-      S(0) => \VGA_R[0]_i_98_n_0\
-    );
-\VGA_R_reg[0]_i_82\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \VGA_R_reg[0]_i_82_n_0\,
-      CO(2) => \VGA_R_reg[0]_i_82_n_1\,
-      CO(1) => \VGA_R_reg[0]_i_82_n_2\,
-      CO(0) => \VGA_R_reg[0]_i_82_n_3\,
-      CYINIT => '0',
-      DI(3) => \VGA_R2__1_n_103\,
-      DI(2) => \VGA_R2__1_n_104\,
-      DI(1) => \VGA_R2__1_n_105\,
-      DI(0) => '0',
-      O(3 downto 0) => O(3 downto 0),
-      S(3) => \VGA_R[0]_i_99_n_0\,
-      S(2) => \VGA_R[0]_i_100_n_0\,
-      S(1) => \VGA_R[0]_i_101_n_0\,
-      S(0) => \VGA_R2__0_n_89\
+      S(2) => \VGA_R[0]_i_10_n_0\,
+      S(1) => \VGA_R[0]_i_11_n_0\,
+      S(0) => \VGA_R[0]_i_12_n_0\
     );
 \VGA_R_reg[0]_i_9\: unisim.vcomponents.CARRY4
      port map (
-      CI => \VGA_R_reg[0]_i_20_n_0\,
+      CI => \VGA_R_reg[0]_i_28_n_0\,
       CO(3) => \VGA_R_reg[0]_i_9_n_0\,
       CO(2) => \VGA_R_reg[0]_i_9_n_1\,
       CO(1) => \VGA_R_reg[0]_i_9_n_2\,
@@ -3804,26 +2175,38 @@ VGA_R2: unisim.vcomponents.DSP48E1
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
       O(3 downto 0) => \NLW_VGA_R_reg[0]_i_9_O_UNCONNECTED\(3 downto 0),
-      S(3) => \VGA_R[0]_i_21_n_0\,
-      S(2) => \VGA_R[0]_i_22_n_0\,
-      S(1) => \VGA_R[0]_i_23_n_0\,
-      S(0) => \VGA_R[0]_i_24_n_0\
+      S(3) => \VGA_R[0]_i_29_n_0\,
+      S(2) => \VGA_R[0]_i_30_n_0\,
+      S(1) => \VGA_R[0]_i_31_n_0\,
+      S(0) => \VGA_R[0]_i_32_n_0\
     );
-vga_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_vga_controller
+vga_inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_vga_controller
      port map (
-      A(10) => DistY(31),
-      A(9 downto 0) => DistY(9 downto 0),
       AR(0) => SR(0),
+      B(10) => B(11),
+      B(9 downto 0) => B(9 downto 0),
       CO(0) => is_pacman,
+      Q(9 downto 0) => DrawY(9 downto 0),
       VGA_HS => VGA_HS,
+      VGA_R1(9 downto 0) => Q(9 downto 0),
+      VGA_R2(9 downto 0) => VGA_R2_0(9 downto 0),
       VGA_VS => VGA_VS,
       active_nblank => active_nblank,
-      \hc_reg[9]_0\(10) => DistX(31),
-      \hc_reg[9]_0\(9 downto 0) => DistX(9 downto 0),
-      pacman_x(9 downto 0) => pacman_x(9 downto 0),
-      pacman_y(9 downto 0) => pacman_y(9 downto 0),
+      \hc_reg[9]_0\(9 downto 0) => DrawX(9 downto 0),
+      \hc_reg[9]_1\ => vga_inst_n_23,
+      \hc_reg[9]_2\(10) => vga_inst_n_37,
+      \hc_reg[9]_2\(9) => vga_inst_n_38,
+      \hc_reg[9]_2\(8) => vga_inst_n_39,
+      \hc_reg[9]_2\(7) => vga_inst_n_40,
+      \hc_reg[9]_2\(6) => vga_inst_n_41,
+      \hc_reg[9]_2\(5) => vga_inst_n_42,
+      \hc_reg[9]_2\(4) => vga_inst_n_43,
+      \hc_reg[9]_2\(3) => vga_inst_n_44,
+      \hc_reg[9]_2\(2) => vga_inst_n_45,
+      \hc_reg[9]_2\(1) => vga_inst_n_46,
+      \hc_reg[9]_2\(0) => vga_inst_n_47,
       s00_axi_aresetn => s00_axi_aresetn,
-      s00_axi_aresetn_0 => vga_inst_n_3,
+      \vc_reg[9]_0\ => vga_inst_n_24,
       vga_clk => vga_clk
     );
 end STRUCTURE;
@@ -3831,28 +2214,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0_S00_AXI is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0_S00_AXI is
   port (
-    VGA_HS : out STD_LOGIC;
-    VGA_VS : out STD_LOGIC;
-    VGA_R : out STD_LOGIC_VECTOR ( 0 to 0 );
     axi_wready_reg_0 : out STD_LOGIC;
     axi_awready_reg_0 : out STD_LOGIC;
     axi_arready_reg_0 : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
     aw_en_reg_0 : out STD_LOGIC;
     s00_axi_rvalid : out STD_LOGIC;
-    active_nblank : out STD_LOGIC;
-    O : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1_1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_2\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    pacman_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    pacman_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    Q : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    \slv_reg0_reg[9]_0\ : out STD_LOGIC_VECTOR ( 9 downto 0 );
     ghost1_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
     ghost1_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
     ghost2_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
@@ -3865,30 +2236,30 @@ entity mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0_S00_AXI is
     game_status : out STD_LOGIC_VECTOR ( 3 downto 0 );
     lives : out STD_LOGIC_VECTOR ( 3 downto 0 );
     level : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    VGA_VS : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    vga_clk : in STD_LOGIC;
+    VGA_HS : out STD_LOGIC;
+    active_nblank : out STD_LOGIC;
+    VGA_R : out STD_LOGIC_VECTOR ( 0 to 0 );
+    VGA_B : out STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aclk : in STD_LOGIC;
     axi_bvalid_reg_0 : in STD_LOGIC;
     aw_en_reg_1 : in STD_LOGIC;
     axi_rvalid_reg_0 : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
-    S : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_12\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_10\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_7\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s00_axi_wvalid : in STD_LOGIC;
     s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_arvalid : in STD_LOGIC
+    s00_axi_arvalid : in STD_LOGIC;
+    vga_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0_S00_AXI : entity is "pacman_AXI4_graphics_v1_0_S00_AXI";
-end mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0_S00_AXI;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0_S00_AXI;
 
-architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0_S00_AXI is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0_S00_AXI is
+  signal \^q\ : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal \^vga_vs\ : STD_LOGIC;
   signal \^aw_en_reg_0\ : STD_LOGIC;
   signal \axi_araddr_reg[2]_rep_n_0\ : STD_LOGIC;
@@ -4297,14 +2668,13 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphic
   signal \^lives\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal p_0_in : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 7 );
-  signal \^pacman_x\ : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal \^pacman_y\ : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal reg_data_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal reset0 : STD_LOGIC;
   signal \^s00_axi_rvalid\ : STD_LOGIC;
   signal sel0 : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal slv_reg0 : STD_LOGIC_VECTOR ( 31 downto 10 );
   signal \slv_reg0[9]_i_3_n_0\ : STD_LOGIC;
+  signal \^slv_reg0_reg[9]_0\ : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal slv_reg1 : STD_LOGIC_VECTOR ( 31 downto 10 );
   signal \slv_reg10[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg10[23]_i_1_n_0\ : STD_LOGIC;
@@ -4462,6 +2832,7 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphic
   attribute ORIG_CELL_NAME of \axi_araddr_reg[3]\ : label is "axi_araddr_reg[3]";
   attribute ORIG_CELL_NAME of \axi_araddr_reg[3]_rep\ : label is "axi_araddr_reg[3]";
 begin
+  Q(9 downto 0) <= \^q\(9 downto 0);
   VGA_VS <= \^vga_vs\;
   aw_en_reg_0 <= \^aw_en_reg_0\;
   axi_arready_reg_0 <= \^axi_arready_reg_0\;
@@ -4479,9 +2850,8 @@ begin
   ghost4_y(9 downto 0) <= \^ghost4_y\(9 downto 0);
   level(7 downto 0) <= \^level\(7 downto 0);
   lives(3 downto 0) <= \^lives\(3 downto 0);
-  pacman_x(9 downto 0) <= \^pacman_x\(9 downto 0);
-  pacman_y(9 downto 0) <= \^pacman_y\(9 downto 0);
   s00_axi_rvalid <= \^s00_axi_rvalid\;
+  \slv_reg0_reg[9]_0\(9 downto 0) <= \^slv_reg0_reg[9]_0\(9 downto 0);
 aw_en_reg: unisim.vcomponents.FDSE
      port map (
       C => s00_axi_aclk,
@@ -4677,9 +3047,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(0),
       I1 => \^ghost1_x\(0),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(0),
+      I3 => \^q\(0),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(0),
+      I5 => \^slv_reg0_reg[9]_0\(0),
       O => \axi_rdata[0]_i_12_n_0\
     );
 \axi_rdata[0]_i_13\: unisim.vcomponents.LUT6
@@ -5953,9 +4323,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(1),
       I1 => \^ghost1_x\(1),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(1),
+      I3 => \^q\(1),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(1),
+      I5 => \^slv_reg0_reg[9]_0\(1),
       O => \axi_rdata[1]_i_12_n_0\
     );
 \axi_rdata[1]_i_13\: unisim.vcomponents.LUT6
@@ -7229,9 +5599,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(2),
       I1 => \^ghost1_x\(2),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(2),
+      I3 => \^q\(2),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(2),
+      I5 => \^slv_reg0_reg[9]_0\(2),
       O => \axi_rdata[2]_i_12_n_0\
     );
 \axi_rdata[2]_i_13\: unisim.vcomponents.LUT6
@@ -7587,9 +5957,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(3),
       I1 => \^ghost1_x\(3),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(3),
+      I3 => \^q\(3),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(3),
+      I5 => \^slv_reg0_reg[9]_0\(3),
       O => \axi_rdata[3]_i_12_n_0\
     );
 \axi_rdata[3]_i_13\: unisim.vcomponents.LUT6
@@ -7703,9 +6073,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(4),
       I1 => \^ghost1_x\(4),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(4),
+      I3 => \^q\(4),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(4),
+      I5 => \^slv_reg0_reg[9]_0\(4),
       O => \axi_rdata[4]_i_12_n_0\
     );
 \axi_rdata[4]_i_13\: unisim.vcomponents.LUT6
@@ -7819,9 +6189,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(5),
       I1 => \^ghost1_x\(5),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(5),
+      I3 => \^q\(5),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(5),
+      I5 => \^slv_reg0_reg[9]_0\(5),
       O => \axi_rdata[5]_i_12_n_0\
     );
 \axi_rdata[5]_i_13\: unisim.vcomponents.LUT6
@@ -7935,9 +6305,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(6),
       I1 => \^ghost1_x\(6),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(6),
+      I3 => \^q\(6),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(6),
+      I5 => \^slv_reg0_reg[9]_0\(6),
       O => \axi_rdata[6]_i_12_n_0\
     );
 \axi_rdata[6]_i_13\: unisim.vcomponents.LUT6
@@ -8051,9 +6421,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(7),
       I1 => \^ghost1_x\(7),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(7),
+      I3 => \^q\(7),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(7),
+      I5 => \^slv_reg0_reg[9]_0\(7),
       O => \axi_rdata[7]_i_12_n_0\
     );
 \axi_rdata[7]_i_13\: unisim.vcomponents.LUT6
@@ -8167,9 +6537,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(8),
       I1 => \^ghost1_x\(8),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(8),
+      I3 => \^q\(8),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(8),
+      I5 => \^slv_reg0_reg[9]_0\(8),
       O => \axi_rdata[8]_i_12_n_0\
     );
 \axi_rdata[8]_i_13\: unisim.vcomponents.LUT6
@@ -8283,9 +6653,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => \^ghost1_y\(9),
       I1 => \^ghost1_x\(9),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \^pacman_y\(9),
+      I3 => \^q\(9),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => \^pacman_x\(9),
+      I5 => \^slv_reg0_reg[9]_0\(9),
       O => \axi_rdata[9]_i_12_n_0\
     );
 \axi_rdata[9]_i_13\: unisim.vcomponents.LUT6
@@ -9532,27 +7902,16 @@ axi_wready_reg: unisim.vcomponents.FDRE
       Q => \^axi_wready_reg_0\,
       R => reset0
     );
-pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engine
+pacman_render_inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_graphics_engine
      port map (
-      O(3 downto 0) => O(3 downto 0),
-      S(3 downto 0) => S(3 downto 0),
+      Q(9 downto 0) => \^q\(9 downto 0),
       SR(0) => reset0,
+      VGA_B(0) => VGA_B(0),
       VGA_HS => VGA_HS,
       VGA_R(0) => VGA_R(0),
-      \VGA_R2__1_0\(3 downto 0) => \VGA_R2__1\(3 downto 0),
-      \VGA_R2__1_1\(3 downto 0) => \VGA_R2__1_0\(3 downto 0),
-      \VGA_R2__1_2\(3 downto 0) => \VGA_R2__1_1\(3 downto 0),
-      \VGA_R2__4_0\(3 downto 0) => \VGA_R2__4\(3 downto 0),
-      \VGA_R2__4_1\(3 downto 0) => \VGA_R2__4_0\(3 downto 0),
-      \VGA_R2__4_2\(3 downto 0) => \VGA_R2__4_1\(3 downto 0),
-      \VGA_R2__4_3\(3 downto 0) => \VGA_R2__4_2\(3 downto 0),
-      \VGA_R[0]_i_10_0\(3 downto 0) => \VGA_R[0]_i_10\(3 downto 0),
-      \VGA_R[0]_i_12_0\(3 downto 0) => \VGA_R[0]_i_12\(3 downto 0),
-      \VGA_R[0]_i_7_0\(3 downto 0) => \VGA_R[0]_i_7\(3 downto 0),
+      VGA_R2_0(9 downto 0) => \^slv_reg0_reg[9]_0\(9 downto 0),
       VGA_VS => \^vga_vs\,
       active_nblank => active_nblank,
-      pacman_x(9 downto 0) => \^pacman_x\(9 downto 0),
-      pacman_y(9 downto 0) => \^pacman_y\(9 downto 0),
       s00_axi_aresetn => s00_axi_aresetn,
       vga_clk => vga_clk
     );
@@ -9625,7 +7984,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(0),
-      Q => \^pacman_x\(0),
+      Q => \^slv_reg0_reg[9]_0\(0),
       R => reset0
     );
 \slv_reg0_reg[10]\: unisim.vcomponents.FDRE
@@ -9713,7 +8072,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(1),
-      Q => \^pacman_x\(1),
+      Q => \^slv_reg0_reg[9]_0\(1),
       R => reset0
     );
 \slv_reg0_reg[20]\: unisim.vcomponents.FDRE
@@ -9801,7 +8160,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(2),
-      Q => \^pacman_x\(2),
+      Q => \^slv_reg0_reg[9]_0\(2),
       R => reset0
     );
 \slv_reg0_reg[30]\: unisim.vcomponents.FDRE
@@ -9825,7 +8184,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(3),
-      Q => \^pacman_x\(3),
+      Q => \^slv_reg0_reg[9]_0\(3),
       R => reset0
     );
 \slv_reg0_reg[4]\: unisim.vcomponents.FDRE
@@ -9833,7 +8192,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(4),
-      Q => \^pacman_x\(4),
+      Q => \^slv_reg0_reg[9]_0\(4),
       R => reset0
     );
 \slv_reg0_reg[5]\: unisim.vcomponents.FDRE
@@ -9841,7 +8200,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(5),
-      Q => \^pacman_x\(5),
+      Q => \^slv_reg0_reg[9]_0\(5),
       R => reset0
     );
 \slv_reg0_reg[6]\: unisim.vcomponents.FDRE
@@ -9849,7 +8208,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(6),
-      Q => \^pacman_x\(6),
+      Q => \^slv_reg0_reg[9]_0\(6),
       R => reset0
     );
 \slv_reg0_reg[7]\: unisim.vcomponents.FDRE
@@ -9857,7 +8216,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(7),
       D => s00_axi_wdata(7),
-      Q => \^pacman_x\(7),
+      Q => \^slv_reg0_reg[9]_0\(7),
       R => reset0
     );
 \slv_reg0_reg[8]\: unisim.vcomponents.FDRE
@@ -9865,7 +8224,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(9),
       D => s00_axi_wdata(8),
-      Q => \^pacman_x\(8),
+      Q => \^slv_reg0_reg[9]_0\(8),
       R => reset0
     );
 \slv_reg0_reg[9]\: unisim.vcomponents.FDRE
@@ -9873,7 +8232,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => p_1_in(9),
       D => s00_axi_wdata(9),
-      Q => \^pacman_x\(9),
+      Q => \^slv_reg0_reg[9]_0\(9),
       R => reset0
     );
 \slv_reg10[15]_i_1\: unisim.vcomponents.LUT6
@@ -12717,7 +11076,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(0),
-      Q => \^pacman_y\(0),
+      Q => \^q\(0),
       R => reset0
     );
 \slv_reg1_reg[10]\: unisim.vcomponents.FDRE
@@ -12805,7 +11164,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(1),
-      Q => \^pacman_y\(1),
+      Q => \^q\(1),
       R => reset0
     );
 \slv_reg1_reg[20]\: unisim.vcomponents.FDRE
@@ -12893,7 +11252,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(2),
-      Q => \^pacman_y\(2),
+      Q => \^q\(2),
       R => reset0
     );
 \slv_reg1_reg[30]\: unisim.vcomponents.FDRE
@@ -12917,7 +11276,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(3),
-      Q => \^pacman_y\(3),
+      Q => \^q\(3),
       R => reset0
     );
 \slv_reg1_reg[4]\: unisim.vcomponents.FDRE
@@ -12925,7 +11284,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(4),
-      Q => \^pacman_y\(4),
+      Q => \^q\(4),
       R => reset0
     );
 \slv_reg1_reg[5]\: unisim.vcomponents.FDRE
@@ -12933,7 +11292,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(5),
-      Q => \^pacman_y\(5),
+      Q => \^q\(5),
       R => reset0
     );
 \slv_reg1_reg[6]\: unisim.vcomponents.FDRE
@@ -12941,7 +11300,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(6),
-      Q => \^pacman_y\(6),
+      Q => \^q\(6),
       R => reset0
     );
 \slv_reg1_reg[7]\: unisim.vcomponents.FDRE
@@ -12949,7 +11308,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(7),
-      Q => \^pacman_y\(7),
+      Q => \^q\(7),
       R => reset0
     );
 \slv_reg1_reg[8]\: unisim.vcomponents.FDRE
@@ -12957,7 +11316,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[9]_i_1_n_0\,
       D => s00_axi_wdata(8),
-      Q => \^pacman_y\(8),
+      Q => \^q\(8),
       R => reset0
     );
 \slv_reg1_reg[9]\: unisim.vcomponents.FDRE
@@ -12965,7 +11324,7 @@ pacman_render_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_graphics_engi
       C => s00_axi_aclk,
       CE => \slv_reg1[9]_i_1_n_0\,
       D => s00_axi_wdata(9),
-      Q => \^pacman_y\(9),
+      Q => \^q\(9),
       R => reset0
     );
 \slv_reg20[15]_i_1\: unisim.vcomponents.LUT6
@@ -19133,27 +17492,18 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0 is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0 is
   port (
-    VGA_HS : out STD_LOGIC;
-    VGA_VS : out STD_LOGIC;
-    VGA_R : out STD_LOGIC_VECTOR ( 0 to 0 );
-    axi_wready_reg : out STD_LOGIC;
-    axi_awready_reg : out STD_LOGIC;
-    axi_arready_reg : out STD_LOGIC;
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_rvalid : out STD_LOGIC;
-    active_nblank : out STD_LOGIC;
-    O : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__1_1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R2__4_2\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     pacman_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
     pacman_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    VGA_HS : out STD_LOGIC;
+    VGA_VS : out STD_LOGIC;
+    active_nblank : out STD_LOGIC;
+    VGA_R : out STD_LOGIC_VECTOR ( 0 to 0 );
+    VGA_B : out STD_LOGIC_VECTOR ( 0 to 0 );
+    S_AXI_WREADY : out STD_LOGIC;
+    S_AXI_AWREADY : out STD_LOGIC;
+    S_AXI_ARREADY : out STD_LOGIC;
     ghost1_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
     ghost1_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
     ghost2_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
@@ -19167,41 +17517,37 @@ entity mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0 is
     lives : out STD_LOGIC_VECTOR ( 3 downto 0 );
     level : out STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC;
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_clk : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC;
-    S : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_12\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_10\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \VGA_R[0]_i_7\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0 : entity is "pacman_AXI4_graphics_v1_0";
-end mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0;
 
-architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0 is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0 is
+  signal \^s_axi_arready\ : STD_LOGIC;
+  signal \^s_axi_awready\ : STD_LOGIC;
+  signal \^s_axi_wready\ : STD_LOGIC;
   signal aw_en_i_1_n_0 : STD_LOGIC;
-  signal \^axi_arready_reg\ : STD_LOGIC;
-  signal \^axi_awready_reg\ : STD_LOGIC;
   signal axi_bvalid_i_1_n_0 : STD_LOGIC;
   signal axi_rvalid_i_1_n_0 : STD_LOGIC;
-  signal \^axi_wready_reg\ : STD_LOGIC;
-  signal pacman_AXI4_graphics_v1_0_S00_AXI_inst_n_7 : STD_LOGIC;
+  signal pacman_AXI4_graphics_v1_0_S00_AXI_inst_n_4 : STD_LOGIC;
   signal \^s00_axi_bvalid\ : STD_LOGIC;
   signal \^s00_axi_rvalid\ : STD_LOGIC;
 begin
-  axi_arready_reg <= \^axi_arready_reg\;
-  axi_awready_reg <= \^axi_awready_reg\;
-  axi_wready_reg <= \^axi_wready_reg\;
+  S_AXI_ARREADY <= \^s_axi_arready\;
+  S_AXI_AWREADY <= \^s_axi_awready\;
+  S_AXI_WREADY <= \^s_axi_wready\;
   s00_axi_bvalid <= \^s00_axi_bvalid\;
   s00_axi_rvalid <= \^s00_axi_rvalid\;
 aw_en_i_1: unisim.vcomponents.LUT6
@@ -19211,10 +17557,10 @@ aw_en_i_1: unisim.vcomponents.LUT6
         port map (
       I0 => s00_axi_bready,
       I1 => \^s00_axi_bvalid\,
-      I2 => \^axi_awready_reg\,
+      I2 => \^s_axi_awready\,
       I3 => s00_axi_awvalid,
       I4 => s00_axi_wvalid,
-      I5 => pacman_AXI4_graphics_v1_0_S00_AXI_inst_n_7,
+      I5 => pacman_AXI4_graphics_v1_0_S00_AXI_inst_n_4,
       O => aw_en_i_1_n_0
     );
 axi_bvalid_i_1: unisim.vcomponents.LUT6
@@ -19224,8 +17570,8 @@ axi_bvalid_i_1: unisim.vcomponents.LUT6
         port map (
       I0 => s00_axi_bready,
       I1 => \^s00_axi_bvalid\,
-      I2 => \^axi_wready_reg\,
-      I3 => \^axi_awready_reg\,
+      I2 => \^s_axi_wready\,
+      I3 => \^s_axi_awready\,
       I4 => s00_axi_awvalid,
       I5 => s00_axi_wvalid,
       O => axi_bvalid_i_1_n_0
@@ -19235,37 +17581,27 @@ axi_rvalid_i_1: unisim.vcomponents.LUT4
       INIT => X"08F8"
     )
         port map (
-      I0 => \^axi_arready_reg\,
+      I0 => \^s_axi_arready\,
       I1 => s00_axi_arvalid,
       I2 => \^s00_axi_rvalid\,
       I3 => s00_axi_rready,
       O => axi_rvalid_i_1_n_0
     );
-pacman_AXI4_graphics_v1_0_S00_AXI_inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0_S00_AXI
+pacman_AXI4_graphics_v1_0_S00_AXI_inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0_S00_AXI
      port map (
-      O(3 downto 0) => O(3 downto 0),
-      S(3 downto 0) => S(3 downto 0),
+      Q(9 downto 0) => pacman_y(9 downto 0),
+      VGA_B(0) => VGA_B(0),
       VGA_HS => VGA_HS,
       VGA_R(0) => VGA_R(0),
-      \VGA_R2__1\(3 downto 0) => \VGA_R2__1\(3 downto 0),
-      \VGA_R2__1_0\(3 downto 0) => \VGA_R2__1_0\(3 downto 0),
-      \VGA_R2__1_1\(3 downto 0) => \VGA_R2__1_1\(3 downto 0),
-      \VGA_R2__4\(3 downto 0) => \VGA_R2__4\(3 downto 0),
-      \VGA_R2__4_0\(3 downto 0) => \VGA_R2__4_0\(3 downto 0),
-      \VGA_R2__4_1\(3 downto 0) => \VGA_R2__4_1\(3 downto 0),
-      \VGA_R2__4_2\(3 downto 0) => \VGA_R2__4_2\(3 downto 0),
-      \VGA_R[0]_i_10\(3 downto 0) => \VGA_R[0]_i_10\(3 downto 0),
-      \VGA_R[0]_i_12\(3 downto 0) => \VGA_R[0]_i_12\(3 downto 0),
-      \VGA_R[0]_i_7\(3 downto 0) => \VGA_R[0]_i_7\(3 downto 0),
       VGA_VS => VGA_VS,
       active_nblank => active_nblank,
-      aw_en_reg_0 => pacman_AXI4_graphics_v1_0_S00_AXI_inst_n_7,
+      aw_en_reg_0 => pacman_AXI4_graphics_v1_0_S00_AXI_inst_n_4,
       aw_en_reg_1 => aw_en_i_1_n_0,
-      axi_arready_reg_0 => \^axi_arready_reg\,
-      axi_awready_reg_0 => \^axi_awready_reg\,
+      axi_arready_reg_0 => \^s_axi_arready\,
+      axi_awready_reg_0 => \^s_axi_awready\,
       axi_bvalid_reg_0 => axi_bvalid_i_1_n_0,
       axi_rvalid_reg_0 => axi_rvalid_i_1_n_0,
-      axi_wready_reg_0 => \^axi_wready_reg\,
+      axi_wready_reg_0 => \^s_axi_wready\,
       game_score(31 downto 0) => game_score(31 downto 0),
       game_status(3 downto 0) => game_status(3 downto 0),
       ghost1_x(9 downto 0) => ghost1_x(9 downto 0),
@@ -19278,8 +17614,6 @@ pacman_AXI4_graphics_v1_0_S00_AXI_inst: entity work.mb_pacman_pacman_AXI4_graphi
       ghost4_y(9 downto 0) => ghost4_y(9 downto 0),
       level(7 downto 0) => level(7 downto 0),
       lives(3 downto 0) => lives(3 downto 0),
-      pacman_x(9 downto 0) => pacman_x(9 downto 0),
-      pacman_y(9 downto 0) => pacman_y(9 downto 0),
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(4 downto 0) => s00_axi_araddr(4 downto 0),
       s00_axi_aresetn => s00_axi_aresetn,
@@ -19292,6 +17626,7 @@ pacman_AXI4_graphics_v1_0_S00_AXI_inst: entity work.mb_pacman_pacman_AXI4_graphi
       s00_axi_wdata(31 downto 0) => s00_axi_wdata(31 downto 0),
       s00_axi_wstrb(3 downto 0) => s00_axi_wstrb(3 downto 0),
       s00_axi_wvalid => s00_axi_wvalid,
+      \slv_reg0_reg[9]_0\(9 downto 0) => pacman_x(9 downto 0),
       vga_clk => vga_clk
     );
 end STRUCTURE;
@@ -19299,7 +17634,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity mb_pacman_pacman_AXI4_graphics_0_0 is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     pacman_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
     pacman_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
@@ -19345,70 +17680,23 @@ entity mb_pacman_pacman_AXI4_graphics_0_0 is
     s00_axi_rready : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of mb_pacman_pacman_AXI4_graphics_0_0 : entity is true;
+  attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of mb_pacman_pacman_AXI4_graphics_0_0 : entity is "mb_pacman_pacman_AXI4_graphics_0_0,pacman_AXI4_graphics_v1_0,{}";
+  attribute CHECK_LICENSE_TYPE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "mb_pacman_pacman_AXI4_graphics_0_0,pacman_AXI4_graphics_v1_0,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of mb_pacman_pacman_AXI4_graphics_0_0 : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of mb_pacman_pacman_AXI4_graphics_0_0 : entity is "pacman_AXI4_graphics_v1_0,Vivado 2022.2";
-end mb_pacman_pacman_AXI4_graphics_0_0;
+  attribute X_CORE_INFO of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "pacman_AXI4_graphics_v1_0,Vivado 2022.2";
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
-architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0 is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal \<const0>\ : STD_LOGIC;
+  signal \^vga_b\ : STD_LOGIC_VECTOR ( 7 to 7 );
   signal \^vga_r\ : STD_LOGIC_VECTOR ( 7 to 7 );
-  signal \VGA_R[0]_i_16_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_17_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_18_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_19_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_28_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_29_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_30_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_31_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_46_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_47_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_48_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_49_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_51_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_52_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_53_n_0\ : STD_LOGIC;
-  signal \VGA_R[0]_i_54_n_0\ : STD_LOGIC;
-  signal inst_n_10 : STD_LOGIC;
-  signal inst_n_11 : STD_LOGIC;
-  signal inst_n_12 : STD_LOGIC;
-  signal inst_n_13 : STD_LOGIC;
-  signal inst_n_14 : STD_LOGIC;
-  signal inst_n_15 : STD_LOGIC;
-  signal inst_n_16 : STD_LOGIC;
-  signal inst_n_17 : STD_LOGIC;
-  signal inst_n_18 : STD_LOGIC;
-  signal inst_n_19 : STD_LOGIC;
-  signal inst_n_20 : STD_LOGIC;
-  signal inst_n_21 : STD_LOGIC;
-  signal inst_n_22 : STD_LOGIC;
-  signal inst_n_23 : STD_LOGIC;
-  signal inst_n_24 : STD_LOGIC;
-  signal inst_n_25 : STD_LOGIC;
-  signal inst_n_26 : STD_LOGIC;
-  signal inst_n_27 : STD_LOGIC;
-  signal inst_n_28 : STD_LOGIC;
-  signal inst_n_29 : STD_LOGIC;
-  signal inst_n_30 : STD_LOGIC;
-  signal inst_n_31 : STD_LOGIC;
-  signal inst_n_32 : STD_LOGIC;
-  signal inst_n_33 : STD_LOGIC;
-  signal inst_n_34 : STD_LOGIC;
-  signal inst_n_35 : STD_LOGIC;
-  signal inst_n_36 : STD_LOGIC;
-  signal inst_n_37 : STD_LOGIC;
-  signal inst_n_38 : STD_LOGIC;
-  signal inst_n_39 : STD_LOGIC;
-  signal inst_n_40 : STD_LOGIC;
-  signal inst_n_9 : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of s00_axi_aclk : signal is "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN mb_pacman_clk_wiz_1_0_clk_out1, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s00_axi_aclk : signal is "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 S00_AXI_RST RST";
   attribute X_INTERFACE_PARAMETER of s00_axi_aresetn : signal is "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_arready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY";
@@ -19418,12 +17706,12 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0 is
   attribute X_INTERFACE_INFO of s00_axi_bready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI BREADY";
   attribute X_INTERFACE_INFO of s00_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI BVALID";
   attribute X_INTERFACE_INFO of s00_axi_rready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of s00_axi_rready : signal is "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN mb_pacman_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s00_axi_rready : signal is "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RVALID";
   attribute X_INTERFACE_INFO of s00_axi_wready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WREADY";
   attribute X_INTERFACE_INFO of s00_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WVALID";
   attribute X_INTERFACE_INFO of vga_clk : signal is "xilinx.com:signal:clock:1.0 vga_clk CLK";
-  attribute X_INTERFACE_PARAMETER of vga_clk : signal is "XIL_INTERFACENAME vga_clk, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of vga_clk : signal is "XIL_INTERFACENAME vga_clk, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR";
   attribute X_INTERFACE_INFO of s00_axi_arprot : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT";
   attribute X_INTERFACE_INFO of s00_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
@@ -19434,14 +17722,14 @@ architecture STRUCTURE of mb_pacman_pacman_AXI4_graphics_0_0 is
   attribute X_INTERFACE_INFO of s00_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WDATA";
   attribute X_INTERFACE_INFO of s00_axi_wstrb : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB";
 begin
-  VGA_B(7) <= \<const0>\;
-  VGA_B(6) <= \<const0>\;
-  VGA_B(5) <= \<const0>\;
-  VGA_B(4) <= \<const0>\;
-  VGA_B(3) <= \<const0>\;
-  VGA_B(2) <= \<const0>\;
-  VGA_B(1) <= \<const0>\;
-  VGA_B(0) <= \<const0>\;
+  VGA_B(7) <= \^vga_b\(7);
+  VGA_B(6) <= \^vga_b\(7);
+  VGA_B(5) <= \^vga_b\(7);
+  VGA_B(4) <= \^vga_b\(7);
+  VGA_B(3) <= \^vga_b\(7);
+  VGA_B(2) <= \^vga_b\(7);
+  VGA_B(1) <= \^vga_b\(7);
+  VGA_B(0) <= \^vga_b\(7);
   VGA_G(7) <= \^vga_r\(7);
   VGA_G(6) <= \^vga_r\(7);
   VGA_G(5) <= \^vga_r\(7);
@@ -19466,207 +17754,16 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\VGA_R[0]_i_16\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_37,
-      I1 => inst_n_21,
-      O => \VGA_R[0]_i_16_n_0\
-    );
-\VGA_R[0]_i_17\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_38,
-      I1 => inst_n_22,
-      O => \VGA_R[0]_i_17_n_0\
-    );
-\VGA_R[0]_i_18\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_39,
-      I1 => inst_n_23,
-      O => \VGA_R[0]_i_18_n_0\
-    );
-\VGA_R[0]_i_19\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_40,
-      I1 => inst_n_24,
-      O => \VGA_R[0]_i_19_n_0\
-    );
-\VGA_R[0]_i_28\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_33,
-      I1 => inst_n_17,
-      O => \VGA_R[0]_i_28_n_0\
-    );
-\VGA_R[0]_i_29\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_34,
-      I1 => inst_n_18,
-      O => \VGA_R[0]_i_29_n_0\
-    );
-\VGA_R[0]_i_30\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_35,
-      I1 => inst_n_19,
-      O => \VGA_R[0]_i_30_n_0\
-    );
-\VGA_R[0]_i_31\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_36,
-      I1 => inst_n_20,
-      O => \VGA_R[0]_i_31_n_0\
-    );
-\VGA_R[0]_i_46\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_29,
-      I1 => inst_n_13,
-      O => \VGA_R[0]_i_46_n_0\
-    );
-\VGA_R[0]_i_47\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_30,
-      I1 => inst_n_14,
-      O => \VGA_R[0]_i_47_n_0\
-    );
-\VGA_R[0]_i_48\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_31,
-      I1 => inst_n_15,
-      O => \VGA_R[0]_i_48_n_0\
-    );
-\VGA_R[0]_i_49\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_32,
-      I1 => inst_n_16,
-      O => \VGA_R[0]_i_49_n_0\
-    );
-\VGA_R[0]_i_51\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_25,
-      I1 => inst_n_9,
-      O => \VGA_R[0]_i_51_n_0\
-    );
-\VGA_R[0]_i_52\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_26,
-      I1 => inst_n_10,
-      O => \VGA_R[0]_i_52_n_0\
-    );
-\VGA_R[0]_i_53\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_27,
-      I1 => inst_n_11,
-      O => \VGA_R[0]_i_53_n_0\
-    );
-\VGA_R[0]_i_54\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => inst_n_28,
-      I1 => inst_n_12,
-      O => \VGA_R[0]_i_54_n_0\
-    );
-inst: entity work.mb_pacman_pacman_AXI4_graphics_0_0_pacman_AXI4_graphics_v1_0
+inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pacman_AXI4_graphics_v1_0
      port map (
-      O(3) => inst_n_9,
-      O(2) => inst_n_10,
-      O(1) => inst_n_11,
-      O(0) => inst_n_12,
-      S(3) => \VGA_R[0]_i_51_n_0\,
-      S(2) => \VGA_R[0]_i_52_n_0\,
-      S(1) => \VGA_R[0]_i_53_n_0\,
-      S(0) => \VGA_R[0]_i_54_n_0\,
+      S_AXI_ARREADY => s00_axi_arready,
+      S_AXI_AWREADY => s00_axi_awready,
+      S_AXI_WREADY => s00_axi_wready,
+      VGA_B(0) => \^vga_b\(7),
       VGA_HS => VGA_HS,
       VGA_R(0) => \^vga_r\(7),
-      \VGA_R2__1\(3) => inst_n_13,
-      \VGA_R2__1\(2) => inst_n_14,
-      \VGA_R2__1\(1) => inst_n_15,
-      \VGA_R2__1\(0) => inst_n_16,
-      \VGA_R2__1_0\(3) => inst_n_17,
-      \VGA_R2__1_0\(2) => inst_n_18,
-      \VGA_R2__1_0\(1) => inst_n_19,
-      \VGA_R2__1_0\(0) => inst_n_20,
-      \VGA_R2__1_1\(3) => inst_n_21,
-      \VGA_R2__1_1\(2) => inst_n_22,
-      \VGA_R2__1_1\(1) => inst_n_23,
-      \VGA_R2__1_1\(0) => inst_n_24,
-      \VGA_R2__4\(3) => inst_n_25,
-      \VGA_R2__4\(2) => inst_n_26,
-      \VGA_R2__4\(1) => inst_n_27,
-      \VGA_R2__4\(0) => inst_n_28,
-      \VGA_R2__4_0\(3) => inst_n_29,
-      \VGA_R2__4_0\(2) => inst_n_30,
-      \VGA_R2__4_0\(1) => inst_n_31,
-      \VGA_R2__4_0\(0) => inst_n_32,
-      \VGA_R2__4_1\(3) => inst_n_33,
-      \VGA_R2__4_1\(2) => inst_n_34,
-      \VGA_R2__4_1\(1) => inst_n_35,
-      \VGA_R2__4_1\(0) => inst_n_36,
-      \VGA_R2__4_2\(3) => inst_n_37,
-      \VGA_R2__4_2\(2) => inst_n_38,
-      \VGA_R2__4_2\(1) => inst_n_39,
-      \VGA_R2__4_2\(0) => inst_n_40,
-      \VGA_R[0]_i_10\(3) => \VGA_R[0]_i_28_n_0\,
-      \VGA_R[0]_i_10\(2) => \VGA_R[0]_i_29_n_0\,
-      \VGA_R[0]_i_10\(1) => \VGA_R[0]_i_30_n_0\,
-      \VGA_R[0]_i_10\(0) => \VGA_R[0]_i_31_n_0\,
-      \VGA_R[0]_i_12\(3) => \VGA_R[0]_i_46_n_0\,
-      \VGA_R[0]_i_12\(2) => \VGA_R[0]_i_47_n_0\,
-      \VGA_R[0]_i_12\(1) => \VGA_R[0]_i_48_n_0\,
-      \VGA_R[0]_i_12\(0) => \VGA_R[0]_i_49_n_0\,
-      \VGA_R[0]_i_7\(3) => \VGA_R[0]_i_16_n_0\,
-      \VGA_R[0]_i_7\(2) => \VGA_R[0]_i_17_n_0\,
-      \VGA_R[0]_i_7\(1) => \VGA_R[0]_i_18_n_0\,
-      \VGA_R[0]_i_7\(0) => \VGA_R[0]_i_19_n_0\,
       VGA_VS => VGA_VS,
       active_nblank => active_nblank,
-      axi_arready_reg => s00_axi_arready,
-      axi_awready_reg => s00_axi_awready,
-      axi_wready_reg => s00_axi_wready,
       game_score(31 downto 0) => game_score(31 downto 0),
       game_status(3 downto 0) => game_status(3 downto 0),
       ghost1_x(9 downto 0) => ghost1_x(9 downto 0),

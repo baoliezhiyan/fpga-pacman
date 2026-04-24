@@ -1,9 +1,48 @@
-10:38:28 **** Incremental Build of configuration Debug for project pacman_app ****
+12:28:12 **** Build of configuration Debug for project pacman_app ****
 make all 
+'Building file: ../src/lw_usb/HID.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lw_usb/HID.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lw_usb/HID.d" -MT"src/lw_usb/HID.o" -o "src/lw_usb/HID.o" "../src/lw_usb/HID.c"
+../src/lw_usb/HID.c:9:1: warning: braces around scalar initializer
+    9 | HID_DEVICE hid_device = { { 0 } };
+      | ^~~~~~~~~~
+../src/lw_usb/HID.c:9:1: note: (near initialization for 'hid_device.addr')
+'Finished building: ../src/lw_usb/HID.c'
+' '
+'Building file: ../src/lw_usb/MAX3421E.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lw_usb/MAX3421E.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lw_usb/MAX3421E.d" -MT"src/lw_usb/MAX3421E.o" -o "src/lw_usb/MAX3421E.o" "../src/lw_usb/MAX3421E.c"
+../src/lw_usb/MAX3421E.c: In function 'MaxGpxHandler':
+../src/lw_usb/MAX3421E.c:338:14: warning: variable 'GPINIRQ' set but not used [-Wunused-but-set-variable]
+  338 |         BYTE GPINIRQ;
+      |              ^~~~~~~
+'Finished building: ../src/lw_usb/MAX3421E.c'
+' '
+'Building file: ../src/lw_usb/transfer.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lw_usb/transfer.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lw_usb/transfer.d" -MT"src/lw_usb/transfer.o" -o "src/lw_usb/transfer.o" "../src/lw_usb/transfer.c"
+../src/lw_usb/transfer.c:13:1: warning: braces around scalar initializer
+   13 | EP_RECORD dev0ep = {{ 0 }};         //Endpoint data structure for uninitialized device during enumeration
+      | ^~~~~~~~~
+../src/lw_usb/transfer.c:13:1: note: (near initialization for 'dev0ep.epAddr')
+../src/lw_usb/transfer.c: In function 'XferInTransfer':
+../src/lw_usb/transfer.c:199:7: warning: unused variable 'tmpbyte' [-Wunused-variable]
+  199 |  BYTE tmpbyte;
+      |       ^~~~~~~
+../src/lw_usb/transfer.c:198:7: warning: unused variable 'i' [-Wunused-variable]
+  198 |  BYTE i;
+      |       ^
+'Finished building: ../src/lw_usb/transfer.c'
+' '
 'Building file: ../src/main.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
 ' '
 'Building target: pacman_app.elf'
 'Invoking: MicroBlaze gcc linker'
@@ -13,9 +52,9 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LD:/Vivado/MyProjects/project_labfinal_plat
 'Invoking: MicroBlaze Print Size'
 mb-size pacman_app.elf  |tee "pacman_app.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  24184	    476	   3660	  28320	   6ea0	pacman_app.elf
+  24352	    476	   3660	  28488	   6f48	pacman_app.elf
 'Finished building: pacman_app.elf.size'
 ' '
 
-10:38:29 Build Finished (took 1s.716ms)
+12:28:17 Build Finished (took 4s.858ms)
 

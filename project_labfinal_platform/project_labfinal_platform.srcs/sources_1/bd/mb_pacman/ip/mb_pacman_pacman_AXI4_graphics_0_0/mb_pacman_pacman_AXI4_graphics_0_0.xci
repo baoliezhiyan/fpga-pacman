@@ -4,7 +4,7 @@
     "xci_name": "mb_pacman_pacman_AXI4_graphics_0_0",
     "cell_name": "pacman_AXI4_graphics_0",
     "component_reference": "xilinx.com:user:pacman_AXI4_graphics:1.0",
-    "ip_revision": "5",
+    "ip_revision": "6",
     "gen_directory": "../../../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0",
     "parameters": {
       "component_parameters": {
@@ -35,7 +35,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "5" } ],
+        "IPREVISION": [ { "value": "6" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

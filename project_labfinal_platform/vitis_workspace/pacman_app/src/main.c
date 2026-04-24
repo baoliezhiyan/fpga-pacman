@@ -4,13 +4,11 @@
 #include "xil_io.h"
 #include "sleep.h"
 
-// ==========================================
-// 解决 Xilinx 宏定义与 USB 协议栈枚举的命名冲突
-// ==========================================
+// 解决宏定义冲突
 #undef FALSE
 #undef TRUE
 
-// USB 驱动协议栈头文件
+// USB 头文件
 #include "lw_usb/GenericMacros.h"
 #include "lw_usb/GenericTypeDefs.h"
 #include "lw_usb/MAX3421E.h"
@@ -19,23 +17,12 @@
 #include "lw_usb/transfer.h"
 #include "lw_usb/HID.h"
 
-// ==========================================
-// 你的 AXI 硬件寄存器映射
-// ==========================================
 #define PACMAN_BASEADDR XPAR_PACMAN_AXI4_GRAPHICS_0_S00_AXI_BASEADDR
 #define REG_PACMAN_X 0
 #define REG_PACMAN_Y 4
 
-// ==========================================
-// 游戏物理常量定义
-// ==========================================
-#define PACMAN_RADIUS 16   // 吃豆人半径
-#define SCREEN_WIDTH  640  // 屏幕宽度
-#define SCREEN_HEIGHT 480  // 屏幕高度
+#define PACMAN_RADIUS 16
 
-// ==========================================
-// USB 键盘常量与外部变量
-// ==========================================
 extern HID_DEVICE hid_device;
 const char* const devclasses[] = { " Uninitialized", " HID Keyboard", " HID Mouse", " Mass storage" };
 
@@ -44,17 +31,13 @@ const char* const devclasses[] = { " Uninitialized", " HID Keyboard", " HID Mous
 #define KEY_A 0x04
 #define KEY_D 0x07
 
-// 提取设备信息的辅助函数 (已清理未使用变量警告)
 BYTE GetDriverandReport(BYTE addr) {
     BYTE i;
     BYTE device = 0xFF;
     DEV_RECORD* tpl_ptr;
-
-    xil_printf("Reached USB_STATE_RUNNING (0x40)\n");
     for (i = 1; i < USB_NUMDEVICES; i++) {
         tpl_ptr = GetDevtable(i);
         if (tpl_ptr->epinfo != NULL) {
-            xil_printf("Device: %d %s \n", i, devclasses[tpl_ptr->devclass]);
             device = tpl_ptr->devclass;
         }
     }
@@ -62,76 +45,75 @@ BYTE GetDriverandReport(BYTE addr) {
 }
 
 // ==========================================
-// 碰撞预测函数 (当前仅包含屏幕物理边缘)
+// 游戏物理：AABB 碰撞检测
 // ==========================================
-// 返回 1 表示撞墙(越界)，返回 0 表示安全
-int check_collision(int next_x, int next_y) {
-    // 考虑吃豆人的物理半径，确保任何一个像素都不会离开屏幕
-    if (next_x - PACMAN_RADIUS < 0) return 1;                  // 撞左边界
-    if (next_x + PACMAN_RADIUS > SCREEN_WIDTH - 1) return 1;   // 撞右边界
-    if (next_y - PACMAN_RADIUS < 0) return 1;                  // 撞上边界
-    if (next_y + PACMAN_RADIUS > SCREEN_HEIGHT - 1) return 1;  // 撞下边界
+// px, py: 吃豆人中心坐标 | r: 吃豆人半径
+// rx1, rx2: 墙壁左、右边界 | ry1, ry2: 墙壁上、下边界
+int check_rect_collision(int px, int py, int r, int rx1, int rx2, int ry1, int ry2) {
+    int pac_left   = px - r;
+    int pac_right  = px + r;
+    int pac_top    = py - r;
+    int pac_bottom = py + r;
 
-    // 之后你想加墙壁，直接把判断条件写在这个 return 0 之前即可
+    // 当且仅当四个方向都发生重叠时，才算真正撞上
+    if (pac_left < rx2 && pac_right > rx1 && pac_top < ry2 && pac_bottom > ry1) {
+        return 1;
+    }
     return 0;
 }
 
-int main() {
-    // 1. 基础平台初始化
-    init_platform();
+// 预测函数：如果走到 (next_x, next_y) 是否会撞墙
+int check_collision(int next_x, int next_y) {
+    int r = PACMAN_RADIUS;
 
-    xil_printf("Initializing MAX3421E USB Controller...\n");
+    // 1. 外部边框围墙 (和 SystemVerilog 里的绘制坐标严格对应)
+    if (check_rect_collision(next_x, next_y, r, 10,  20,  10, 469)) return 1; // 左墙
+    if (check_rect_collision(next_x, next_y, r, 619, 629, 10, 469)) return 1; // 右墙
+    if (check_rect_collision(next_x, next_y, r, 20,  619, 10,  20)) return 1; // 顶墙
+    if (check_rect_collision(next_x, next_y, r, 20,  619, 459, 469)) return 1; // 底墙
+
+    // 2. 内部障碍墙壁
+    if (check_rect_collision(next_x, next_y, r, 100, 540, 100, 120)) return 1; // 墙A(上)
+    if (check_rect_collision(next_x, next_y, r, 100, 540, 360, 380)) return 1; // 墙B(下)
+    if (check_rect_collision(next_x, next_y, r, 300, 340, 180, 300)) return 1; // 墙C(柱)
+
+    return 0; // 安全
+}
+
+int main() {
+    init_platform();
     MAX3421E_init();
-    xil_printf("Initializing USB Protocol Stack...\n");
     USB_init();
 
-    // 2. 吃豆人物理状态初始化
-    int x_pos = 320;
+    // 初始位置设定在安全区域（比如地图左侧）
+    int x_pos = 50;
     int y_pos = 240;
-    int step = 3;             // 每次移动像素数，决定吃豆人速度
-    BYTE current_key = 0;     // 缓存当前按下的方向键
+    int step = 3;
+    BYTE current_key = 0;
 
-    // USB 状态机变量
     BYTE rcode;
     BOOT_KBD_REPORT kbdbuf;
-    BYTE runningdebugflag = 0;
-    BYTE errorflag = 0;
-    BYTE device = 0;
-    BYTE addr = 1;
+    BYTE runningdebugflag = 0, errorflag = 0, device = 0, addr = 1;
 
-    xil_printf("Pac-Man Engine Ready. Waiting for USB Keyboard...\n");
+    xil_printf("Pac-Man Engine Ready.\n");
 
-    // 3. 游戏与 USB 主循环
     while (1) {
-        // --- A. 维持 USB 硬件与协议栈运行 ---
         MAX3421E_Task();
         USB_Task();
 
-        // --- B. 键盘读取逻辑 ---
         if (GetUsbTaskState() == USB_STATE_RUNNING) {
             if (!runningdebugflag) {
                 runningdebugflag = 1;
                 device = GetDriverandReport(addr);
-            } else if (device == 1) { // 确认是键盘接入
-
+            } else if (device == 1) {
                 rcode = kbdPoll(&kbdbuf);
-
-                if (rcode == 0) {
-                    current_key = kbdbuf.keycode[0];
-                }
-                else if (rcode != hrNAK) {
-                    continue;
-                }
+                if (rcode == 0) current_key = kbdbuf.keycode[0];
+                else if (rcode != hrNAK) continue;
             }
-        }
-        else if (GetUsbTaskState() == USB_STATE_ERROR) {
-            if (!errorflag) {
-                errorflag = 1;
-                xil_printf("USB Error State\n");
-            }
+        } else if (GetUsbTaskState() == USB_STATE_ERROR) {
+            if (!errorflag) errorflag = 1;
             current_key = 0;
-        }
-        else {
+        } else {
             if (runningdebugflag) {
                 runningdebugflag = 0;
                 MAX3421E_init();
@@ -141,8 +123,7 @@ int main() {
             current_key = 0;
         }
 
-        // --- C. 游戏物理引擎更新 (预测碰撞) ---
-        // 假设吃豆人按键指令走一步，算出未来坐标
+        // 物理更新与预测
         int next_x = x_pos;
         int next_y = y_pos;
 
@@ -154,17 +135,15 @@ int main() {
             default: break;
         }
 
-        // 调用碰撞预测函数，如果安全 (返回0) 才实际更新坐标
+        // AABB 碰撞阻挡判定
         if (check_collision(next_x, next_y) == 0) {
             x_pos = next_x;
             y_pos = next_y;
         }
 
-        // --- D. 写入硬件 AXI 总线，驱动 HDMI 显示 ---
         Xil_Out32(PACMAN_BASEADDR + REG_PACMAN_X, x_pos);
         Xil_Out32(PACMAN_BASEADDR + REG_PACMAN_Y, y_pos);
 
-        // --- E. 帧率控制 ---
         usleep(16000);
     }
 

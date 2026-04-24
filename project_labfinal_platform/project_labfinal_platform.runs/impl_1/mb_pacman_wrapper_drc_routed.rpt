@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Apr 24 09:53:16 2026
+| Date         : Fri Apr 24 12:23:24 2026
 | Host         : LAPTOP-KGNOGRA4 running 64-bit major release  (build 9200)
 | Command      : report_drc -file mb_pacman_wrapper_drc_routed.rpt -pb mb_pacman_wrapper_drc_routed.pb -rpx mb_pacman_wrapper_drc_routed.rpx
 | Design       : mb_pacman_wrapper
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 15
+             Violations found: 7
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | BUFC-1   | Warning  | Input Buffer Connections                            | 2          |
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| DPIP-1   | Warning  | Input pipelining                                    | 12         |
+| DPIP-1   | Warning  | Input pipelining                                    | 4          |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -60,62 +60,22 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R1 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R1 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__0 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__0 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#5 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__1 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#6 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__1 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#7 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__2 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#8 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__2 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#9 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__3 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#10 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__3 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#11 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__4 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#12 Warning
-Input pipelining  
-DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__4 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2 input mb_pacman_i/pacman_AXI4_graphics_0/inst/pacman_AXI4_graphics_v1_0_S00_AXI_inst/pacman_render_inst/VGA_R2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 

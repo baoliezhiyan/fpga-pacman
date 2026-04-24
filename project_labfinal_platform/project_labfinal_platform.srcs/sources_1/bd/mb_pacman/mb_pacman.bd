@@ -35,13 +35,13 @@
         "m06_couplers": {}
       },
       "hdmi_tx_0": "",
-      "pacman_AXI4_graphics_0": "",
       "axi_quad_spi_0": "",
       "axi_intc_0": "",
       "axi_timer_usb": "",
       "xlconcat_0": "",
       "axi_gpio_usb_rst": "",
-      "axi_gpio_usb_int": ""
+      "axi_gpio_usb_int": "",
+      "pacman_AXI4_graphics_0": ""
     },
     "interface_ports": {
       "uart_rtl_0": {
@@ -1347,12 +1347,6 @@
         "xci_path": "ip\\mb_pacman_hdmi_tx_0_0\\mb_pacman_hdmi_tx_0_0.xci",
         "inst_hier_path": "hdmi_tx_0"
       },
-      "pacman_AXI4_graphics_0": {
-        "vlnv": "xilinx.com:user:pacman_AXI4_graphics:1.0",
-        "xci_name": "mb_pacman_pacman_AXI4_graphics_0_0",
-        "xci_path": "ip\\mb_pacman_pacman_AXI4_graphics_0_0\\mb_pacman_pacman_AXI4_graphics_0_0.xci",
-        "inst_hier_path": "pacman_AXI4_graphics_0"
-      },
       "axi_quad_spi_0": {
         "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
         "xci_name": "mb_pacman_axi_quad_spi_0_0",
@@ -1425,6 +1419,12 @@
             "value": "1"
           }
         }
+      },
+      "pacman_AXI4_graphics_0": {
+        "vlnv": "xilinx.com:user:pacman_AXI4_graphics:1.0",
+        "xci_name": "mb_pacman_pacman_AXI4_graphics_0_0",
+        "xci_path": "ip\\mb_pacman_pacman_AXI4_graphics_0_0\\mb_pacman_pacman_AXI4_graphics_0_0.xci",
+        "inst_hier_path": "pacman_AXI4_graphics_0"
       }
     },
     "interface_nets": {
@@ -1600,7 +1600,6 @@
           "microblaze_0_axi_periph/M00_ACLK",
           "microblaze_0_axi_periph/ACLK",
           "microblaze_0_axi_periph/M01_ACLK",
-          "pacman_AXI4_graphics_0/s00_axi_aclk",
           "microblaze_0_axi_periph/M02_ACLK",
           "axi_quad_spi_0/s_axi_aclk",
           "microblaze_0_axi_periph/M03_ACLK",
@@ -1611,7 +1610,8 @@
           "axi_intc_0/s_axi_aclk",
           "microblaze_0_axi_periph/M05_ACLK",
           "axi_timer_usb/s_axi_aclk",
-          "microblaze_0_axi_periph/M06_ACLK"
+          "microblaze_0_axi_periph/M06_ACLK",
+          "pacman_AXI4_graphics_0/s00_axi_aclk"
         ]
       },
       "pacman_AXI4_graphics_0_VGA_B": {
@@ -1676,7 +1676,6 @@
           "microblaze_0_axi_periph/M00_ARESETN",
           "microblaze_0_axi_periph/ARESETN",
           "microblaze_0_axi_periph/M01_ARESETN",
-          "pacman_AXI4_graphics_0/s00_axi_aresetn",
           "microblaze_0_axi_periph/M02_ARESETN",
           "axi_quad_spi_0/s_axi_aresetn",
           "microblaze_0_axi_periph/M03_ARESETN",
@@ -1686,7 +1685,8 @@
           "axi_intc_0/s_axi_aresetn",
           "microblaze_0_axi_periph/M05_ARESETN",
           "axi_timer_usb/s_axi_aresetn",
-          "microblaze_0_axi_periph/M06_ARESETN"
+          "microblaze_0_axi_periph/M06_ARESETN",
+          "pacman_AXI4_graphics_0/s00_axi_aresetn"
         ]
       },
       "rst_clk_wiz_1_100M_peripheral_reset": {
