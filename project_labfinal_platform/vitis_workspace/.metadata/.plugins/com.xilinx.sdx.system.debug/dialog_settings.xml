@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="pacman_app_system-imgFile" value=""/>
+	<item key="pacman_app_system-offSet" value=""/>
+	<item key="pacman_app_system-initFile" value=""/>
+	<item key="pacman_app_system-flashType" value="is25lp016d-spi-x1_x2_x4"/>
+	<item key="pacman_app_system-verifyFlash" value="false"/>
+	<item key="pacman_app_system-blankCheck" value="false"/>
+	<item key="pacman_app_system-device" value="Auto Detect"/>
+	<item key="pacman_app_system-target" value="Local"/>
+	<item key="programflash.hwplatform" value="pacman_app_system"/>
+</section>

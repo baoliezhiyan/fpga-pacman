@@ -485,3 +485,2143 @@ con
 
 12:29:40 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
 12:35:22 INFO  : Disconnected from the channel tcfchan#7.
+12:37:24 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+12:37:25 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+12:37:27 INFO  : XSCT server has started successfully.
+12:37:27 INFO  : plnx-install-location is set to ''
+12:37:27 INFO  : Successfully done setting XSCT server connection channel  
+12:37:27 INFO  : Successfully done setting workspace for the tool. 
+12:37:39 INFO  : Platform repository initialization has completed.
+12:37:39 INFO  : Registering command handlers for Vitis TCF services
+12:37:46 INFO  : Successfully done query RDI_DATADIR 
+12:54:27 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:54:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:55:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:55:31 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:55:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:55:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:55:32 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:55:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:55:40 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:55:40 INFO  : 'jtag frequency' command is executed.
+12:55:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:55:41 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:55:41 INFO  : Context for processor 'microblaze_0' is selected.
+12:55:41 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:55:41 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:55:41 INFO  : Context for processor 'microblaze_0' is selected.
+12:55:41 INFO  : System reset is completed.
+12:55:44 INFO  : 'after 3000' command is executed.
+12:55:44 INFO  : Context for processor 'microblaze_0' is selected.
+12:55:45 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:55:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:55:45 INFO  : Context for processor 'microblaze_0' is selected.
+12:55:45 INFO  : 'con' command is executed.
+12:55:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:55:45 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:57:27 INFO  : Disconnected from the channel tcfchan#1.
+17:16:24 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+17:16:25 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+17:16:30 INFO  : XSCT server has started successfully.
+17:16:30 INFO  : Successfully done setting XSCT server connection channel  
+17:16:30 INFO  : plnx-install-location is set to ''
+17:16:30 INFO  : Successfully done setting workspace for the tool. 
+17:16:39 INFO  : Registering command handlers for Vitis TCF services
+17:16:39 INFO  : Platform repository initialization has completed.
+17:16:48 INFO  : Successfully done query RDI_DATADIR 
+17:17:32 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+17:19:49 INFO  : Result from executing command 'getProjects': pacman_platform
+17:19:49 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+17:20:06 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:20:11 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+17:20:11 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+17:20:11 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+17:20:11 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+17:20:11 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+17:23:37 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+17:23:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:23:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:23:41 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:24:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:24:02 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+17:24:02 INFO  : 'jtag frequency' command is executed.
+17:24:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:24:03 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:24:04 INFO  : Context for processor 'microblaze_0' is selected.
+17:24:04 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+17:24:04 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+17:24:04 INFO  : Context for processor 'microblaze_0' is selected.
+17:24:04 INFO  : System reset is completed.
+17:24:07 INFO  : 'after 3000' command is executed.
+17:24:07 INFO  : Context for processor 'microblaze_0' is selected.
+17:24:07 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+17:24:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+17:24:07 INFO  : Context for processor 'microblaze_0' is selected.
+17:24:07 INFO  : 'con' command is executed.
+17:24:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+17:24:07 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+17:44:09 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+17:44:21 INFO  : Result from executing command 'getProjects': pacman_platform
+17:44:21 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+17:44:46 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:44:49 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+17:44:49 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+17:44:49 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+17:44:49 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+17:44:49 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+17:55:31 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:57:12 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:59:05 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+17:59:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:59:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:59:07 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:59:28 INFO  : Disconnected from the channel tcfchan#2.
+17:59:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:59:28 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+17:59:28 INFO  : 'jtag frequency' command is executed.
+17:59:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:59:30 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:59:30 INFO  : Context for processor 'microblaze_0' is selected.
+17:59:30 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+17:59:30 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+17:59:30 INFO  : Context for processor 'microblaze_0' is selected.
+17:59:30 INFO  : System reset is completed.
+17:59:33 INFO  : 'after 3000' command is executed.
+17:59:33 INFO  : Context for processor 'microblaze_0' is selected.
+17:59:33 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+17:59:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+17:59:33 INFO  : Context for processor 'microblaze_0' is selected.
+17:59:33 INFO  : 'con' command is executed.
+17:59:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+17:59:33 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+18:30:51 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+18:31:05 INFO  : Result from executing command 'getProjects': pacman_platform
+18:31:06 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+18:31:13 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+18:31:16 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:31:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+18:31:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+18:31:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+18:31:16 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+18:43:55 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+18:44:36 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+18:44:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:44:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:44:37 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+18:44:43 INFO  : Disconnected from the channel tcfchan#4.
+18:44:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:44:44 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+18:44:44 INFO  : 'jtag frequency' command is executed.
+18:44:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:44:45 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+18:44:45 INFO  : Context for processor 'microblaze_0' is selected.
+18:44:45 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+18:44:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:44:45 INFO  : Context for processor 'microblaze_0' is selected.
+18:44:45 INFO  : System reset is completed.
+18:44:48 INFO  : 'after 3000' command is executed.
+18:44:48 INFO  : Context for processor 'microblaze_0' is selected.
+18:44:49 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+18:44:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+18:44:49 INFO  : Context for processor 'microblaze_0' is selected.
+18:44:49 INFO  : 'con' command is executed.
+18:44:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:44:49 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+19:03:36 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+19:03:52 INFO  : Result from executing command 'getProjects': pacman_platform
+19:03:52 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+19:04:23 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+19:04:26 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:04:26 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+19:04:26 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+19:04:26 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+19:04:26 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+19:05:48 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+19:05:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:05:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:05:49 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+19:06:06 INFO  : Disconnected from the channel tcfchan#6.
+19:06:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:06:06 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+19:06:06 INFO  : 'jtag frequency' command is executed.
+19:06:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:06:08 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+19:06:08 INFO  : Context for processor 'microblaze_0' is selected.
+19:06:08 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+19:06:08 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:06:08 INFO  : Context for processor 'microblaze_0' is selected.
+19:06:08 INFO  : System reset is completed.
+19:06:11 INFO  : 'after 3000' command is executed.
+19:06:11 INFO  : Context for processor 'microblaze_0' is selected.
+19:06:11 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+19:06:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+19:06:11 INFO  : Context for processor 'microblaze_0' is selected.
+19:06:11 INFO  : 'con' command is executed.
+19:06:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:06:11 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:00:59 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+22:03:33 INFO  : Result from executing command 'getProjects': pacman_platform
+22:03:33 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+22:06:07 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:09:16 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+22:09:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+22:09:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+22:09:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+22:09:16 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+22:09:44 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:09:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:09:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:09:46 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:10:15 INFO  : Disconnected from the channel tcfchan#8.
+22:10:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:10:15 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:10:15 INFO  : 'jtag frequency' command is executed.
+22:10:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:10:17 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:10:17 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:17 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:10:17 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:10:17 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:17 INFO  : System reset is completed.
+22:10:20 INFO  : 'after 3000' command is executed.
+22:10:20 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:20 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:10:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:10:20 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:20 INFO  : 'con' command is executed.
+22:10:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:10:20 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:11:46 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:12:31 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:12:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:12:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:12:32 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:12:37 INFO  : Disconnected from the channel tcfchan#10.
+22:12:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:12:38 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:12:38 INFO  : 'jtag frequency' command is executed.
+22:12:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:12:39 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:12:39 INFO  : Context for processor 'microblaze_0' is selected.
+22:12:39 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:12:39 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:12:39 INFO  : Context for processor 'microblaze_0' is selected.
+22:12:39 INFO  : System reset is completed.
+22:12:42 INFO  : 'after 3000' command is executed.
+22:12:42 INFO  : Context for processor 'microblaze_0' is selected.
+22:12:43 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:12:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:12:43 INFO  : Context for processor 'microblaze_0' is selected.
+22:12:43 INFO  : 'con' command is executed.
+22:12:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:12:43 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:29:48 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:32:04 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:32:31 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:32:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:32:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:32:32 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:33:05 INFO  : Disconnected from the channel tcfchan#11.
+22:33:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:33:05 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:33:05 INFO  : 'jtag frequency' command is executed.
+22:33:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:33:06 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:33:06 INFO  : Context for processor 'microblaze_0' is selected.
+22:33:06 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:33:06 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:33:06 INFO  : Context for processor 'microblaze_0' is selected.
+22:33:06 INFO  : System reset is completed.
+22:33:09 INFO  : 'after 3000' command is executed.
+22:33:09 INFO  : Context for processor 'microblaze_0' is selected.
+22:33:10 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:33:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:33:10 INFO  : Context for processor 'microblaze_0' is selected.
+22:33:10 INFO  : 'con' command is executed.
+22:33:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:33:10 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:34:16 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:35:07 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:35:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:35:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:35:08 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:35:18 INFO  : Disconnected from the channel tcfchan#12.
+22:35:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:35:18 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:35:18 INFO  : 'jtag frequency' command is executed.
+22:35:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:35:19 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:35:19 INFO  : Context for processor 'microblaze_0' is selected.
+22:35:19 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:35:19 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:35:20 INFO  : Context for processor 'microblaze_0' is selected.
+22:35:20 INFO  : System reset is completed.
+22:35:23 INFO  : 'after 3000' command is executed.
+22:35:23 INFO  : Context for processor 'microblaze_0' is selected.
+22:35:23 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:35:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:35:23 INFO  : Context for processor 'microblaze_0' is selected.
+22:35:23 INFO  : 'con' command is executed.
+22:35:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:35:23 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:36:49 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:37:46 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:37:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:37:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:37:48 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:38:01 INFO  : Disconnected from the channel tcfchan#13.
+22:38:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:38:02 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:38:02 INFO  : 'jtag frequency' command is executed.
+22:38:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:38:03 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:38:04 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:04 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:38:04 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:38:04 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:04 INFO  : System reset is completed.
+22:38:07 INFO  : 'after 3000' command is executed.
+22:38:07 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:07 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:38:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:38:07 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:07 INFO  : 'con' command is executed.
+22:38:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:38:07 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:46:18 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:47:48 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:47:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:47:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:47:50 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:48:09 INFO  : Disconnected from the channel tcfchan#14.
+22:48:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:48:10 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:48:10 INFO  : 'jtag frequency' command is executed.
+22:48:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:48:12 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:48:13 INFO  : Context for processor 'microblaze_0' is selected.
+22:48:13 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:48:13 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:48:13 INFO  : Context for processor 'microblaze_0' is selected.
+22:48:13 INFO  : System reset is completed.
+22:48:16 INFO  : 'after 3000' command is executed.
+22:48:16 INFO  : Context for processor 'microblaze_0' is selected.
+22:48:16 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:48:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:48:17 INFO  : Context for processor 'microblaze_0' is selected.
+22:48:17 INFO  : 'con' command is executed.
+22:48:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:48:17 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:59:57 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+23:01:04 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+23:01:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:01:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:01:06 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:01:44 INFO  : Disconnected from the channel tcfchan#15.
+23:01:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:01:44 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+23:01:44 INFO  : 'jtag frequency' command is executed.
+23:01:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:01:46 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:01:46 INFO  : Context for processor 'microblaze_0' is selected.
+23:01:46 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+23:01:46 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:01:46 INFO  : Context for processor 'microblaze_0' is selected.
+23:01:46 INFO  : System reset is completed.
+23:01:49 INFO  : 'after 3000' command is executed.
+23:01:49 INFO  : Context for processor 'microblaze_0' is selected.
+23:01:49 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+23:01:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+23:01:49 INFO  : Context for processor 'microblaze_0' is selected.
+23:01:49 INFO  : 'con' command is executed.
+23:01:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:01:49 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+23:03:34 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+23:04:10 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+23:04:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:04:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:04:12 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:04:33 INFO  : Disconnected from the channel tcfchan#16.
+23:04:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:04:33 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+23:04:34 INFO  : 'jtag frequency' command is executed.
+23:04:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:04:35 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:04:36 INFO  : Context for processor 'microblaze_0' is selected.
+23:04:36 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+23:04:36 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:04:36 INFO  : Context for processor 'microblaze_0' is selected.
+23:04:36 INFO  : System reset is completed.
+23:04:39 INFO  : 'after 3000' command is executed.
+23:04:39 INFO  : Context for processor 'microblaze_0' is selected.
+23:04:39 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+23:04:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+23:04:39 INFO  : Context for processor 'microblaze_0' is selected.
+23:04:39 INFO  : 'con' command is executed.
+23:04:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:04:39 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+23:05:05 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+23:05:55 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+23:05:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:05:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:05:57 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:06:10 INFO  : Disconnected from the channel tcfchan#17.
+23:06:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:06:11 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+23:06:11 INFO  : 'jtag frequency' command is executed.
+23:06:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:06:13 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:06:13 INFO  : Context for processor 'microblaze_0' is selected.
+23:06:13 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+23:06:13 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:06:13 INFO  : Context for processor 'microblaze_0' is selected.
+23:06:13 INFO  : System reset is completed.
+23:06:16 INFO  : 'after 3000' command is executed.
+23:06:16 INFO  : Context for processor 'microblaze_0' is selected.
+23:06:16 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+23:06:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+23:06:17 INFO  : Context for processor 'microblaze_0' is selected.
+23:06:17 INFO  : 'con' command is executed.
+23:06:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:06:17 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+23:18:35 INFO  : Disconnected from the channel tcfchan#18.
+17:39:27 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+17:39:28 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+17:39:33 INFO  : XSCT server has started successfully.
+17:39:33 INFO  : plnx-install-location is set to ''
+17:39:33 INFO  : Successfully done setting XSCT server connection channel  
+17:39:33 INFO  : Successfully done setting workspace for the tool. 
+17:39:44 INFO  : Registering command handlers for Vitis TCF services
+17:39:44 INFO  : Platform repository initialization has completed.
+17:39:58 INFO  : Successfully done query RDI_DATADIR 
+17:40:31 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+17:42:55 INFO  : Result from executing command 'getProjects': pacman_platform
+17:42:55 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+17:46:20 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:46:26 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+17:46:26 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+17:46:26 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+17:46:26 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+17:46:26 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+17:49:13 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+17:49:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:49:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:49:18 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:49:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:49:55 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+17:49:55 INFO  : 'jtag frequency' command is executed.
+17:49:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:49:56 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:49:56 INFO  : Context for processor 'microblaze_0' is selected.
+17:49:56 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+17:49:56 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+17:49:56 INFO  : Context for processor 'microblaze_0' is selected.
+17:49:56 INFO  : System reset is completed.
+17:49:59 INFO  : 'after 3000' command is executed.
+17:49:59 INFO  : Context for processor 'microblaze_0' is selected.
+17:50:00 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+17:50:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+17:50:00 INFO  : Context for processor 'microblaze_0' is selected.
+17:50:00 INFO  : 'con' command is executed.
+17:50:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+17:50:00 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+18:10:52 INFO  : Disconnected from the channel tcfchan#2.
+21:35:04 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+21:35:05 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+21:35:12 INFO  : XSCT server has started successfully.
+21:35:12 INFO  : Successfully done setting XSCT server connection channel  
+21:35:12 INFO  : plnx-install-location is set to ''
+21:35:12 INFO  : Successfully done setting workspace for the tool. 
+21:35:20 INFO  : Registering command handlers for Vitis TCF services
+21:35:20 INFO  : Platform repository initialization has completed.
+21:35:34 INFO  : Successfully done query RDI_DATADIR 
+22:05:49 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+22:07:27 INFO  : Result from executing command 'getProjects': pacman_platform
+22:07:27 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+22:08:26 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:08:32 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+22:08:32 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+22:08:32 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+22:08:32 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+22:08:32 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+22:10:07 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:10:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:10:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:10:11 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:10:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:10:38 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:10:38 INFO  : 'jtag frequency' command is executed.
+22:10:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:10:39 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:10:39 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:39 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:10:39 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:10:39 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:40 INFO  : System reset is completed.
+22:10:43 INFO  : 'after 3000' command is executed.
+22:10:43 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:43 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:10:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:10:43 INFO  : Context for processor 'microblaze_0' is selected.
+22:10:43 INFO  : 'con' command is executed.
+22:10:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:10:43 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:11:36 INFO  : Disconnected from the channel tcfchan#2.
+22:11:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:11:37 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:11:37 INFO  : 'jtag frequency' command is executed.
+22:11:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:11:38 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:11:38 INFO  : Context for processor 'microblaze_0' is selected.
+22:11:38 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:11:38 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:11:38 INFO  : Context for processor 'microblaze_0' is selected.
+22:11:38 INFO  : System reset is completed.
+22:11:41 INFO  : 'after 3000' command is executed.
+22:11:41 INFO  : Context for processor 'microblaze_0' is selected.
+22:11:42 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:11:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:11:42 INFO  : Context for processor 'microblaze_0' is selected.
+22:11:42 INFO  : 'con' command is executed.
+22:11:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:11:42 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+22:16:50 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+22:17:16 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+22:17:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:17:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:17:18 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:17:28 INFO  : Disconnected from the channel tcfchan#3.
+22:17:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:17:28 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+22:17:28 INFO  : 'jtag frequency' command is executed.
+22:17:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:17:29 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+22:17:29 INFO  : Context for processor 'microblaze_0' is selected.
+22:17:30 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+22:17:30 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:17:30 INFO  : Context for processor 'microblaze_0' is selected.
+22:17:30 INFO  : System reset is completed.
+22:17:33 INFO  : 'after 3000' command is executed.
+22:17:33 INFO  : Context for processor 'microblaze_0' is selected.
+22:17:33 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+22:17:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+22:17:33 INFO  : Context for processor 'microblaze_0' is selected.
+22:17:33 INFO  : 'con' command is executed.
+22:17:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:17:33 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+01:03:59 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+01:06:18 INFO  : Result from executing command 'getProjects': pacman_platform
+01:06:18 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+01:09:16 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+01:09:23 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+01:09:23 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+01:09:23 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+01:09:23 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+01:09:24 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+01:13:41 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+01:13:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:13:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:13:43 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:14:29 INFO  : Disconnected from the channel tcfchan#4.
+01:14:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:14:29 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+01:14:29 INFO  : 'jtag frequency' command is executed.
+01:14:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:14:31 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:14:31 INFO  : Context for processor 'microblaze_0' is selected.
+01:14:31 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+01:14:31 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:14:31 INFO  : Context for processor 'microblaze_0' is selected.
+01:14:31 INFO  : System reset is completed.
+01:14:34 INFO  : 'after 3000' command is executed.
+01:14:34 INFO  : Context for processor 'microblaze_0' is selected.
+01:14:34 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+01:14:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+01:14:34 INFO  : Context for processor 'microblaze_0' is selected.
+01:14:34 INFO  : 'con' command is executed.
+01:14:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:14:34 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+01:15:22 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+01:15:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:15:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:15:23 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:23:45 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+01:24:10 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+01:24:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:24:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:24:11 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:24:19 INFO  : Disconnected from the channel tcfchan#6.
+01:24:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:24:19 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+01:24:19 INFO  : 'jtag frequency' command is executed.
+01:24:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:24:21 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:24:21 INFO  : Context for processor 'microblaze_0' is selected.
+01:24:21 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+01:24:21 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:24:21 INFO  : Context for processor 'microblaze_0' is selected.
+01:24:21 INFO  : System reset is completed.
+01:24:24 INFO  : 'after 3000' command is executed.
+01:24:24 INFO  : Context for processor 'microblaze_0' is selected.
+01:24:24 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+01:24:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+01:24:24 INFO  : Context for processor 'microblaze_0' is selected.
+01:24:24 INFO  : 'con' command is executed.
+01:24:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:24:24 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+01:25:05 INFO  : Disconnected from the channel tcfchan#7.
+01:25:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:25:05 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+01:25:05 INFO  : 'jtag frequency' command is executed.
+01:25:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:25:06 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:25:06 INFO  : Context for processor 'microblaze_0' is selected.
+01:25:06 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+01:25:06 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:25:06 INFO  : Context for processor 'microblaze_0' is selected.
+01:25:06 INFO  : System reset is completed.
+01:25:09 INFO  : 'after 3000' command is executed.
+01:25:09 INFO  : Context for processor 'microblaze_0' is selected.
+01:25:10 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+01:25:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+01:25:10 INFO  : Context for processor 'microblaze_0' is selected.
+01:25:10 INFO  : 'con' command is executed.
+01:25:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:25:10 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+01:26:11 INFO  : Disconnected from the channel tcfchan#8.
+01:26:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:26:11 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+01:26:11 INFO  : 'jtag frequency' command is executed.
+01:26:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:26:12 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:26:13 INFO  : Context for processor 'microblaze_0' is selected.
+01:26:13 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+01:26:13 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:26:13 INFO  : Context for processor 'microblaze_0' is selected.
+01:26:13 INFO  : System reset is completed.
+01:26:16 INFO  : 'after 3000' command is executed.
+01:26:16 INFO  : Context for processor 'microblaze_0' is selected.
+01:26:16 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+01:26:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+01:26:16 INFO  : Context for processor 'microblaze_0' is selected.
+01:26:16 INFO  : 'con' command is executed.
+01:26:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:26:16 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+01:26:59 INFO  : Disconnected from the channel tcfchan#9.
+01:26:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:26:59 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+01:26:59 INFO  : 'jtag frequency' command is executed.
+01:26:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:27:01 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:27:01 INFO  : Context for processor 'microblaze_0' is selected.
+01:27:01 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+01:27:01 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:27:01 INFO  : Context for processor 'microblaze_0' is selected.
+01:27:01 INFO  : System reset is completed.
+01:27:04 INFO  : 'after 3000' command is executed.
+01:27:04 INFO  : Context for processor 'microblaze_0' is selected.
+01:27:04 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+01:27:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+01:27:04 INFO  : Context for processor 'microblaze_0' is selected.
+01:27:04 INFO  : 'con' command is executed.
+01:27:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:27:04 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+01:27:52 INFO  : Disconnected from the channel tcfchan#10.
+12:27:12 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+12:27:13 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+12:27:18 INFO  : XSCT server has started successfully.
+12:27:18 INFO  : plnx-install-location is set to ''
+12:27:18 INFO  : Successfully done setting XSCT server connection channel  
+12:27:18 INFO  : Successfully done setting workspace for the tool. 
+12:27:28 INFO  : Registering command handlers for Vitis TCF services
+12:27:28 INFO  : Platform repository initialization has completed.
+12:27:37 INFO  : Successfully done query RDI_DATADIR 
+12:27:54 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:31:20 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:31:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:31:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:31:25 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:31:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:31:43 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:31:43 INFO  : 'jtag frequency' command is executed.
+12:31:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:31:44 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:31:44 INFO  : Context for processor 'microblaze_0' is selected.
+12:31:45 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:31:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:31:45 INFO  : Context for processor 'microblaze_0' is selected.
+12:31:45 INFO  : System reset is completed.
+12:31:48 INFO  : 'after 3000' command is executed.
+12:31:48 INFO  : Context for processor 'microblaze_0' is selected.
+12:31:48 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:31:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:31:48 INFO  : Context for processor 'microblaze_0' is selected.
+12:31:48 INFO  : 'con' command is executed.
+12:31:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:31:48 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:34:27 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:34:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:34:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:34:28 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:34:45 INFO  : Disconnected from the channel tcfchan#1.
+12:34:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:34:45 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:34:45 INFO  : 'jtag frequency' command is executed.
+12:34:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:34:46 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:34:46 INFO  : Context for processor 'microblaze_0' is selected.
+12:34:47 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:34:47 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:34:47 INFO  : Context for processor 'microblaze_0' is selected.
+12:34:47 INFO  : System reset is completed.
+12:34:50 INFO  : 'after 3000' command is executed.
+12:34:50 INFO  : Context for processor 'microblaze_0' is selected.
+12:34:50 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:34:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:34:50 INFO  : Context for processor 'microblaze_0' is selected.
+12:34:50 INFO  : 'con' command is executed.
+12:34:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:34:50 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+13:15:06 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+13:15:27 INFO  : Result from executing command 'getProjects': pacman_platform
+13:15:27 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+13:19:13 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+13:19:16 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+13:19:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+13:19:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+13:19:16 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+13:19:16 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+13:21:17 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+13:21:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:21:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+13:21:19 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+13:21:41 INFO  : Disconnected from the channel tcfchan#2.
+13:21:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:21:41 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+13:21:41 INFO  : 'jtag frequency' command is executed.
+13:21:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+13:21:43 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+13:21:43 INFO  : Context for processor 'microblaze_0' is selected.
+13:21:43 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+13:21:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+13:21:43 INFO  : Context for processor 'microblaze_0' is selected.
+13:21:43 INFO  : System reset is completed.
+13:21:46 INFO  : 'after 3000' command is executed.
+13:21:46 INFO  : Context for processor 'microblaze_0' is selected.
+13:21:46 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+13:21:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+13:21:47 INFO  : Context for processor 'microblaze_0' is selected.
+13:21:47 INFO  : 'con' command is executed.
+13:21:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+13:21:47 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+13:44:04 INFO  : Disconnected from the channel tcfchan#4.
+15:59:34 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+15:59:35 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+15:59:42 INFO  : XSCT server has started successfully.
+15:59:42 INFO  : Successfully done setting XSCT server connection channel  
+15:59:42 INFO  : plnx-install-location is set to ''
+15:59:42 INFO  : Successfully done setting workspace for the tool. 
+15:59:49 INFO  : Registering command handlers for Vitis TCF services
+15:59:50 INFO  : Platform repository initialization has completed.
+16:00:01 INFO  : Successfully done query RDI_DATADIR 
+17:32:28 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:33:17 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:33:55 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+17:33:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:33:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:33:59 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:34:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:34:06 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+17:34:06 INFO  : 'jtag frequency' command is executed.
+17:34:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:34:07 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:34:07 INFO  : Context for processor 'microblaze_0' is selected.
+17:34:07 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+17:34:07 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+17:34:07 INFO  : Context for processor 'microblaze_0' is selected.
+17:34:07 INFO  : System reset is completed.
+17:34:10 INFO  : 'after 3000' command is executed.
+17:34:10 INFO  : Context for processor 'microblaze_0' is selected.
+17:34:10 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+17:34:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+17:34:11 INFO  : Context for processor 'microblaze_0' is selected.
+17:34:11 INFO  : 'con' command is executed.
+17:34:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+17:34:11 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+17:56:40 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+17:58:13 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+17:58:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:58:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:58:14 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:58:25 INFO  : Disconnected from the channel tcfchan#1.
+17:58:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:58:25 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+17:58:25 INFO  : 'jtag frequency' command is executed.
+17:58:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:58:27 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+17:58:27 INFO  : Context for processor 'microblaze_0' is selected.
+17:58:27 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+17:58:27 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+17:58:27 INFO  : Context for processor 'microblaze_0' is selected.
+17:58:27 INFO  : System reset is completed.
+17:58:30 INFO  : 'after 3000' command is executed.
+17:58:30 INFO  : Context for processor 'microblaze_0' is selected.
+17:58:31 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+17:58:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+17:58:31 INFO  : Context for processor 'microblaze_0' is selected.
+17:58:31 INFO  : 'con' command is executed.
+17:58:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+17:58:31 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+19:14:10 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+19:16:32 INFO  : Result from executing command 'getProjects': pacman_platform
+19:16:32 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+19:31:20 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+19:31:25 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:31:25 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+19:31:25 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+19:31:25 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+19:31:25 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+19:35:15 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+19:35:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:35:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:35:16 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+19:35:32 INFO  : Disconnected from the channel tcfchan#2.
+19:35:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:35:33 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+19:35:33 INFO  : 'jtag frequency' command is executed.
+19:35:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:35:34 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+19:35:34 INFO  : Context for processor 'microblaze_0' is selected.
+19:35:34 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+19:35:34 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:35:34 INFO  : Context for processor 'microblaze_0' is selected.
+19:35:34 INFO  : System reset is completed.
+19:35:37 INFO  : 'after 3000' command is executed.
+19:35:37 INFO  : Context for processor 'microblaze_0' is selected.
+19:35:38 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+19:35:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+19:35:38 INFO  : Context for processor 'microblaze_0' is selected.
+19:35:38 INFO  : 'con' command is executed.
+19:35:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:35:38 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+19:40:21 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+19:40:47 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+19:40:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:41:43 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+19:41:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:41:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:41:44 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+19:41:52 INFO  : Disconnected from the channel tcfchan#4.
+19:41:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:41:53 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+19:41:53 INFO  : 'jtag frequency' command is executed.
+19:41:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:41:54 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+19:41:54 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:54 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+19:41:54 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:41:54 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:54 INFO  : System reset is completed.
+19:41:57 INFO  : 'after 3000' command is executed.
+19:41:57 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:58 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+19:41:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+19:41:58 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:58 INFO  : 'con' command is executed.
+19:41:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:41:58 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+21:53:50 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+21:56:15 INFO  : Result from executing command 'getProjects': pacman_platform
+21:56:15 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+22:54:56 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+22:54:57 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+22:55:04 INFO  : XSCT server has started successfully.
+22:55:04 INFO  : plnx-install-location is set to ''
+22:55:04 INFO  : Successfully done setting XSCT server connection channel  
+22:55:04 INFO  : Successfully done setting workspace for the tool. 
+22:55:11 INFO  : Registering command handlers for Vitis TCF services
+22:55:12 INFO  : Platform repository initialization has completed.
+22:55:23 INFO  : Successfully done query RDI_DATADIR 
+22:58:37 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+23:00:54 INFO  : Result from executing command 'getProjects': pacman_platform
+23:00:54 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+23:00:58 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+23:01:04 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+23:01:04 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+23:01:04 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+23:01:04 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+23:01:04 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+23:02:24 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+23:02:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:02:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:02:28 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:42:36 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+23:42:57 INFO  : Result from executing command 'getProjects': pacman_platform
+23:42:57 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+23:45:49 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+23:45:54 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+23:45:54 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+23:45:54 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+23:45:54 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+23:45:54 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+23:48:55 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+23:48:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:48:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:48:56 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:50:51 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+23:50:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:50:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:50:52 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+23:52:06 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+23:52:15 INFO  : Result from executing command 'removePlatformRepo': 
+23:52:36 INFO  : Result from executing command 'getProjects': pacman_platform
+23:52:36 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+00:04:04 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+00:04:15 INFO  : Result from executing command 'getProjects': pacman_platform
+00:04:15 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+00:05:26 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+00:05:30 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+00:05:30 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+00:05:30 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+00:05:30 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+00:05:30 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+00:06:54 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+00:06:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:06:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+00:06:55 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+00:07:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:07:09 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+00:07:09 INFO  : 'jtag frequency' command is executed.
+00:07:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+00:07:10 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+00:07:10 INFO  : Context for processor 'microblaze_0' is selected.
+00:07:10 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+00:07:10 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+00:07:10 INFO  : Context for processor 'microblaze_0' is selected.
+00:07:10 INFO  : System reset is completed.
+00:07:13 INFO  : 'after 3000' command is executed.
+00:07:13 INFO  : Context for processor 'microblaze_0' is selected.
+00:07:13 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+00:07:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+00:07:14 INFO  : Context for processor 'microblaze_0' is selected.
+00:07:14 INFO  : 'con' command is executed.
+00:07:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+00:07:14 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+00:46:43 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+00:47:06 INFO  : Result from executing command 'getProjects': pacman_platform
+00:47:06 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+00:56:55 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+00:56:57 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+00:56:57 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+00:56:57 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+00:56:57 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+00:56:57 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+01:10:20 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+01:18:39 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+01:18:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:18:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:18:41 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:18:47 INFO  : Disconnected from the channel tcfchan#2.
+01:18:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:18:47 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+01:18:47 INFO  : 'jtag frequency' command is executed.
+01:18:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:18:49 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+01:18:49 INFO  : Context for processor 'microblaze_0' is selected.
+01:18:49 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+01:18:49 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:18:49 INFO  : Context for processor 'microblaze_0' is selected.
+01:18:49 INFO  : System reset is completed.
+01:18:52 INFO  : 'after 3000' command is executed.
+01:18:52 INFO  : Context for processor 'microblaze_0' is selected.
+01:18:52 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+01:18:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+01:18:52 INFO  : Context for processor 'microblaze_0' is selected.
+01:18:52 INFO  : 'con' command is executed.
+01:18:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:18:52 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+01:24:38 INFO  : Disconnected from the channel tcfchan#8.
+09:15:48 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+09:15:50 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+09:15:55 INFO  : XSCT server has started successfully.
+09:15:55 INFO  : Successfully done setting XSCT server connection channel  
+09:15:55 INFO  : plnx-install-location is set to ''
+09:15:55 INFO  : Successfully done setting workspace for the tool. 
+09:16:05 INFO  : Platform repository initialization has completed.
+09:16:06 INFO  : Registering command handlers for Vitis TCF services
+09:16:17 INFO  : Successfully done query RDI_DATADIR 
+09:23:02 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+09:25:18 INFO  : Result from executing command 'getProjects': pacman_platform
+09:25:18 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+09:26:16 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+09:26:22 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+09:26:22 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+09:26:22 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+09:26:22 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+09:26:22 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+09:29:23 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+09:29:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:29:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+09:29:27 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+09:30:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:30:08 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+09:30:08 INFO  : 'jtag frequency' command is executed.
+09:30:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+09:30:10 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+09:30:10 INFO  : Context for processor 'microblaze_0' is selected.
+09:30:10 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+09:30:10 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:30:10 INFO  : Context for processor 'microblaze_0' is selected.
+09:30:10 INFO  : System reset is completed.
+09:30:13 INFO  : 'after 3000' command is executed.
+09:30:13 INFO  : Context for processor 'microblaze_0' is selected.
+09:30:13 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+09:30:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+09:30:14 INFO  : Context for processor 'microblaze_0' is selected.
+09:30:14 INFO  : 'con' command is executed.
+09:30:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:30:14 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+09:45:12 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+09:45:31 INFO  : Result from executing command 'getProjects': pacman_platform
+09:45:31 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+09:45:47 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+09:45:49 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+09:45:49 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+09:45:49 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+09:45:49 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+09:45:49 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+09:54:33 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+09:54:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:54:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+09:54:34 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+09:54:48 INFO  : Disconnected from the channel tcfchan#2.
+09:54:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:54:48 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+09:54:48 INFO  : 'jtag frequency' command is executed.
+09:54:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+09:54:49 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+09:54:50 INFO  : Context for processor 'microblaze_0' is selected.
+09:54:50 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+09:54:50 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:54:50 INFO  : Context for processor 'microblaze_0' is selected.
+09:54:50 INFO  : System reset is completed.
+09:54:53 INFO  : 'after 3000' command is executed.
+09:54:53 INFO  : Context for processor 'microblaze_0' is selected.
+09:54:53 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+09:54:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+09:54:53 INFO  : Context for processor 'microblaze_0' is selected.
+09:54:53 INFO  : 'con' command is executed.
+09:54:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:54:53 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+10:40:41 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+10:40:58 INFO  : Result from executing command 'getProjects': pacman_platform
+10:40:58 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+10:46:04 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+10:46:08 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+10:46:08 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+10:46:08 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+10:46:08 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+10:46:08 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+10:48:37 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+10:48:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:48:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+10:48:39 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+10:48:55 INFO  : Disconnected from the channel tcfchan#4.
+10:48:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:48:56 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+10:48:56 INFO  : 'jtag frequency' command is executed.
+10:48:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+10:48:57 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+10:48:57 INFO  : Context for processor 'microblaze_0' is selected.
+10:48:57 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+10:48:57 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:48:57 INFO  : Context for processor 'microblaze_0' is selected.
+10:48:57 INFO  : System reset is completed.
+10:49:00 INFO  : 'after 3000' command is executed.
+10:49:00 INFO  : Context for processor 'microblaze_0' is selected.
+10:49:01 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+10:49:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+10:49:01 INFO  : Context for processor 'microblaze_0' is selected.
+10:49:01 INFO  : 'con' command is executed.
+10:49:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:49:01 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+11:06:57 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+11:09:28 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+11:09:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:09:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+11:09:30 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+11:09:42 INFO  : Disconnected from the channel tcfchan#6.
+11:09:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:09:42 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+11:09:42 INFO  : 'jtag frequency' command is executed.
+11:09:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+11:09:44 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+11:09:44 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:44 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+11:09:44 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:09:44 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:44 INFO  : System reset is completed.
+11:09:47 INFO  : 'after 3000' command is executed.
+11:09:47 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:47 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+11:09:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+11:09:47 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:47 INFO  : 'con' command is executed.
+11:09:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:09:47 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+11:26:50 INFO  : Disconnected from the channel tcfchan#7.
+11:52:07 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+11:52:08 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+11:52:11 INFO  : XSCT server has started successfully.
+11:52:11 INFO  : Successfully done setting XSCT server connection channel  
+11:52:11 INFO  : plnx-install-location is set to ''
+11:52:11 INFO  : Successfully done setting workspace for the tool. 
+11:52:22 INFO  : Platform repository initialization has completed.
+11:52:22 INFO  : Registering command handlers for Vitis TCF services
+11:52:22 INFO  : Successfully done query RDI_DATADIR 
+11:52:35 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+11:52:49 INFO  : Result from executing command 'getProjects': pacman_platform
+11:52:49 INFO  : Result from executing command 'getPlatforms': pacman_platform|D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/pacman_platform.xpfm
+11:53:26 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+11:53:30 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+11:53:30 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+11:53:30 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+11:53:30 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+11:53:30 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+11:55:29 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+11:55:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:55:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+11:55:33 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+11:55:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:55:50 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+11:55:50 INFO  : 'jtag frequency' command is executed.
+11:55:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+11:55:51 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+11:55:52 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:52 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+11:55:52 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:55:52 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:52 INFO  : System reset is completed.
+11:55:55 INFO  : 'after 3000' command is executed.
+11:55:55 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:55 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+11:55:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+11:55:55 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:55 INFO  : 'con' command is executed.
+11:55:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:55:55 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:02:51 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:04:14 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:05:10 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:05:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:05:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:05:11 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:05:26 INFO  : Disconnected from the channel tcfchan#2.
+12:05:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:05:27 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:05:27 INFO  : 'jtag frequency' command is executed.
+12:05:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:05:28 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:05:28 INFO  : Context for processor 'microblaze_0' is selected.
+12:05:28 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:05:28 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:05:28 INFO  : Context for processor 'microblaze_0' is selected.
+12:05:28 INFO  : System reset is completed.
+12:05:31 INFO  : 'after 3000' command is executed.
+12:05:31 INFO  : Context for processor 'microblaze_0' is selected.
+12:05:31 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:05:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:05:32 INFO  : Context for processor 'microblaze_0' is selected.
+12:05:32 INFO  : 'con' command is executed.
+12:05:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:05:32 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:08:35 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:09:09 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:09:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:09:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:09:11 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:09:30 INFO  : Disconnected from the channel tcfchan#3.
+12:09:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:09:31 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:09:31 INFO  : 'jtag frequency' command is executed.
+12:09:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:09:32 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:09:32 INFO  : Context for processor 'microblaze_0' is selected.
+12:09:32 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:09:32 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:09:32 INFO  : Context for processor 'microblaze_0' is selected.
+12:09:32 INFO  : System reset is completed.
+12:09:35 INFO  : 'after 3000' command is executed.
+12:09:35 INFO  : Context for processor 'microblaze_0' is selected.
+12:09:36 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:09:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:09:36 INFO  : Context for processor 'microblaze_0' is selected.
+12:09:36 INFO  : 'con' command is executed.
+12:09:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:09:36 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:10:54 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:10:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:10:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:10:56 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:11:09 INFO  : Disconnected from the channel tcfchan#4.
+12:11:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:11:09 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:11:09 INFO  : 'jtag frequency' command is executed.
+12:11:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:11:10 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:11:11 INFO  : Context for processor 'microblaze_0' is selected.
+12:11:11 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:11:11 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:11:11 INFO  : Context for processor 'microblaze_0' is selected.
+12:11:11 INFO  : System reset is completed.
+12:11:14 INFO  : 'after 3000' command is executed.
+12:11:14 INFO  : Context for processor 'microblaze_0' is selected.
+12:11:14 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:11:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:11:14 INFO  : Context for processor 'microblaze_0' is selected.
+12:11:14 INFO  : 'con' command is executed.
+12:11:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:11:14 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:12:25 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:14:28 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:14:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:14:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:14:30 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:14:41 INFO  : Disconnected from the channel tcfchan#5.
+12:14:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:14:42 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:14:42 INFO  : 'jtag frequency' command is executed.
+12:14:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:14:43 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:14:43 INFO  : Context for processor 'microblaze_0' is selected.
+12:14:43 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:14:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:14:43 INFO  : Context for processor 'microblaze_0' is selected.
+12:14:43 INFO  : System reset is completed.
+12:14:46 INFO  : 'after 3000' command is executed.
+12:14:46 INFO  : Context for processor 'microblaze_0' is selected.
+12:14:47 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:14:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:14:47 INFO  : Context for processor 'microblaze_0' is selected.
+12:14:47 INFO  : 'con' command is executed.
+12:14:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:14:47 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:18:00 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:18:38 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:18:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:18:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:18:39 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:18:45 INFO  : Disconnected from the channel tcfchan#6.
+12:18:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:18:45 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:18:45 INFO  : 'jtag frequency' command is executed.
+12:18:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:18:47 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:18:47 INFO  : Context for processor 'microblaze_0' is selected.
+12:18:47 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:18:47 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:18:47 INFO  : Context for processor 'microblaze_0' is selected.
+12:18:47 INFO  : System reset is completed.
+12:18:50 INFO  : 'after 3000' command is executed.
+12:18:50 INFO  : Context for processor 'microblaze_0' is selected.
+12:18:50 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:18:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:18:50 INFO  : Context for processor 'microblaze_0' is selected.
+12:18:50 INFO  : 'con' command is executed.
+12:18:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:18:50 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:20:09 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:20:44 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:20:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:20:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:20:45 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:20:51 INFO  : Disconnected from the channel tcfchan#7.
+12:20:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:20:51 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:20:51 INFO  : 'jtag frequency' command is executed.
+12:20:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:20:53 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:20:53 INFO  : Context for processor 'microblaze_0' is selected.
+12:20:53 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:20:53 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:20:53 INFO  : Context for processor 'microblaze_0' is selected.
+12:20:53 INFO  : System reset is completed.
+12:20:56 INFO  : 'after 3000' command is executed.
+12:20:56 INFO  : Context for processor 'microblaze_0' is selected.
+12:20:56 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:20:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:20:56 INFO  : Context for processor 'microblaze_0' is selected.
+12:20:56 INFO  : 'con' command is executed.
+12:20:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:20:56 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:22:32 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:23:41 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+12:23:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:23:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:23:42 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:23:46 INFO  : Disconnected from the channel tcfchan#8.
+12:23:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:23:47 INFO  : Jtag cable 'RealDigital Boo 887100000000A' is selected.
+12:23:47 INFO  : 'jtag frequency' command is executed.
+12:23:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+12:23:48 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+12:23:48 INFO  : Context for processor 'microblaze_0' is selected.
+12:23:48 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+12:23:48 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:23:48 INFO  : Context for processor 'microblaze_0' is selected.
+12:23:48 INFO  : System reset is completed.
+12:23:51 INFO  : 'after 3000' command is executed.
+12:23:51 INFO  : Context for processor 'microblaze_0' is selected.
+12:23:52 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+12:23:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+12:23:52 INFO  : Context for processor 'microblaze_0' is selected.
+12:23:52 INFO  : 'con' command is executed.
+12:23:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:23:52 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+12:51:34 INFO  : Hardware specification for platform project 'pacman_platform' is updated.
+12:51:50 INFO  : Result from executing command 'getProjects': pacman_platform
+12:51:50 INFO  : Result from executing command 'getPlatforms': 
+12:53:22 INFO  : Checking for BSP changes to sync application flags for project 'pacman_app'...
+12:53:25 INFO  : The hardware specification used by project 'pacman_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+12:53:25 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\download.bit' stored in project is removed.
+12:53:25 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.bit' stored in project is removed.
+12:53:25 INFO  : The file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream\mb_pacman_wrapper.mmi' stored in project is removed.
+12:53:25 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app\_ide\bitstream' in project 'pacman_app'.
+12:53:30 INFO  : Disconnected from the channel tcfchan#9.
+14:36:41 DEBUG : Logs will be stored at 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/IDE.log'.
+14:36:42 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\temp_xsdb_launch_script.tcl
+14:36:48 INFO  : XSCT server has started successfully.
+14:36:48 INFO  : Successfully done setting XSCT server connection channel  
+14:36:48 INFO  : plnx-install-location is set to ''
+14:36:48 INFO  : Successfully done setting workspace for the tool. 
+14:36:58 INFO  : Registering command handlers for Vitis TCF services
+14:36:58 INFO  : Platform repository initialization has completed.
+14:37:06 INFO  : Successfully done query RDI_DATADIR 
+14:37:34 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+14:37:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:37:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874042400D9A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+14:37:39 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+14:37:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:37:54 INFO  : Jtag cable 'RealDigital Boo 8874042400D9A' is selected.
+14:37:54 INFO  : 'jtag frequency' command is executed.
+14:37:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874042400D9A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+14:37:55 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+14:37:55 INFO  : Context for processor 'microblaze_0' is selected.
+14:37:55 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+14:37:55 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+14:37:55 INFO  : Context for processor 'microblaze_0' is selected.
+14:37:55 INFO  : System reset is completed.
+14:37:58 INFO  : 'after 3000' command is executed.
+14:37:58 INFO  : Context for processor 'microblaze_0' is selected.
+14:37:59 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+14:37:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874042400D9A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+14:37:59 INFO  : Context for processor 'microblaze_0' is selected.
+14:37:59 INFO  : 'con' command is executed.
+14:37:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+14:37:59 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+14:52:26 INFO  : Bit file 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit' is generated.
+14:52:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:52:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874042400D9A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+14:52:27 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+14:52:43 INFO  : Disconnected from the channel tcfchan#1.
+14:52:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:52:43 INFO  : Jtag cable 'RealDigital Boo 8874042400D9A' is selected.
+14:52:43 INFO  : 'jtag frequency' command is executed.
+14:52:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874042400D9A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+14:52:44 INFO  : Device configured successfully with "D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit"
+14:52:44 INFO  : Context for processor 'microblaze_0' is selected.
+14:52:45 INFO  : Hardware design and registers information is loaded from 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa'.
+14:52:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+14:52:45 INFO  : Context for processor 'microblaze_0' is selected.
+14:52:45 INFO  : System reset is completed.
+14:52:48 INFO  : 'after 3000' command is executed.
+14:52:48 INFO  : Context for processor 'microblaze_0' is selected.
+14:52:48 INFO  : The application 'D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf' is downloaded to processor 'microblaze_0'.
+14:52:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874042400D9A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/Debug/pacman_app.elf
+----------------End of Script----------------
+
+14:52:48 INFO  : Context for processor 'microblaze_0' is selected.
+14:52:48 INFO  : 'con' command is executed.
+14:52:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+14:52:48 INFO  : Launch script is exported to file 'D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl'
+14:59:50 INFO  : Disconnected from the channel tcfchan#2.

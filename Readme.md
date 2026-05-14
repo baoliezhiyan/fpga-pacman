@@ -1,0 +1,1 @@
+project_labfinal_platform is the main vivado project and ip_repo is where I store the IP cores. The vitis_workspace folder is under project_labfinal_platform(project_labfinal_platform\vitis_workspace). Use this file as the workspace of vitis, then just program the device and run.

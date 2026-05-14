@@ -1,7 +1,7 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Fri Apr 24 12:20:06 2026
+-- Date        : Mon May 11 12:44:30 2026
 -- Host        : LAPTOP-KGNOGRA4 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/mb_pacman_pacman_AXI4_graphics_0_0_stub.vhdl
@@ -25,7 +25,7 @@ entity mb_pacman_pacman_AXI4_graphics_0_0 is
     ghost4_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
     ghost4_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
     game_score : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    game_status : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ghost_status : out STD_LOGIC_VECTOR ( 3 downto 0 );
     lives : out STD_LOGIC_VECTOR ( 3 downto 0 );
     level : out STD_LOGIC_VECTOR ( 7 downto 0 );
     vga_clk : in STD_LOGIC;
@@ -64,7 +64,7 @@ architecture stub of mb_pacman_pacman_AXI4_graphics_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "pacman_x[9:0],pacman_y[9:0],ghost1_x[9:0],ghost1_y[9:0],ghost2_x[9:0],ghost2_y[9:0],ghost3_x[9:0],ghost3_y[9:0],ghost4_x[9:0],ghost4_y[9:0],game_score[31:0],game_status[3:0],lives[3:0],level[7:0],vga_clk,VGA_R[7:0],VGA_G[7:0],VGA_B[7:0],VGA_HS,VGA_VS,active_nblank,s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[6:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[6:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
+attribute black_box_pad_pin of stub : architecture is "pacman_x[9:0],pacman_y[9:0],ghost1_x[9:0],ghost1_y[9:0],ghost2_x[9:0],ghost2_y[9:0],ghost3_x[9:0],ghost3_y[9:0],ghost4_x[9:0],ghost4_y[9:0],game_score[31:0],ghost_status[3:0],lives[3:0],level[7:0],vga_clk,VGA_R[7:0],VGA_G[7:0],VGA_B[7:0],VGA_HS,VGA_VS,active_nblank,s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[6:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[6:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "pacman_AXI4_graphics_v1_0,Vivado 2022.2";
 begin

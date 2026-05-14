@@ -82,6 +82,7 @@
 		
 		output wire [9:0]  pacman_x,
         output wire [9:0]  pacman_y,
+		output wire [1:0]  pacman_dir,
         output wire [9:0]  ghost1_x,
         output wire [9:0]  ghost1_y,
         output wire [9:0]  ghost2_x,
@@ -90,8 +91,9 @@
         output wire [9:0]  ghost3_y,
         output wire [9:0]  ghost4_x,
         output wire [9:0]  ghost4_y,
+		output wire [7:0]  all_ghost_dirs,
         output wire [31:0] game_score,
-        output wire [3:0]  game_status, // 0:Menu, 1:Play, 2:Power, 3:Dead
+        output wire [3:0]  ghost_status,
         output wire [3:0]  lives,
         output wire [7:0]  level,
         // 视频输出端口
@@ -688,7 +690,7 @@
 	        5'h0C   : reg_data_out <= slv_reg12;
 	        5'h0D   : reg_data_out <= slv_reg13;
 	        5'h0E   : reg_data_out <= slv_reg14;
-	        5'h0F   : reg_data_out <= {31'b0, VGA_VS}; // 让 slv_reg15 返回实时的 VS 信号
+	        5'h0F   : reg_data_out <= {31'b0, VGA_VS};
 	        5'h10   : reg_data_out <= slv_reg16;
 	        5'h11   : reg_data_out <= slv_reg17;
 	        5'h12   : reg_data_out <= slv_reg18;
@@ -729,9 +731,10 @@
 	end    
 
 	// Add user logic here
-	// 坐标映射：将寄存器低10位分配给坐标信号（屏幕分辨率一般为640x480）
+	// 坐标映射：将寄存器低10位分配给坐标信号（屏幕分辨率为640x480）
     assign pacman_x   = slv_reg0[9:0];
     assign pacman_y   = slv_reg1[9:0];
+	assign pacman_dir = slv_reg14[1:0];
     
     assign ghost1_x   = slv_reg2[9:0];
     assign ghost1_y   = slv_reg3[9:0];
@@ -745,24 +748,13 @@
     assign ghost4_x   = slv_reg8[9:0];
     assign ghost4_y   = slv_reg9[9:0];
 
+	assign all_ghost_dirs = slv_reg17[7:0];
+
     // 游戏全局状态映射
     assign game_score  = slv_reg10;
-    assign game_status = slv_reg11[3:0];
+    assign ghost_status = slv_reg11[3:0];
     assign lives       = slv_reg12[3:0];
     assign level       = slv_reg13[7:0];
-
-    // 剩下的 slv_reg14 到 slv_reg30 暂时预留给：
-    // - 地图 Tile 更新数据
-    // - 颜色调色板 (Palette)
-    // - 音效触发标志位
-    
-    // 特殊：实现 CPU 读取硬件状态 (VSync)
-    // 注意：Vivado 生成的代码中有一个由 axi_araddr 控制的读取 mux。
-    // 你需要找到控制 'reg_data_out' 的 always_comb 块。
-    // 通常是将 slv_reg15 的内容直接通过总线返回给 CPU。
-    // 如果你想让 CPU 读到真正的硬件 vsync_active，请确保 slv_reg15 被赋值为硬件信号。
-    // 在这里我们演示如何把输入信号“塞”回一个寄存器以便读取：
-    // 注意：这只是映射输出，读取逻辑通常在文件的 'READ_ADDR' 部分。
 
 	graphics_engine pacman_render_inst (
         .vga_clk(vga_clk),
@@ -771,21 +763,36 @@
         // 坐标和状态输入
         .pacman_x(pacman_x),
         .pacman_y(pacman_y),
+        .pacman_dir(pacman_dir),
         .ghost1_x(ghost1_x),
         .ghost1_y(ghost1_y),
-        // ... (根据需要继续连接其余幽灵坐标)
-        
-        .game_status(game_status),
+        .ghost2_x(ghost2_x),
+        .ghost2_y(ghost2_y),
+        .ghost3_x(ghost3_x),
+        .ghost3_y(ghost3_y),
+        .ghost4_x(ghost4_x),
+        .ghost4_y(ghost4_y),
+        .all_ghost_dirs(all_ghost_dirs),
+        .ghost_status(ghost_status),
+		.game_score(game_score), 
+        .lives(lives),
+		.ghost_returning_status(slv_reg18[3:0]),
+		
+		.text_reg0(slv_reg19),
+		.text_reg1(slv_reg20),
+		.text_reg2(slv_reg21),
+		.text_reg3(slv_reg22),
+		.text_reg4(slv_reg23),
+
 		.VGA_R(VGA_R),
 		.VGA_G(VGA_G),
 		.VGA_B(VGA_B),
 		.VGA_HS(VGA_HS),
 		.VGA_VS(VGA_VS),
-		.active_nblank(active_nblank)
-        
-        // 此处后续需要添加连接到 HDMI IP 或 HDMI 引脚的端口
-        // .hdmi_out_clk(...),
-        // .hdmi_out_data(...)
+		.active_nblank(active_nblank),
+        .dot_cmd_reg(slv_reg15[31:0]),
+		.super_dot_status(slv_reg16[3:0]),
+		.s00_axi_aclk(S_AXI_ACLK)
     );
 
 	// User logic ends

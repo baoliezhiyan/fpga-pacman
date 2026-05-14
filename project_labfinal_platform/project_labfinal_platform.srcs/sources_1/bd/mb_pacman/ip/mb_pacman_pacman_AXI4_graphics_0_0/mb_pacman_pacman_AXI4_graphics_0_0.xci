@@ -4,7 +4,7 @@
     "xci_name": "mb_pacman_pacman_AXI4_graphics_0_0",
     "cell_name": "pacman_AXI4_graphics_0",
     "component_reference": "xilinx.com:user:pacman_AXI4_graphics:1.0",
-    "ip_revision": "6",
+    "ip_revision": "26",
     "gen_directory": "../../../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0",
     "parameters": {
       "component_parameters": {
@@ -35,7 +35,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "6" } ],
+        "IPREVISION": [ { "value": "26" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -57,7 +57,7 @@
         "ghost4_x": [ { "direction": "out", "size_left": "9", "size_right": "0" } ],
         "ghost4_y": [ { "direction": "out", "size_left": "9", "size_right": "0" } ],
         "game_score": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
-        "game_status": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
+        "ghost_status": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
         "lives": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
         "level": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
         "vga_clk": [ { "direction": "in" } ],
@@ -187,7 +187,7 @@
           "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
           "mode": "slave",
           "parameters": {
-            "FREQ_HZ": [ { "value": "25000000", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "65000000", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "/clk_wiz_1_clk_out1", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],

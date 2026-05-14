@@ -1,14 +1,5 @@
-12:28:12 **** Build of configuration Debug for project pacman_app ****
+12:53:22 **** Incremental Build of configuration Debug for project pacman_app ****
 make all 
-'Building file: ../src/lw_usb/HID.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lw_usb/HID.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lw_usb/HID.d" -MT"src/lw_usb/HID.o" -o "src/lw_usb/HID.o" "../src/lw_usb/HID.c"
-../src/lw_usb/HID.c:9:1: warning: braces around scalar initializer
-    9 | HID_DEVICE hid_device = { { 0 } };
-      | ^~~~~~~~~~
-../src/lw_usb/HID.c:9:1: note: (near initialization for 'hid_device.addr')
-'Finished building: ../src/lw_usb/HID.c'
-' '
 'Building file: ../src/lw_usb/MAX3421E.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lw_usb/MAX3421E.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lw_usb/MAX3421E.d" -MT"src/lw_usb/MAX3421E.o" -o "src/lw_usb/MAX3421E.o" "../src/lw_usb/MAX3421E.c"
@@ -37,6 +28,9 @@ mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lw_usb/transfer.o" -ID:/Vivad
 'Building file: ../src/main.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -ID:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/sw/pacman_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:138:22: warning: 'level_map' initialized and declared 'extern'
+  138 | extern const uint8_t level_map[30][40] = {
+      |                      ^~~~~~~~~
 'Finished building: ../src/main.c'
 ' '
 'Building file: ../src/platform.c'
@@ -52,9 +46,9 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LD:/Vivado/MyProjects/project_labfinal_plat
 'Invoking: MicroBlaze Print Size'
 mb-size pacman_app.elf  |tee "pacman_app.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  24352	    476	   3660	  28488	   6f48	pacman_app.elf
+  49308	   1608	   5148	  56064	   db00	pacman_app.elf
 'Finished building: pacman_app.elf.size'
 ' '
 
-12:28:17 Build Finished (took 4s.858ms)
+12:53:25 Build Finished (took 2s.433ms)
 

@@ -35,5 +35,7 @@ set_property src_info {type:XDC file:1 line:53 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN V14 [get_ports SPI_0_0_sck_io]
 set_property src_info {type:XDC file:1 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN T12 [get_ports {SPI_0_0_ss_io[0]}]
-set_property src_info {type:XDC file:1 line:63 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:1 line:62 export:INPUT save:INPUT read:READ} [current_design]
 set_false_path -from [get_clocks clk_out1_mb_pacman_clk_wiz_1_0_1] -to [get_clocks clk_out2_mb_pacman_clk_wiz_1_0_1]
+set_property src_info {type:XDC file:1 line:63 export:INPUT save:INPUT read:READ} [current_design]
+set_false_path -from [get_clocks clk_out2_mb_pacman_clk_wiz_1_0_1] -to [get_clocks clk_out1_mb_pacman_clk_wiz_1_0_1]

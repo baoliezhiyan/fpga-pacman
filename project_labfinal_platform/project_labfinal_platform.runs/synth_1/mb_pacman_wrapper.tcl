@@ -126,6 +126,10 @@ set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/p
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_axi_gpio_1_0/mb_pacman_axi_gpio_1_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_axi_gpio_1_0/mb_pacman_axi_gpio_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_axi_gpio_1_0/mb_pacman_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_2/blk_mem_gen_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_3/blk_mem_gen_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/mb_pacman_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_microblaze_0_0/data/mb_bootloop_le.elf]
 

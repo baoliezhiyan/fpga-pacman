@@ -10,7 +10,7 @@
 # source D:\Vivado\MyProjects\project_labfinal_platform\vitis_workspace\pacman_app_system\_ide\scripts\systemdebugger_pacman_app_system_standalone.tcl
 # 
 connect -url tcp:127.0.0.1:3121
-targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874042400D9A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
 fpga -file D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_app/_ide/bitstream/download.bit
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
 loadhw -hw D:/Vivado/MyProjects/project_labfinal_platform/vitis_workspace/pacman_platform/export/pacman_platform/hw/mb_pacman_wrapper.xsa -regs

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:pacman_AXI4_graphics:1.0
-// IP Revision: 6
+// IP Revision: 26
 
 `timescale 1ns/1ps
 
@@ -65,7 +65,7 @@ module mb_pacman_pacman_AXI4_graphics_0_0 (
   ghost4_x,
   ghost4_y,
   game_score,
-  game_status,
+  ghost_status,
   lives,
   level,
   vga_clk,
@@ -109,10 +109,10 @@ output wire [9 : 0] ghost3_y;
 output wire [9 : 0] ghost4_x;
 output wire [9 : 0] ghost4_y;
 output wire [31 : 0] game_score;
-output wire [3 : 0] game_status;
+output wire [3 : 0] ghost_status;
 output wire [3 : 0] lives;
 output wire [7 : 0] level;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vga_clk, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vga_clk, FREQ_HZ 65000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 vga_clk CLK" *)
 input wire vga_clk;
 output wire [7 : 0] VGA_R;
@@ -183,7 +183,7 @@ input wire s00_axi_rready;
     .ghost4_x(ghost4_x),
     .ghost4_y(ghost4_y),
     .game_score(game_score),
-    .game_status(game_status),
+    .ghost_status(ghost_status),
     .lives(lives),
     .level(level),
     .vga_clk(vga_clk),

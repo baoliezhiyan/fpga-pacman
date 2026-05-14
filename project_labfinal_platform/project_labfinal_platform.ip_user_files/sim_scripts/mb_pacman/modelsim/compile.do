@@ -156,15 +156,6 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../project_labfinal_pl
 "../../../bd/mb_pacman/ipshared/afa8/hdl/srldelay.v" \
 "../../../bd/mb_pacman/ipshared/afa8/hdl/hdmi_tx_v1_0.v" \
 "../../../bd/mb_pacman/ip/mb_pacman_hdmi_tx_0_0/sim/mb_pacman_hdmi_tx_0_0.v" \
-"../../../bd/mb_pacman/ipshared/4cd7/hdl/pacman_AXI4_graphics_v1_0_S00_AXI.v" \
-
-vlog -work xil_defaultlib  -incr -mfcu  -sv "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/7698" "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/ec67/hdl" \
-"../../../bd/mb_pacman/ipshared/4cd7/src/VGA_controller.sv" \
-"../../../bd/mb_pacman/ipshared/4cd7/hdl/graphics_engine.sv" \
-
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/7698" "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/ec67/hdl" \
-"../../../bd/mb_pacman/ipshared/4cd7/hdl/pacman_AXI4_graphics_v1_0.v" \
-"../../../bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/sim/mb_pacman_pacman_AXI4_graphics_0_0.v" \
 
 vlog -work dist_mem_gen_v8_0_13  -incr -mfcu  "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/7698" "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/ec67/hdl" \
 "../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/0bf5/simulation/dist_mem_gen_v8_0.v" \
@@ -207,6 +198,19 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/mb_pacman/ip/mb_pacman_axi_gpio_1_0/sim/mb_pacman_axi_gpio_1_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/7698" "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/ec67/hdl" \
+"../../../bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_2/sim/blk_mem_gen_2.v" \
+"../../../bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_3/sim/blk_mem_gen_3.v" \
+"../../../bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_1/sim/blk_mem_gen_1.v" \
+"../../../bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+"../../../bd/mb_pacman/ipshared/5b5d/hdl/pacman_AXI4_graphics_v1_0_S00_AXI.v" \
+
+vlog -work xil_defaultlib  -incr -mfcu  -sv "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/7698" "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/ec67/hdl" \
+"../../../bd/mb_pacman/ipshared/5b5d/src/VGA_controller.sv" \
+"../../../bd/mb_pacman/ipshared/5b5d/hdl/graphics_engine.sv" \
+
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/7698" "+incdir+../../../../project_labfinal_platform.gen/sources_1/bd/mb_pacman/ipshared/ec67/hdl" \
+"../../../bd/mb_pacman/ipshared/5b5d/hdl/pacman_AXI4_graphics_v1_0.v" \
+"../../../bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/sim/mb_pacman_pacman_AXI4_graphics_0_0.v" \
 "../../../bd/mb_pacman/sim/mb_pacman.v" \
 
 vlog -work xil_defaultlib \

@@ -59,5 +59,5 @@ set_property PACKAGE_PIN T12 [get_ports {SPI_0_0_ss_io[0]}]
 # -------------------------------------------------------------------------
 # 5. 时序约束 (修复跨时钟域 Setup 违例)
 # -------------------------------------------------------------------------
-# 根据截图报错信息，解除 AXI 时钟 (clk_out1) 到 VGA 像素时钟 (clk_out2) 的时序分析
 set_false_path -from [get_clocks clk_out1_mb_pacman_clk_wiz_1_0_1] -to [get_clocks clk_out2_mb_pacman_clk_wiz_1_0_1]
+set_false_path -from [get_clocks clk_out2_mb_pacman_clk_wiz_1_0_1] -to [get_clocks clk_out1_mb_pacman_clk_wiz_1_0_1]

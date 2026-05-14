@@ -83,7 +83,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.cache/wt [current_project]
 set_property parent.project_path D:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths d:/Vivado/MyProjects/ip_repo [current_project]
@@ -92,7 +92,7 @@ set_property ip_output_repo d:/Vivado/MyProjects/project_labfinal_platform/proje
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.srcs/sources_1/bd/mb_pacman/ip/mb_pacman_clk_wiz_1_0/mb_pacman_clk_wiz_1_0.xci
+read_ip -quiet D:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.srcs/sources_1/bd/mb_pacman/ip/mb_pacman_clk_wiz_1_0/mb_pacman_clk_wiz_1_0.xci
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_clk_wiz_1_0/mb_pacman_clk_wiz_1_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_clk_wiz_1_0/mb_pacman_clk_wiz_1_0.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_clk_wiz_1_0/mb_pacman_clk_wiz_1_0_ooc.xdc]

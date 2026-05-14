@@ -8,5 +8,5 @@
 	<item key="pacman_app_system-skip_rev_check" value="false"/>
 	<item key="programfpga.sdxproject" value="pacman_app_system"/>
 	<item key="pacman_app_system-microblaze_0-initElf" value="bootloop"/>
-	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;RealDigital Boo 887100000000A&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn1-0362f093-0&quot;}}]}"/>
+	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;RealDigital Boo 8874042400D9A&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn1-0362f093-0&quot;}}]}"/>
 </section>

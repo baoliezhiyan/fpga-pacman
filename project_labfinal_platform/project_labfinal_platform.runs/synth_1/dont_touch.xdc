@@ -45,9 +45,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_pacman_m
 # IP: bd/mb_pacman/ip/mb_pacman_hdmi_tx_0_0/mb_pacman_hdmi_tx_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_pacman_hdmi_tx_0_0 || ORIG_REF_NAME==mb_pacman_hdmi_tx_0_0} -quiet] -quiet
 
-# IP: bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/mb_pacman_pacman_AXI4_graphics_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_pacman_pacman_AXI4_graphics_0_0 || ORIG_REF_NAME==mb_pacman_pacman_AXI4_graphics_0_0} -quiet] -quiet
-
 # IP: bd/mb_pacman/ip/mb_pacman_axi_quad_spi_0_0/mb_pacman_axi_quad_spi_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_pacman_axi_quad_spi_0_0 || ORIG_REF_NAME==mb_pacman_axi_quad_spi_0_0} -quiet] -quiet
 
@@ -65,5 +62,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_pacman_a
 
 # IP: bd/mb_pacman/ip/mb_pacman_axi_gpio_1_0/mb_pacman_axi_gpio_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_pacman_axi_gpio_1_0 || ORIG_REF_NAME==mb_pacman_axi_gpio_1_0} -quiet] -quiet
+
+# IP: bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/mb_pacman_pacman_AXI4_graphics_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_pacman_pacman_AXI4_graphics_0_0 || ORIG_REF_NAME==mb_pacman_pacman_AXI4_graphics_0_0} -quiet] -quiet
 
 # XDC: d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/mb_pacman_ooc.xdc

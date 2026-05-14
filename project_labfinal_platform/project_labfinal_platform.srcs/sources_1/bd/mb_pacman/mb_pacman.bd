@@ -475,35 +475,47 @@
         "xci_path": "ip\\mb_pacman_clk_wiz_1_0\\mb_pacman_clk_wiz_1_0.xci",
         "inst_hier_path": "clk_wiz_1",
         "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "130.067"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "99.281"
+          },
           "CLKOUT2_JITTER": {
-            "value": "175.402"
+            "value": "142.278"
           },
           "CLKOUT2_PHASE_ERROR": {
-            "value": "98.575"
+            "value": "99.281"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
-            "value": "25.000"
+            "value": "65.000"
           },
           "CLKOUT2_USED": {
             "value": "true"
           },
           "CLKOUT3_JITTER": {
-            "value": "125.247"
+            "value": "104.357"
           },
           "CLKOUT3_PHASE_ERROR": {
-            "value": "98.575"
+            "value": "99.281"
           },
           "CLKOUT3_REQUESTED_OUT_FREQ": {
-            "value": "125.000"
+            "value": "325.000"
           },
           "CLKOUT3_USED": {
             "value": "true"
           },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "9.750"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "9.750"
+          },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "40"
+            "value": "15"
           },
           "MMCM_CLKOUT2_DIVIDE": {
-            "value": "8"
+            "value": "3"
           },
           "NUM_OUT_CLKS": {
             "value": "3"

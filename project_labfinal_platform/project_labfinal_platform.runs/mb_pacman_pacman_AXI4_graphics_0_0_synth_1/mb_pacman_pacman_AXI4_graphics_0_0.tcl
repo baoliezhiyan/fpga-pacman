@@ -91,6 +91,10 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_ip -quiet D:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.srcs/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/mb_pacman_pacman_AXI4_graphics_0_0.xci
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_2/blk_mem_gen_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_3/blk_mem_gen_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Vivado/MyProjects/project_labfinal_platform/project_labfinal_platform.gen/sources_1/bd/mb_pacman/ip/mb_pacman_pacman_AXI4_graphics_0_0/src/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -101,6 +105,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
